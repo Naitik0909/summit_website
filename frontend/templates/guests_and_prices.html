@@ -1,62 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% block body_block %}
+{% load static %}
 
-<head>
-  <title>Eventalk - Free Bootstrap 4 Template by Colorlib</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-  <link rel="stylesheet" href="css/animate.css">
-
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/magnific-popup.css">
-
-  <link rel="stylesheet" href="css/aos.css">
-
-  <link rel="stylesheet" href="css/ionicons.min.css">
-
-  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-  <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-
-  <link rel="stylesheet" href="css/flaticon.css">
-  <link rel="stylesheet" href="css/icomoon.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/prize.css">
-
-</head>
-
-<body>
-
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Even<span>talk.</span></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> Menu
-      </button>
-
-      <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-          <li class="nav-item active"><a href="speakers.html" class="nav-link">Speakers</a></li>
-          <li class="nav-item"><a href="schedule.html" class="nav-link">Schedule</a></li>
-          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-          <li class="nav-item cta mr-md-2"><a href="#" class="nav-link">Buy ticket</a></li>
-
-        </ul>
-      </div>
-    </div>
-  </nav>
   <!-- END nav -->
 
-  <!-- <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+  <!-- <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('/static/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
        <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
@@ -121,7 +69,7 @@
         </div>
         <div class="row">
         	<div class="col-md-4 speaker">
-        		<img src="images/speaker-1.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
+        		<img src="{% static 'images/speaker-1.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
         		<div class="text text-center pt-3">
         			<h3>John Adams</h3>
         			<span class="position">Web Developer</span>
@@ -133,7 +81,7 @@
         		</div>
         	</div>
 					<div class="col-md-4 speaker">
-        		<img src="images/speaker-2.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
+        		<img src="{% static 'images/speaker-2.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
         		<div class="text text-center pt-3">
         			<h3>John Adams</h3>
         			<span class="position">Web Developer</span>
@@ -145,7 +93,7 @@
         		</div>
         	</div>
         	<div class="col-md-4 speaker">
-        		<img src="images/speaker-3.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
+        		<img src="{% static 'images/speaker-3.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
         		<div class="text text-center pt-3">
         			<h3>John Adams</h3>
         			<span class="position">Web Developer</span>
@@ -157,7 +105,7 @@
         		</div>
         	</div>
         	<div class="col-md-4 speaker">
-        		<img src="images/speaker-4.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
+        		<img src="{% static 'images/speaker-4.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
         		<div class="text text-center pt-3">
         			<h3>John Adams</h3>
         			<span class="position">Web Developer</span>
@@ -169,7 +117,7 @@
         		</div>
         	</div>
 					<div class="col-md-4 speaker">
-        		<img src="images/speaker-5.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
+        		<img src="{% static 'images/speaker-5.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
         		<div class="text text-center pt-3">
         			<h3>John Adams</h3>
         			<span class="position">Web Developer</span>
@@ -181,7 +129,7 @@
         		</div>
         	</div>
         	<div class="col-md-4 speaker">
-        		<img src="images/speaker-6.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
+        		<img src="{% static 'images/speaker-6.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
         		<div class="text text-center pt-3">
         			<h3>John Adams</h3>
         			<span class="position">Web Developer</span>
@@ -218,18 +166,18 @@
       <input type="radio" id="tab3" name="tab-control">
       <ul>
         <li title="Cricket"><label for="tab1" role="button">
-            <img src="./images/game_icons/cricket.png" alt="Cricket" width="60px" height="60px">
+            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
 
             <span>Cricket</span></label>
         </li>
 
         <li title="Badminton"><label for="tab2" role="button">
-            <img src="./images/game_icons/cricket.png" alt="Cricket" width="60px" height="60px">
+            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
             <span>Badminton</span></label>
         </li>
         <li title="Basketball">
           <label for="tab3" role="button">
-            <img src="./images/game_icons/cricket.png" alt="Cricket" width="60px" height="60px">
+            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
             <span>Basketbal</span>
           </label>
         </li>
@@ -269,20 +217,20 @@
       <ul>
         <li title="Volleyball">
           <label for="tab4" role="button">
-            <img src="./images/game_icons/cricket.png" alt="Cricket" width="60px" height="60px">
+            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
             <span>Volleyball</span>
           </label>
         </li>
 
         <li title="Baseball">
           <label for="tab5" role="button">
-            <img src="./images/game_icons/cricket.png" alt="Cricket" width="60px" height="60px">
+            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
             <span>Baseball</span>
           </label>
         </li>
         <li title="Football">
           <label for="tab6" role="button">
-            <img src="./images/game_icons/cricket.png" alt="Cricket" width="60px" height="60px">
+            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
             <span>Football</span>
           </label>
         </li>
@@ -321,21 +269,21 @@
       <ul>
         <li title="Table Tennis">
           <label for="tab7" role="button">
-            <img src="./images/game_icons/cricket.png" alt="Cricket" width="60px" height="60px">
+            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
             <span>Table Tennis</span>
           </label>
         </li>
 
         <li title="Chess">
           <label for="tab8" role="button">
-            <img src="./images/game_icons/cricket.png" alt="Cricket" width="60px" height="60px">
+            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
             <span>Chess</span>
           </label>
         </li>
 
         <li title="Lawn Tennis">
           <label for="tab9" role="button">
-            <img src="./images/game_icons/cricket.png" alt="Cricket" width="60px" height="60px">
+            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
             <span>Lawn Tennis</span>
           </label>
         </li>
@@ -373,18 +321,18 @@
       <ul>
         <li title="Squash">
           <label for="tab13" role="button">
-            <img src="./images/game_icons/cricket.png" alt="Cricket" width="60px" height="60px">
+            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
             <span>Squash</span></label>
         </li>
 
         <li title="Kabbadi"><label for="tab14" role="button">
-            <img src="./images/game_icons/cricket.png" alt="Cricket" width="60px" height="60px">
+            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
             <span>Kabbadi</span>
           </label>
         </li>
         <li title="Carrom">
           <label for="tab15" role="button">            
-            <img src="./images/game_icons/cricket.png" alt="Cricket" width="60px" height="60px">
+            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
             <span>Carrom</span></label></li>
       </ul>
 
@@ -420,18 +368,18 @@
       <ul>
         <li title="Water polo">
           <label for="tab10" role="button">            
-            <img src="./images/game_icons/cricket.png" alt="Cricket" width="60px" height="60px">
+            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
             <span>Water polo</span>
           </label>
         </li>
 
         <li title="Swimming"><label for="tab11" role="button">            
-          <img src="./images/game_icons/cricket.png" alt="Cricket" width="60px" height="60px">
+          <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
           <span>Swimming</span>
         </label>
       </li>
         <li title="Rowing"><label for="tab12" role="button">            
-          <img src="./images/game_icons/cricket.png" alt="Cricket" width="60px" height="60px">
+          <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
           <span>Rowing</span>
         </label>
       </li>
@@ -473,7 +421,7 @@
         		<div class="carousel-testimony owl-carousel">
         			<div class="item">
         				<div class="speaker">
-			        		<img src="images/speaker-1.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
+			        		<img src="{% static 'images/speaker-1.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
 			        		<div class="text text-center py-3">
 			        			<h3>John Adams</h3>
 			        			<span class="position">Web Developer</span>
@@ -484,7 +432,7 @@
 
         			<div class="item">
         				<div class="speaker">
-			        		<img src="images/speaker-2.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
+			        		<img src="{% static 'images/speaker-2.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
 			        		<div class="text text-center py-3">
 			        			<h3>Paul George</h3>
 			        			<span class="position">Web Developer</span>
@@ -495,7 +443,7 @@
 
         			<div class="item">
         				<div class="speaker">
-			        		<img src="images/speaker-3.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
+			        		<img src="{% static 'images/speaker-3.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
 			        		<div class="text text-center py-3">
 			        			<h3>James Smith</h3>
 			        			<span class="position">Web Developer</span>
@@ -506,7 +454,7 @@
 
         			<div class="item">
         				<div class="speaker">
-			        		<img src="images/speaker-4.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
+			        		<img src="{% static 'images/speaker-4.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
 			        		<div class="text text-center py-3">
 			        			<h3>Angelie Crawford</h3>
 			        			<span class="position">Web Developer</span>
@@ -517,7 +465,7 @@
 
         			<div class="item">
         				<div class="speaker">
-			        		<img src="images/speaker-5.jpg" class="img-fluid" alt="Colorlib HTML5 Template">
+			        		<img src="{% static 'images/speaker-5.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
 			        		<div class="text text-center py-3">
 			        			<h3>Jackie Spears</h3>
 			        			<span class="position">Entrepreneur</span>
@@ -575,115 +523,17 @@
     <!-- Gallery -->
     <div class="tabs">
       <div class="image-container">
-        <div class="image" style="--clip-start: ellipse(0 0 at 0 0); --clip-end: ellipse(150% 150% at 0 0);"><img src="https://i.picsum.photos/id/21/200/200.jpg?hmac=a2iQ6UhOjpU6jn7QSsCpk1CiiKTxmW1R4UivDsv-n8o"/><img src="https://i.picsum.photos/id/21/200/200.jpg?hmac=a2iQ6UhOjpU6jn7QSsCpk1CiiKTxmW1R4UivDsv-n8o"/></div>
-        <div class="image" style="--clip-start: inset(100% 0 0 0); --clip-end: inset(0 0 0 0);"><img src="https://i.picsum.photos/id/139/200/200.jpg?hmac=FNSPvHsHcRzKQtNxKKauJgIXpoaAufCwYvr-1w5T3R4"/><img src="https://i.picsum.photos/id/139/200/200.jpg?hmac=FNSPvHsHcRzKQtNxKKauJgIXpoaAufCwYvr-1w5T3R4"/></div>
-        <div class="image" style="--clip-start: ellipse(0 0 at 100% 0); --clip-end: ellipse(150% 150% at 100% 0);"><img src="https://i.picsum.photos/id/642/200/200.jpg?hmac=MJkhEaTWaybCn0y7rKfh_irNHvVuqRHmxcpziWABTKw"/><img src="https://i.picsum.photos/id/642/200/200.jpg?hmac=MJkhEaTWaybCn0y7rKfh_irNHvVuqRHmxcpziWABTKw"/></div>
-        <div class="image" style="--clip-start: polygon(50% 50%,  50% 50%,  50% 50%, 50% 50%); --clip-end: polygon(-50% 50%, 50% -50%, 150% 50%, 50% 150%);"><img src="https://i.picsum.photos/id/253/200/200.jpg?hmac=_dceojr9yz5ZIKoye8I9HOqPCBHfn-jT9aRYdoLx1kQ"/><img src="https://i.picsum.photos/id/253/200/200.jpg?hmac=_dceojr9yz5ZIKoye8I9HOqPCBHfn-jT9aRYdoLx1kQ"/></div>
-        <div class="image" style="--clip-start: circle(0); --clip-end: circle(125%);"><img src="https://i.picsum.photos/id/604/200/200.jpg?hmac=qgFjxODI1hMBMfHo68VvLeji-zvG9y-iPYhyW0EkvOs"/><img src="https://i.picsum.photos/id/604/200/200.jpg?hmac=qgFjxODI1hMBMfHo68VvLeji-zvG9y-iPYhyW0EkvOs"/></div>
-        <div class="image" style="--clip-start: inset(100% 100% 100% 100%); --clip-end: inset(0 0 0 0);"><img src="https://i.picsum.photos/id/119/200/200.jpg?hmac=JGrHG7yCKfebsm5jJSWw7F7x2oxeYnm5YE_74PhnRME"/><img src="https://i.picsum.photos/id/119/200/200.jpg?hmac=JGrHG7yCKfebsm5jJSWw7F7x2oxeYnm5YE_74PhnRME"/></div>
-        <div class="image" style="--clip-start: ellipse(0 0 at 0 100%); --clip-end: ellipse(150% 150% at 0 100%);"><img src="https://i.picsum.photos/id/520/200/200.jpg?hmac=gq6GVKg64GMqsvk_d6gzXZ7L1htska1jEdgBnAwm4xU"/><img src="https://i.picsum.photos/id/520/200/200.jpg?hmac=gq6GVKg64GMqsvk_d6gzXZ7L1htska1jEdgBnAwm4xU"/></div>
-        <div class="image" style="--clip-start: inset(0 0 100% 0); --clip-end: inset(0 0 0 0);"><img src="https://i.picsum.photos/id/553/200/200.jpg?hmac=HSLKzqqoxnajv4KjLxYSjZokWcuCCiZLGdRPUoryhXk"/><img src="https://i.picsum.photos/id/553/200/200.jpg?hmac=HSLKzqqoxnajv4KjLxYSjZokWcuCCiZLGdRPUoryhXk"/></div>
-        <div class="image" style="--clip-start: ellipse(0 0 at 100% 100%); --clip-end: ellipse(150% 150% at 100% 100%);"><img src="https://i.picsum.photos/id/988/200/200.jpg?hmac=-lwK-i6PssD9WlUeVPDIhOxDVxlzJKeM4MgEx_fIqJg"/><img src="https://i.picsum.photos/id/988/200/200.jpg?hmac=-lwK-i6PssD9WlUeVPDIhOxDVxlzJKeM4MgEx_fIqJg"/></div>
+        <div class="image" style="--clip-start: ellipse(0 0 at 0 0); --clip-end: ellipse(150% 150% at 0 0);"><img src="{% static 'https://i.picsum.photos/id/21/200/200.jpg?hmac=a2iQ6UhOjpU6jn7QSsCpk1CiiKTxmW1R4UivDsv-n8o"/><img src="{% static 'https://i.picsum.photos/id/21/200/200.jpg?hmac=a2iQ6UhOjpU6jn7QSsCpk1CiiKTxmW1R4UivDsv-n8o"/></div>
+        <div class="image" style="--clip-start: inset(100% 0 0 0); --clip-end: inset(0 0 0 0);"><img src="{% static 'https://i.picsum.photos/id/139/200/200.jpg?hmac=FNSPvHsHcRzKQtNxKKauJgIXpoaAufCwYvr-1w5T3R4"/><img src="{% static 'https://i.picsum.photos/id/139/200/200.jpg?hmac=FNSPvHsHcRzKQtNxKKauJgIXpoaAufCwYvr-1w5T3R4"/></div>
+        <div class="image" style="--clip-start: ellipse(0 0 at 100% 0); --clip-end: ellipse(150% 150% at 100% 0);"><img src="{% static 'https://i.picsum.photos/id/642/200/200.jpg?hmac=MJkhEaTWaybCn0y7rKfh_irNHvVuqRHmxcpziWABTKw"/><img src="{% static 'https://i.picsum.photos/id/642/200/200.jpg?hmac=MJkhEaTWaybCn0y7rKfh_irNHvVuqRHmxcpziWABTKw"/></div>
+        <div class="image" style="--clip-start: polygon(50% 50%,  50% 50%,  50% 50%, 50% 50%); --clip-end: polygon(-50% 50%, 50% -50%, 150% 50%, 50% 150%);"><img src="{% static 'https://i.picsum.photos/id/253/200/200.jpg?hmac=_dceojr9yz5ZIKoye8I9HOqPCBHfn-jT9aRYdoLx1kQ"/><img src="{% static 'https://i.picsum.photos/id/253/200/200.jpg?hmac=_dceojr9yz5ZIKoye8I9HOqPCBHfn-jT9aRYdoLx1kQ"/></div>
+        <div class="image" style="--clip-start: circle(0); --clip-end: circle(125%);"><img src="{% static 'https://i.picsum.photos/id/604/200/200.jpg?hmac=qgFjxODI1hMBMfHo68VvLeji-zvG9y-iPYhyW0EkvOs"/><img src="{% static 'https://i.picsum.photos/id/604/200/200.jpg?hmac=qgFjxODI1hMBMfHo68VvLeji-zvG9y-iPYhyW0EkvOs"/></div>
+        <div class="image" style="--clip-start: inset(100% 100% 100% 100%); --clip-end: inset(0 0 0 0);"><img src="{% static 'https://i.picsum.photos/id/119/200/200.jpg?hmac=JGrHG7yCKfebsm5jJSWw7F7x2oxeYnm5YE_74PhnRME"/><img src="{% static 'https://i.picsum.photos/id/119/200/200.jpg?hmac=JGrHG7yCKfebsm5jJSWw7F7x2oxeYnm5YE_74PhnRME"/></div>
+        <div class="image" style="--clip-start: ellipse(0 0 at 0 100%); --clip-end: ellipse(150% 150% at 0 100%);"><img src="{% static 'https://i.picsum.photos/id/520/200/200.jpg?hmac=gq6GVKg64GMqsvk_d6gzXZ7L1htska1jEdgBnAwm4xU"/><img src="{% static 'https://i.picsum.photos/id/520/200/200.jpg?hmac=gq6GVKg64GMqsvk_d6gzXZ7L1htska1jEdgBnAwm4xU"/></div>
+        <div class="image" style="--clip-start: inset(0 0 100% 0); --clip-end: inset(0 0 0 0);"><img src="{% static 'https://i.picsum.photos/id/553/200/200.jpg?hmac=HSLKzqqoxnajv4KjLxYSjZokWcuCCiZLGdRPUoryhXk"/><img src="{% static 'https://i.picsum.photos/id/553/200/200.jpg?hmac=HSLKzqqoxnajv4KjLxYSjZokWcuCCiZLGdRPUoryhXk"/></div>
+        <div class="image" style="--clip-start: ellipse(0 0 at 100% 100%); --clip-end: ellipse(150% 150% at 100% 100%);"><img src="{% static 'https://i.picsum.photos/id/988/200/200.jpg?hmac=-lwK-i6PssD9WlUeVPDIhOxDVxlzJKeM4MgEx_fIqJg"/><img src="{% static 'https://i.picsum.photos/id/988/200/200.jpg?hmac=-lwK-i6PssD9WlUeVPDIhOxDVxlzJKeM4MgEx_fIqJg"/></div>
       </div>
     </div>
     <br/>
-  <footer class="ftco-footer ftco-bg-dark ftco-section">
-    <div class="container">
-      <div class="row mb-5">
-        <div class="col-md">
-          <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Eventalk</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-              blind texts.</p>
-            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="ftco-footer-widget mb-4 ml-md-5">
-            <h2 class="ftco-heading-2">Useful Links</h2>
-            <ul class="list-unstyled">
-              <li><a href="#" class="py-2 d-block">Speakers</a></li>
-              <li><a href="#" class="py-2 d-block">Shcedule</a></li>
-              <li><a href="#" class="py-2 d-block">Events</a></li>
-              <li><a href="#" class="py-2 d-block">Blog</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Privacy</h2>
-            <ul class="list-unstyled">
-              <li><a href="#" class="py-2 d-block">Career</a></li>
-              <li><a href="#" class="py-2 d-block">About Us</a></li>
-              <li><a href="#" class="py-2 d-block">Contact Us</a></li>
-              <li><a href="#" class="py-2 d-block">Services</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="ftco-footer-widget mb-4">
-            <h2 class="ftco-heading-2">Have a Questions?</h2>
-            <div class="block-23 mb-3">
-              <ul>
-                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San
-                    Francisco, California, USA</span></li>
-                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-                <li><a href="#"><span class="icon icon-envelope"></span><span
-                      class="text">info@yourdomain.com</span></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12 text-center">
 
-          <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;
-            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with
-            <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com"
-              target="_blank">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-
-
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-        stroke="#F96D00" />
-    </svg></div>
-
-
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.timepicker.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
-
-</body>
-
-</html>
+    {% endblock %}
