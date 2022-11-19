@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, View
 
 class HomePageView(TemplateView):
     template_name = 'index.html'
@@ -15,3 +15,6 @@ class TeamAndContactPageView(TemplateView):
 
 class ScoresAndFixturesPageView(TemplateView):
     template_name = 'scores_and_fixtures.html'
+
+class SportDetailPageView(TemplateView):
+    template_name = 'sport_detail.html'
