@@ -15,3 +15,6 @@ class TeamAndContactPageView(TemplateView):
 
 class ScoresAndFixturesPageView(TemplateView):
     template_name = 'scores_and_fixtures.html'
+
+class SportDetailPageView(TemplateView):
+    template_name = 'sport_detail.html'
