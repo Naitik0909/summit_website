@@ -7672,7 +7672,7 @@ h1, h2, h3, h4, h5,
     outline: none; }
   .btn.btn-primary {
     border-radius: 35px;
-    padding: 10px 0px!important;
+    padding: 10px 15px!important;
     background: #ED8842 !important;
     border: 1px solid #ED8842 !important;
     color: #fff !important; }
@@ -8030,7 +8030,7 @@ line-height: 1.5;}
   background: #fff !important;
   color: #000000 !important;
   font-size: 18px;
-  border-radius: 5px;
+  border-radius: 10px;
   -webkit-box-shadow: none !important;
   box-shadow: none !important; }
   .form-control:focus, .form-control:active {
