@@ -7671,7 +7671,8 @@ h1, h2, h3, h4, h5,
   .btn:hover, .btn:active, .btn:focus {
     outline: none; }
   .btn.btn-primary {
-    border-radius: 35px;
+    border-radius: 15px;
+    width: 100%;
     padding: 10px 0px!important;
     background: #ED8842 !important;
     border: 1px solid #ED8842 !important;
@@ -8030,7 +8031,7 @@ line-height: 1.5;}
   background: #fff !important;
   color: #000000 !important;
   font-size: 18px;
-  border-radius: 5px;
+  border-radius: 10px;
   -webkit-box-shadow: none !important;
   box-shadow: none !important; }
   .form-control:focus, .form-control:active {
