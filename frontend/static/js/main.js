@@ -70,6 +70,7 @@
 			margin: 30,
 			stagePadding: 0,
 			nav: false,
+			autoplay: 5000,
 			navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
 			responsive:{
 				0:{

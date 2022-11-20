@@ -4,6 +4,12 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+ @font-face {
+  font-family: 'Gilroy';
+  src: url("/static/fonts/Gilroy-ExtraBold.otf") format("opentype");
+}
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -41,7 +47,7 @@
   box-sizing: border-box; }
 
 html {
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -74,6 +80,7 @@ hr {
   overflow: visible; }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Gilroy';
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
@@ -303,7 +310,7 @@ template {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
-  font-family: inherit;
+  font-family: 'Gilroy';
   font-weight: 500;
   line-height: 1.2;
   color: inherit; 
@@ -4495,7 +4502,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'Lato', sans-serif;;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -4580,7 +4587,7 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -7270,7 +7277,7 @@ a.text-dark:hover, a.text-dark:focus {
     border: 1px solid #dee2e6 !important; } }
 
 body {
-  font-family: "Work Sans", Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
   background: #fff;
   font-size: 16px;
   line-height: 1.8;
@@ -7374,7 +7381,7 @@ h1, h2, h3, h4, h5,
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -ms-border-radius: 2px;
-    border-radius: 2px; }
+    border-radius: 25px; }
     .ftco-navbar-light .navbar-nav > .nav-item.cta > a span {
       display: inline-block;
       color: #fff; }
@@ -7426,7 +7433,7 @@ h1, h2, h3, h4, h5,
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       -ms-border-radius: 5px;
-      border-radius: 5px; }
+      border-radius: 25px; }
       .ftco-navbar-light.scrolled .nav-item.cta > a span {
         display: inline-block;
         color: #fff !important; }
@@ -7494,7 +7501,7 @@ h1, h2, h3, h4, h5,
     background: -webkit-linear-gradient(45deg, #6b75ff 0%, #6b75ff 0%, #59b7ff 100%);
     background: -o-linear-gradient(45deg, #6b75ff 0%, #6b75ff 0%, #59b7ff 100%);
     background: -ms-linear-gradient(45deg, #6b75ff 0%, #6b75ff 0%, #59b7ff 100%);
-    background: linear-gradient(45deg, #6b75ff 0%, #6b75ff 0%, #59b7ff 100%);
+    background: #fff576;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b75ff', endColorstr='#59b7ff', GradientType=1 ); }
   .hero-wrap.hero-wrap-2 .overlay {
     width: 100%;
@@ -7559,7 +7566,7 @@ h1, h2, h3, h4, h5,
     width: 25%;
     font-size: 38px;
     font-weight: 200;
-    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    border-left: 1px solid rgba(0, 0, 0, 0.30);
     color: #ED8842; }
     #timer .time:first-child {
       border-left: transparent; }
@@ -7664,6 +7671,8 @@ h1, h2, h3, h4, h5,
   .btn:hover, .btn:active, .btn:focus {
     outline: none; }
   .btn.btn-primary {
+    border-radius: 35px;
+    padding: 10px 0px!important;
     background: #ED8842 !important;
     border: 1px solid #ED8842 !important;
     color: #fff !important; }
@@ -8103,7 +8112,7 @@ textarea.form-control {
 
 .ftco-footer {
   font-size: 16px;
-  background: #222831;
+  background: #04424D;
   padding: 7em 0; }
   .ftco-footer .ftco-footer-logo {
     text-transform: uppercase;
@@ -8115,7 +8124,7 @@ textarea.form-control {
     font-size: 20px;
     font-weight: 400; }
   .ftco-footer .ftco-footer-widget ul li a {
-    color: rgba(255, 255, 255, 0.4); }
+    color: rgba(255, 255, 255, 0.7); }
     .ftco-footer .ftco-footer-widget ul li a span {
       color: #fff; }
   .ftco-footer .ftco-footer-widget .btn-primary {
@@ -8144,7 +8153,7 @@ textarea.form-control {
     width: 50px;
     display: block;
     float: left;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.30);
     border-radius: 50%;
     position: relative; }
     .ftco-footer-social li a span {
@@ -8332,8 +8341,8 @@ textarea.form-control {
   position: relative;
   background: rgba(255, 255, 255, 0.1); }
   .testimony-wrap .user-img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     position: relative;
     margin: 0 auto;
@@ -8427,13 +8436,13 @@ textarea.form-control {
 
 .ftco-counter .text strong.number {
   font-weight: 600;
-  font-size: 28px;
+  font-size: 40px;
   color: #000000; }
 
 .ftco-counter .text span {
   display: block;
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.7);
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.5);
   margin-bottom: 10px; }
 
 .ftco-counter .icon {
@@ -8694,7 +8703,7 @@ textarea.form-control {
     border: 1px solid transparent;
     color: rgba(0, 0, 0, 0.7) !important;
     font-size: 16px;
-    border-radius: 5px 0px 0px 5px; }
+    border-radius: 25px 0px 0 25px; }
     .subscribe-form .form-group input::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
       color: rgba(0, 0, 0, 0.7) !important; }
@@ -8709,8 +8718,8 @@ textarea.form-control {
       color: rgba(0, 0, 0, 0.7) !important; }
   .subscribe-form .form-group .submit {
     color: #fff !important;
-    background: #3847ff !important;
-    border-radius: 0px 5px 5px 0px;
+    background: #0A9B81 !important;
+    border-radius: 0px 25px 25px 0px;
     font-size: 16px; }
     .subscribe-form .form-group .submit:hover {
       cursor: pointer; }
