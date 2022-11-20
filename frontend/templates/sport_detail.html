@@ -2,17 +2,7 @@
 {% block body_block %}
 {% load static %}
     
-    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('/static/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
-      <div class="overlay"></div>
-      <div class="container">
-        <div style="text-align:start;" class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-          <div class="col-md-12 ftco-animate pb-5">
-            <h1 class="mb-3 bread">Blog</h1>
-            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span class="mr-2"><a href="blog.html">Blog <i class="ion-ios-arrow-forward"></i></a></span> <span>Blog Single <i class="ion-ios-arrow-forward"></i></span></p>
-          </div>
-        </div>
-      </div>
-    </section>
+{% include 'head_common.html' %}
 
     <section class="ftco-section ftco-degree-bg">
       <div class="container">
@@ -22,43 +12,16 @@
             <div >
               <h3 >Rules</h3>
               <ul class="comment-list">
+                {% for rule in rules %}
                 <li class="comment">
                   <div class="vcard bio">
                     <img src="{% static 'images/person_1.jpg' %}" alt="Image placeholder">
                   </div>
                   <div class="comment-body">
-                    <h3>Jsuscipit exercitationem hic molestiae totam obcaecati rerum, eius aut, in. Exercitationem</h3>                    
+                    <h3>{{ rule }}</h3>                    
                   </div>
                 </li>
-                <li class="comment">
-                  <div class="vcard bio">
-                    <img src="{% static 'images/person_1.jpg' %}" alt="Image placeholder">
-                  </div>
-                  <div class="comment-body">
-                    <h3>Jsuscipit exercitationem hic molestiae totam obcaecati rerum, eius aut, in. Exercitationem</h3>                    
-                  </div>
-                </li><li class="comment">
-                  <div class="vcard bio">
-                    <img src="{% static 'images/person_1.jpg' %}" alt="Image placeholder">
-                  </div>
-                  <div class="comment-body">
-                    <h3>Jsuscipit exercitationem hic molestiae totam obcaecati rerum, eius aut, in. Exercitationem</h3>                    
-                  </div>
-                </li><li class="comment">
-                  <div class="vcard bio">
-                    <img src="{% static 'images/person_1.jpg' %}" alt="Image placeholder">
-                  </div>
-                  <div class="comment-body">
-                    <h3>Jsuscipit exercitationem hic molestiae totam obcaecati rerum, eius aut, in. Exercitationem</h3>                    
-                  </div>
-                </li><li class="comment">
-                  <div class="vcard bio">
-                    <img src="{% static 'images/person_1.jpg' %}" alt="Image placeholder">
-                  </div>
-                  <div class="comment-body">
-                    <h3>Jsuscipit exercitationem hic molestiae totam obcaecati rerum, eius aut, in. Exercitationem</h3>                    
-                  </div>
-                </li>
+                {% endfor %}
                
                   </ul>
                 </li>
@@ -149,12 +112,9 @@
             <div class="sidebar-box ftco-animate">
               <div class="categories">
                 <h3>Sports</h3>
-                <li><a href="#">Jobs <span>(12)</span></a></li>
-                <li><a href="#">Visual Assistant <span>(22)</span></a></li>
-                <li><a href="#">Coffee <span>(37)</span></a></li>
-                <li><a href="#">Drinks <span>(42)</span></a></li>
-                <li><a href="#">Foods <span>(14)</span></a></li>
-                <li><a href="#">Travel <span>(140)</span></a></li>
+                {% for sport in relatedSports %}
+                  <li><a href="{% url 'sport_detail' sport.slug %}">{{ sport.name }}<span>(12)</span></a></li>
+                {% endfor %}
               </div>
             </div>
 
