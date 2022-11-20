@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block body_block %}
 {% load static %}
+
+{% block title %}<title>MIT-WPU SUMMIT 2023</title> {% endblock %}
 <div id="carouselExampleControls" data-interval="false" class="carousel slide" data-ride="carousel">
 	<div class="carousel-inner">
 		<div class="carousel-item active">
@@ -33,7 +35,9 @@
 			<div class="js-fullheight"
 				style="display: flex;
 		align-items: center;background-image: url('https://summit.mitwpu.edu.in/wp-content/uploads/2021/11/IMG_8250_11-1536x1024.jpg')">
-				<div style="display: flex;justify-content: center;" class="container">
+				<div style="display: flex;justify-content: center;
+				flex-direction: column;align-items: center;" class="container">
+					<h2 style="color:white">MIT WPU Summit 2023</h2>
 					<a href="#" class="btn btn-primary d-block px-2 py-3 btn-short">Know More</a>
 				</div>
 			</div>
@@ -147,7 +151,7 @@
       </div>
     </section> -->
 
-<section class="ftco-counter img mt-4">
+<section class="ftco-counter img mt-5">
 	<div class="container">
 		<div class="row d-flex">
 			<div class="col-md-6 d-flex">
@@ -644,7 +648,7 @@
 					<h2>Subcribe to our Newsletter</h2>
 					<p>To get the latest update about our events, prizes and lots of more information, 
 						subscribe to our newsletter now!</p>
-					<div class="row d-flex justify-content-center mt-4 mb-4">
+					<div style="max-width: 100%" class="row d-flex justify-content-center mt-4 mb-4">
 						<div class="col-md-8">
 							<form action="#" class="subscribe-form">
 								<div class="form-group d-flex">
