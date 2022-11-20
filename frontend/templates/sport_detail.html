@@ -80,26 +80,83 @@
               
               <div class="comment-form-wrap pt-5">
                 <h3 class="mb-5">Register</h3>
-                <form action="#" class="p-5 bg-light">
+                <form action="#" class="p-6 bg-light">
+                  <h5> Player Information </h5>
                   <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" class="form-control" id="name">
+                    <label for="name"> Full Name *</label>
+                    <input name="Fullname" type="text" class="form-control" id="name">
                   </div>
                   <div class="form-group">
                     <label for="email">Email *</label>
-                    <input type="email" class="form-control" id="email">
+                    <input name="email" type="email" class="form-control" id="email">
                   </div>
                   <div class="form-group">
-                    <label for="website">Website</label>
-                    <input type="url" class="form-control" id="website">
+                    <label for="number"> Contact Number </label>
+                    <input name="contact_number" type="number" class="form-control" id="number">
                   </div>
 
                   <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
+                    <label for="photo">College Id Photo</label>
+                    <br>
+                    <input type="file" id="myFile" class="form-control" name="photo_filename">
+                    <!-- <br>
+                    <input type="submit"> -->
                   </div>
+
                   <div class="form-group">
-                    <input type="submit" value="Register" class="btn py-3 px-4 btn-primary">
+                    <label for="number">Aadhar Card Number</label>
+                    <input name="Aadhar_number" type="number" class="form-control" id="number">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="message">Sate</label>
+                    <input name="state" type="text" class="form-control" id="website">
+                  </div>
+
+                  <h5>Other Information</h5>
+
+                  <div class="form-group">
+                    <label for="message">Sport</label>
+                    <input name="sport" type="text" class="form-control" id="website">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="message">College Name</label>
+                    <input name="college_name" type="text" class="form-control" id="website">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="message">Pool(Engineering/open)</label>
+                    <input name="Pool" type="text" class="form-control" id="website">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="message">If Open(Name of School)</label>
+                    <input name="ifopen" type="text" class="form-control" id="website">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="message">Need Accomadation?(  yes/no Specifying price)</label>
+                    <input name="accomadation" type="text" class="form-control" id="website">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="message">Sports Incharge Name</label>
+                    <input name="sportsincharge_name" type="text" class="form-control" id="website">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="message">Sports Incharge Number</label>
+                    <input name="sportsincharge_number" type="number" class="form-control" id="website">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="message">Sports Incharge Email id.</label>
+                    <input name="sportsincharge_email" type="email" class="form-control" id="website">
+                  </div>
+
+                  <div class="form-group">
+                    <input name="Aadhar_number" type="submit" value="Register" class="btn py-3 px-4 btn-primary">
                   </div>
 
                 </form>
