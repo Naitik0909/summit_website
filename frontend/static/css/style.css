@@ -7344,7 +7344,7 @@ h1, h2, h3, h4, h5,
       color: #000000; }
     @media (max-width: 991.98px) {
       .ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
-        padding-left: 0;
+        
         padding-right: 0;
         padding-bottom: 0; } }
   .ftco-navbar-light .navbar-nav > .nav-item .dropdown-menu {
@@ -7381,6 +7381,8 @@ h1, h2, h3, h4, h5,
     padding-right: 18px;
     margin-top: 4px;
     background: #ED8842;
+    text-align: center;
+    max-width: 130px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -ms-border-radius: 2px;
@@ -8706,11 +8708,12 @@ textarea.form-control {
   -ms-border-radius: 0;
   border-radius: 0; }
   .subscribe-form .form-group input {
+    padding-left: 20px;
     background: white !important;
     border: 1px solid transparent;
     color: rgba(0, 0, 0, 0.7) !important;
     font-size: 16px;
-    border-radius: 25px 0px 0 25px; }
+    border-radius: 25px; }
     .subscribe-form .form-group input::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
       color: rgba(0, 0, 0, 0.7) !important; }
@@ -8726,7 +8729,8 @@ textarea.form-control {
   .subscribe-form .form-group .submit {
     color: #fff !important;
     background: #0A9B81 !important;
-    border-radius: 0px 25px 25px 0px;
+    border-radius: 30px;
+    margin-left: 15px;
     font-size: 16px; }
     .subscribe-form .form-group .submit:hover {
       cursor: pointer; }
@@ -8959,3 +8963,10 @@ textarea.form-control {
 .ftco-navbar-light .navbar-nav > .nav-item > .nav-link{
   color: #fff!important;
 }
+
+@media screen and (max-width: 768px) {
+  #map-container{
+    max-width: 100%!important;
+  }
+}
+  
