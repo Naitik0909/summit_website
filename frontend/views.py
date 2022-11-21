@@ -14,6 +14,7 @@ class EventsPageView(View):
         return newArr
 
     def get(self, request, *args, **kwargs):
+        print(request.resolver_match.view_name)
         introData = {
             'title': 'Events',
             'desc':'Lorem ipsum dummy text'
@@ -24,8 +25,7 @@ class EventsPageView(View):
             sport.rules = EventsPageView.reducaeArray(sport.rules, 4)
         context = {
                 'introData': introData,
-                'allSport': allSport
-            }
+                'allSport': allSport            }
         return render(request, 'events.html',context)
 
 class GuestsAndPricesPageView(View):

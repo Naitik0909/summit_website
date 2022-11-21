@@ -57,11 +57,11 @@
 		
 			<div class="collapse navbar-collapse" id="ftco-nav">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item"><a href="{% url 'events' %}" class="nav-link">Events</a></li>
-				<li class="nav-item"><a href="{% url 'guests_and_prices' %}" class="nav-link">Guests & Prizes</a></li>
-				<li class="nav-item"><a href="{% url 'team_and_contact' %}" class="nav-link">Our team & Contact Us</a></li>
-				<li class="nav-item"><a href="{% url 'guests_and_prices' %}" class="nav-link">Live Score & Fixtures</a></li>
-				<li class="nav-item"><a href="{% url 'guests_and_prices' %}" class="nav-link">Brochure</a></li>
+				<li class="nav-item"><a href="{% url 'events' %}" class="nav-link{% if request.resolver_match.view_name == 'events' %}-active{% endif %}">Events</a></li>
+				<li class="nav-item"><a href="{% url 'guests_and_prices' %}" class="nav-link{% if request.resolver_match.view_name == 'guests_and_prices' %}-active{% endif %}">Guests & Prizes</a></li>
+				<li class="nav-item"><a href="{% url 'team_and_contact' %}" class="nav-link{% if request.resolver_match.view_name == 'team_and_contact' %}-active{% endif %}">Our team & Contact Us</a></li>
+				<li class="nav-item"><a href="{% url 'guests_and_prices' %}" class="nav-link{% if request.resolver_match.view_name == '.' %}-active{% endif %}">Live Score & Fixtures</a></li>
+				<li class="nav-item"><a href="{% url 'guests_and_prices' %}" class="nav-link{% if request.resolver_match.view_name == '.' %}-active{% endif %}">Brochure</a></li>
 				<li class="nav-item cta "><a href="#" class="nav-link">Register Now</a></li>
 		
 				<!-- <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
