@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'summit_app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'da58hejupahdl2',
+        'USER': 'shndhsylthjwst',
+        'PASSWORD': 'e9d8f16f9ff91a8e1b56cd51db7fbe42ecee171c262d4a263321698252425f27',
+        'HOST': 'ec2-34-248-169-69.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -129,7 +133,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media');
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 MEDIA_URL = '/media/'
 
