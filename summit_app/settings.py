@@ -3,9 +3,14 @@
 from pathlib import Path
 import os
 # Configure Django App for Heroku.
-import django_heroku
-
+import socket
 import environ
+
+if socket.gethostname() == 'Nishikas-MacBook-Air.local' :
+    import django_on_heroku
+else:
+    import django_heroku
+
 
 # Initialise environment variables
 env = environ.Env()
@@ -137,4 +142,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 MEDIA_URL = '/media/'
 
-django_heroku.settings(locals())
+if socket.gethostname() == 'Nishikas-MacBook-Air.local' :
+    django_on_heroku.settings(locals())
+else:
+    django_heroku.settings(locals())
