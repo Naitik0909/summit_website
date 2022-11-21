@@ -514,7 +514,7 @@ pre {
   position: relative;
   width: 150%;
   min-height: 1px;
-  /* padding-right: 15px; */
+  padding-right: 15px;
   padding-left: 15px; }
 
 .col {

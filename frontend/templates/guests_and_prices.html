@@ -3,9 +3,9 @@
 {% load static %}
 {% block title %}<title>Guests & Prizes - MIT-WPU SUMMIT 2023</title> {% endblock %}
 
-  <!-- END nav -->
+<!-- END nav -->
 
-  <!-- <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('/static/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+<!-- <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('/static/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
        <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
@@ -146,394 +146,413 @@
     </section> -->
 
 
-   {% include 'head_common.html' %}
+{% include 'head_common.html' %}
 
-  <section class="ftco-section">
- 
+<section class="ftco-section">
 
-    <div class="tabs">
 
-      <input type="radio" id="tab1" name="tab-control" checked>
-      <input type="radio" id="tab2" name="tab-control">
-      <input type="radio" id="tab3" name="tab-control">
-      <ul>
-        <li title="Cricket"><label for="tab1" role="button">
-            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
+  <div class="tabs">
 
-            <span>Cricket</span></label>
-        </li>
+    <input type="radio" id="tab1" name="tab-control" checked>
+    <input type="radio" id="tab2" name="tab-control">
+    <input type="radio" id="tab3" name="tab-control">
+    <ul>
+      <li title="Cricket"><label for="tab1" role="button">
+          <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
 
-        <li title="Badminton"><label for="tab2" role="button">
-            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
-            <span>Badminton</span></label>
-        </li>
-        <li title="Basketball">
-          <label for="tab3" role="button">
-            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
-            <span>Basketbal</span>
-          </label>
-        </li>
-      </ul>
+          <span>Cricket</span></label>
+      </li>
 
-      <div class="slider">
-        <div class="indicator"></div>
-      </div>
-      <div class="content">
-        <section>
-          <h2>Cricket</h2>
-          MIT-WPU Summit ‘21 Man of the Tournament<br />
-          MIT-WPU Summit ‘21 Best Batsman<br />
-          MIT-WPU Summit ‘21 Best Bowler<br />
-          MIT-WPU Summit ‘21 Man of the Match (Final)
-        </section>
-        <section>
-          <h2>Badminton</h2>
-          2 ipsum dolor sit amet, consectetur adipisicing elit. Autem quas adipisci a accusantium eius ut
-          voluptatibus
-          ad impedit nulla, ipsa qui. Quasi temporibus eos commodi aliquid impedit amet, similique nulla.
-        </section>
-        <section>
-          <h2>Basketball</h2>
-          3 ipsum dolor sit amet, consectetur adipisicing elit. Quam nemo ducimus eius, magnam error quisquam sunt
-          voluptate labore, excepturi numquam! Alias libero optio sed harum debitis! Veniam, quia in eum.
-        </section>
-      </div>
+      <li title="Badminton"><label for="tab2" role="button">
+          <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
+          <span>Badminton</span></label>
+      </li>
+      <li title="Basketball">
+        <label for="tab3" role="button">
+          <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
+          <span>Basketbal</span>
+        </label>
+      </li>
+    </ul>
+
+    <div class="slider">
+      <div class="indicator"></div>
     </div>
-    <br />
-    <br />
-
-    
-
-    <div class="tabs1">
-
-      <input type="radio" id="tab4" name="tab-control1" checked>
-      <input type="radio" id="tab5" name="tab-control1">
-      <input type="radio" id="tab6" name="tab-control1">
-      <ul>
-        <li title="Volleyball">
-          <label for="tab4" role="button">
-            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
-            <span>Volleyball</span>
-          </label>
-        </li>
-
-        <li title="Baseball">
-          <label for="tab5" role="button">
-            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
-            <span>Baseball</span>
-          </label>
-        </li>
-        <li title="Football">
-          <label for="tab6" role="button">
-            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
-            <span>Football</span>
-          </label>
-        </li>
-      </ul>
-
-      <div class="slider">
-        <div class="indicator"></div>
-      </div>
-      <div class="content">
-        <section>
-          <h2>Volleyball</h2>4 ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in
-          eum
-          obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates
-          quibusdam cum?
-        </section>
-        <section>
-          <h2>Baseball</h2>
-          5 ipsum dolor sit amet, consectetur adipisicing elit. Autem quas adipisci a accusantium eius ut
-          voluptatibus
-          ad impedit nulla, ipsa qui. Quasi temporibus eos commodi aliquid impedit amet, similique nulla.
-        </section>
-        <section>
-          <h2>Football</h2>
-          6 ipsum dolor sit amet, consectetur adipisicing elit. Quam nemo ducimus eius, magnam error quisquam sunt
-          voluptate labore, excepturi numquam! Alias libero optio sed harum debitis! Veniam, quia in eum.
-        </section>
-      </div>
+    <div class="content">
+      <section>
+        <h2>Cricket</h2>
+        MIT-WPU Summit ‘21 Man of the Tournament<br />
+        MIT-WPU Summit ‘21 Best Batsman<br />
+        MIT-WPU Summit ‘21 Best Bowler<br />
+        MIT-WPU Summit ‘21 Man of the Match (Final)
+      </section>
+      <section>
+        <h2>Badminton</h2>
+        2 ipsum dolor sit amet, consectetur adipisicing elit. Autem quas adipisci a accusantium eius ut
+        voluptatibus
+        ad impedit nulla, ipsa qui. Quasi temporibus eos commodi aliquid impedit amet, similique nulla.
+      </section>
+      <section>
+        <h2>Basketball</h2>
+        3 ipsum dolor sit amet, consectetur adipisicing elit. Quam nemo ducimus eius, magnam error quisquam sunt
+        voluptate labore, excepturi numquam! Alias libero optio sed harum debitis! Veniam, quia in eum.
+      </section>
     </div>
-    <br />
-    <br />
+  </div>
+  <br />
+  <br />
 
-    <div class="tabs2">
 
-      <input type="radio" id="tab7" name="tab-control2" checked>
-      <input type="radio" id="tab8" name="tab-control2">
-      <input type="radio" id="tab9" name="tab-control2">
-      <ul>
-        <li title="Table Tennis">
-          <label for="tab7" role="button">
-            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
-            <span>Table Tennis</span>
-          </label>
-        </li>
 
-        <li title="Chess">
-          <label for="tab8" role="button">
-            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
-            <span>Chess</span>
-          </label>
-        </li>
+  <div class="tabs1">
 
-        <li title="Lawn Tennis">
-          <label for="tab9" role="button">
-            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
-            <span>Lawn Tennis</span>
-          </label>
-        </li>
-      </ul>
+    <input type="radio" id="tab4" name="tab-control1" checked>
+    <input type="radio" id="tab5" name="tab-control1">
+    <input type="radio" id="tab6" name="tab-control1">
+    <ul>
+      <li title="Volleyball">
+        <label for="tab4" role="button">
+          <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
+          <span>Volleyball</span>
+        </label>
+      </li>
 
-      <div class="slider">
-        <div class="indicator"></div>
-      </div>
-      <div class="content">
-        <section>
-          <h2>Table Tennis</h2>4 ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in
-          eum
-          obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates
-          quibusdam cum?
-        </section>
-        <section>
-          <h2>Chess</h2>
-          5 ipsum dolor sit amet, consectetur adipisicing elit. Autem quas adipisci a accusantium eius ut
-          voluptatibus
-          ad impedit nulla, ipsa qui. Quasi temporibus eos commodi aliquid impedit amet, similique nulla.
-        </section>
-        <section>
-          <h2>Lawn Tennis</h2>
-          6 ipsum dolor sit amet, consectetur adipisicing elit. Quam nemo ducimus eius, magnam error quisquam sunt
-          voluptate labore, excepturi numquam! Alias libero optio sed harum debitis! Veniam, quia in eum.
-        </section>
-      </div>
+      <li title="Baseball">
+        <label for="tab5" role="button">
+          <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
+          <span>Baseball</span>
+        </label>
+      </li>
+      <li title="Football">
+        <label for="tab6" role="button">
+          <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
+          <span>Football</span>
+        </label>
+      </li>
+    </ul>
+
+    <div class="slider">
+      <div class="indicator"></div>
     </div>
-    <br />
-    <br />
-
-    <div class="tabs4">
-
-      <input type="radio" id="tab13" name="tab-control4" checked>
-      <input type="radio" id="tab14" name="tab-control4">
-      <input type="radio" id="tab15" name="tab-control4">
-      <ul>
-        <li title="Squash">
-          <label for="tab13" role="button">
-            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
-            <span>Squash</span></label>
-        </li>
-
-        <li title="Kabbadi"><label for="tab14" role="button">
-            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
-            <span>Kabbadi</span>
-          </label>
-        </li>
-        <li title="Carrom">
-          <label for="tab15" role="button">            
-            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
-            <span>Carrom</span></label></li>
-      </ul>
-
-      <div class="slider">
-        <div class="indicator"></div>
-      </div>
-      <div class="content">
-        <section>
-          <h2>Squash</h2>4 ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in
-          eum
-          obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates
-          quibusdam cum?
-        </section>
-        <section>
-          <h2>Kabbadi</h2>
-          5 ipsum dolor sit amet, consectetur adipisicing elit. Autem quas adipisci a accusantium eius ut
-          voluptatibus
-          ad impedit nulla, ipsa qui. Quasi temporibus eos commodi aliquid impedit amet, similique nulla.
-        </section>
-        <section>
-          <h2>Carrom</h2>
-          6 ipsum dolor sit amet, consectetur adipisicing elit. Quam nemo ducimus eius, magnam error quisquam sunt
-          voluptate labore, excepturi numquam! Alias libero optio sed harum debitis! Veniam, quia in eum.
-        </section>
-      </div>
+    <div class="content">
+      <section>
+        <h2>Volleyball</h2>4 ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in
+        eum
+        obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates
+        quibusdam cum?
+      </section>
+      <section>
+        <h2>Baseball</h2>
+        5 ipsum dolor sit amet, consectetur adipisicing elit. Autem quas adipisci a accusantium eius ut
+        voluptatibus
+        ad impedit nulla, ipsa qui. Quasi temporibus eos commodi aliquid impedit amet, similique nulla.
+      </section>
+      <section>
+        <h2>Football</h2>
+        6 ipsum dolor sit amet, consectetur adipisicing elit. Quam nemo ducimus eius, magnam error quisquam sunt
+        voluptate labore, excepturi numquam! Alias libero optio sed harum debitis! Veniam, quia in eum.
+      </section>
     </div>
-    <br />
-    <br />
+  </div>
+  <br />
+  <br />
 
-    <div class="tabs3">
+  <div class="tabs2">
 
-      <input type="radio" id="tab10" name="tab-control3" checked>
-      <input type="radio" id="tab11" name="tab-control3">
-      <input type="radio" id="tab12" name="tab-control3">
-      <ul>
-        <li title="Water polo">
-          <label for="tab10" role="button">            
-            <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
-            <span>Water polo</span>
-          </label>
-        </li>
+    <input type="radio" id="tab7" name="tab-control2" checked>
+    <input type="radio" id="tab8" name="tab-control2">
+    <input type="radio" id="tab9" name="tab-control2">
+    <ul>
+      <li title="Table Tennis">
+        <label for="tab7" role="button">
+          <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
+          <span>Table Tennis</span>
+        </label>
+      </li>
 
-        <li title="Swimming"><label for="tab11" role="button">            
+      <li title="Chess">
+        <label for="tab8" role="button">
+          <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
+          <span>Chess</span>
+        </label>
+      </li>
+
+      <li title="Lawn Tennis">
+        <label for="tab9" role="button">
+          <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
+          <span>Lawn Tennis</span>
+        </label>
+      </li>
+    </ul>
+
+    <div class="slider">
+      <div class="indicator"></div>
+    </div>
+    <div class="content">
+      <section>
+        <h2>Table Tennis</h2>4 ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in
+        eum
+        obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates
+        quibusdam cum?
+      </section>
+      <section>
+        <h2>Chess</h2>
+        5 ipsum dolor sit amet, consectetur adipisicing elit. Autem quas adipisci a accusantium eius ut
+        voluptatibus
+        ad impedit nulla, ipsa qui. Quasi temporibus eos commodi aliquid impedit amet, similique nulla.
+      </section>
+      <section>
+        <h2>Lawn Tennis</h2>
+        6 ipsum dolor sit amet, consectetur adipisicing elit. Quam nemo ducimus eius, magnam error quisquam sunt
+        voluptate labore, excepturi numquam! Alias libero optio sed harum debitis! Veniam, quia in eum.
+      </section>
+    </div>
+  </div>
+  <br />
+  <br />
+
+  <div class="tabs4">
+
+    <input type="radio" id="tab13" name="tab-control4" checked>
+    <input type="radio" id="tab14" name="tab-control4">
+    <input type="radio" id="tab15" name="tab-control4">
+    <ul>
+      <li title="Squash">
+        <label for="tab13" role="button">
+          <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
+          <span>Squash</span></label>
+      </li>
+
+      <li title="Kabbadi"><label for="tab14" role="button">
+          <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
+          <span>Kabbadi</span>
+        </label>
+      </li>
+      <li title="Carrom">
+        <label for="tab15" role="button">
+          <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
+          <span>Carrom</span></label>
+      </li>
+    </ul>
+
+    <div class="slider">
+      <div class="indicator"></div>
+    </div>
+    <div class="content">
+      <section>
+        <h2>Squash</h2>4 ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in
+        eum
+        obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates
+        quibusdam cum?
+      </section>
+      <section>
+        <h2>Kabbadi</h2>
+        5 ipsum dolor sit amet, consectetur adipisicing elit. Autem quas adipisci a accusantium eius ut
+        voluptatibus
+        ad impedit nulla, ipsa qui. Quasi temporibus eos commodi aliquid impedit amet, similique nulla.
+      </section>
+      <section>
+        <h2>Carrom</h2>
+        6 ipsum dolor sit amet, consectetur adipisicing elit. Quam nemo ducimus eius, magnam error quisquam sunt
+        voluptate labore, excepturi numquam! Alias libero optio sed harum debitis! Veniam, quia in eum.
+      </section>
+    </div>
+  </div>
+  <br />
+  <br />
+
+  <div class="tabs3">
+
+    <input type="radio" id="tab10" name="tab-control3" checked>
+    <input type="radio" id="tab11" name="tab-control3">
+    <input type="radio" id="tab12" name="tab-control3">
+    <ul>
+      <li title="Water polo">
+        <label for="tab10" role="button">
+          <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
+          <span>Water polo</span>
+        </label>
+      </li>
+
+      <li title="Swimming"><label for="tab11" role="button">
           <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
           <span>Swimming</span>
         </label>
       </li>
-        <li title="Rowing"><label for="tab12" role="button">            
+      <li title="Rowing"><label for="tab12" role="button">
           <img src="{% static './images/game_icons/cricket.png' %}" alt="Cricket" width="60px" height="60px">
           <span>Rowing</span>
         </label>
       </li>
-      </ul>
+    </ul>
 
-      <div class="slider">
-        <div class="indicator"></div>
-      </div>
-      <div class="content">
-        <section>
-          <h2>Water polo</h2>4 ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in
-          eum
-          obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates
-          quibusdam cum?
-        </section>
-        <section>
-          <h2>Swimming</h2>
-          5 ipsum dolor sit amet, consectetur adipisicing elit. Autem quas adipisci a accusantium eius ut
-          voluptatibus
-          ad impedit nulla, ipsa qui. Quasi temporibus eos commodi aliquid impedit amet, similique nulla.
-        </section>
-        <section>
-          <h2>Rowing</h2>
-          6 ipsum dolor sit amet, consectetur adipisicing elit. Quam nemo ducimus eius, magnam error quisquam sunt
-          voluptate labore, excepturi numquam! Alias libero optio sed harum debitis! Veniam, quia in eum.
-        </section>
-      </div>
+    <div class="slider">
+      <div class="indicator"></div>
     </div>
+    <div class="content">
+      <section>
+        <h2>Water polo</h2>4 ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in
+        eum
+        obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates
+        quibusdam cum?
+      </section>
+      <section>
+        <h2>Swimming</h2>
+        5 ipsum dolor sit amet, consectetur adipisicing elit. Autem quas adipisci a accusantium eius ut
+        voluptatibus
+        ad impedit nulla, ipsa qui. Quasi temporibus eos commodi aliquid impedit amet, similique nulla.
+      </section>
+      <section>
+        <h2>Rowing</h2>
+        6 ipsum dolor sit amet, consectetur adipisicing elit. Quam nemo ducimus eius, magnam error quisquam sunt
+        voluptate labore, excepturi numquam! Alias libero optio sed harum debitis! Veniam, quia in eum.
+      </section>
+    </div>
+  </div>
 
-    <section class="ftco-section">
-    	<div class="container">
-    		<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-            <h2 class="mb-4"><span>Our</span> Esteemed Guests</h2>
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-3">
+        <div class="col-md-7 text-center heading-section ftco-animate">
+          <h2 class="mb-4"><span>Our</span> Esteemed Guests</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 ftco-animate">
+          <div class="carousel-testimony owl-carousel">
+            <div class="item">
+              <div class="speaker">
+                <img src="{% static 'images/speaker-1.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
+                <div class="text text-center py-3">
+                  <h3>John Adams</h3>
+                  <span class="position">Web Developer</span>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="speaker">
+                <img src="{% static 'images/speaker-2.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
+                <div class="text text-center py-3">
+                  <h3>Paul George</h3>
+                  <span class="position">Web Developer</span>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="speaker">
+                <img src="{% static 'images/speaker-3.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
+                <div class="text text-center py-3">
+                  <h3>James Smith</h3>
+                  <span class="position">Web Developer</span>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="speaker">
+                <img src="{% static 'images/speaker-4.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
+                <div class="text text-center py-3">
+                  <h3>Angelie Crawford</h3>
+                  <span class="position">Web Developer</span>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="speaker">
+                <img src="{% static 'images/speaker-5.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
+                <div class="text text-center py-3">
+                  <h3>Jackie Spears</h3>
+                  <span class="position">Entrepreneur</span>
+
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="row">
-        	<div class="col-md-12 ftco-animate">
-        		<div class="carousel-testimony owl-carousel">
-        			<div class="item">
-        				<div class="speaker">
-			        		<img src="{% static 'images/speaker-1.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
-			        		<div class="text text-center py-3">
-			        			<h3>John Adams</h3>
-			        			<span class="position">Web Developer</span>
-			        			
-			        		</div>
-			        	</div>
-        			</div>
-
-        			<div class="item">
-        				<div class="speaker">
-			        		<img src="{% static 'images/speaker-2.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
-			        		<div class="text text-center py-3">
-			        			<h3>Paul George</h3>
-			        			<span class="position">Web Developer</span>
-			        			
-			        		</div>
-			        	</div>
-        			</div>
-
-        			<div class="item">
-        				<div class="speaker">
-			        		<img src="{% static 'images/speaker-3.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
-			        		<div class="text text-center py-3">
-			        			<h3>James Smith</h3>
-			        			<span class="position">Web Developer</span>
-			        			
-			        		</div>
-			        	</div>
-        			</div>
-
-        			<div class="item">
-        				<div class="speaker">
-			        		<img src="{% static 'images/speaker-4.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
-			        		<div class="text text-center py-3">
-			        			<h3>Angelie Crawford</h3>
-			        			<span class="position">Web Developer</span>
-			        			
-			        		</div>
-			        	</div>
-        			</div>
-
-        			<div class="item">
-        				<div class="speaker">
-			        		<img src="{% static 'images/speaker-5.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
-			        		<div class="text text-center py-3">
-			        			<h3>Jackie Spears</h3>
-			        			<span class="position">Entrepreneur</span>
-			        			
-			        		</div>
-			        	</div>
-        			</div>
-        		</div>
-        	</div>
-        </div>
-    	</div>
-    </section>
-
-    <section class="ftco-section">
-    	<div class="container">
-    		<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-            <h2 class="mb-4"><span>Our</span> Sports Prizes</h2>
-          </div>
-        </div>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">Events</th>
-              <th scope="col">Winner's Prize</th>
-              <th scope="col">Runner Ups's Prize</th>
-             
-              
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Cricket (M)</th>
-              <td>30,000/-</td>
-              <td>18,000/-</td>
-              
-            </tr>
-            <tr>
-              <th scope="row">Cricket (M)</th>
-              <td>30,000/-</td>
-              <td>18,000/-</td>
-              
-            </tr>
-            <tr>
-              <th scope="row">Cricket (M)</th>
-              <td>30,000/-</td>
-              <td>18,000/-</td>
-              
-            </tr>
-          </tbody>
-        </table>
-    	</div>
-    </section>
-
-    <!-- Gallery -->
-    <div class="tabs">
-      <div class="image-container">
-        <div class="image" style="--clip-start: ellipse(0 0 at 0 0); --clip-end: ellipse(150% 150% at 0 0);"><img src="https://i.picsum.photos/id/21/200/200.jpg?hmac=a2iQ6UhOjpU6jn7QSsCpk1CiiKTxmW1R4UivDsv-n8o"/><img src="https://i.picsum.photos/id/21/200/200.jpg?hmac=a2iQ6UhOjpU6jn7QSsCpk1CiiKTxmW1R4UivDsv-n8o"/></div>
-        <div class="image" style="--clip-start: inset(100% 0 0 0); --clip-end: inset(0 0 0 0);"><img src="https://i.picsum.photos/id/139/200/200.jpg?hmac=FNSPvHsHcRzKQtNxKKauJgIXpoaAufCwYvr-1w5T3R4"/><img src="https://i.picsum.photos/id/139/200/200.jpg?hmac=FNSPvHsHcRzKQtNxKKauJgIXpoaAufCwYvr-1w5T3R4"/></div>
-        <div class="image" style="--clip-start: ellipse(0 0 at 100% 0); --clip-end: ellipse(150% 150% at 100% 0);"><img src="https://i.picsum.photos/id/642/200/200.jpg?hmac=MJkhEaTWaybCn0y7rKfh_irNHvVuqRHmxcpziWABTKw"/><img src="https://i.picsum.photos/id/642/200/200.jpg?hmac=MJkhEaTWaybCn0y7rKfh_irNHvVuqRHmxcpziWABTKw"/></div>
-        <div class="image" style="--clip-start: polygon(50% 50%,  50% 50%,  50% 50%, 50% 50%); --clip-end: polygon(-50% 50%, 50% -50%, 150% 50%, 50% 150%);"><img src="https://i.picsum.photos/id/253/200/200.jpg?hmac=_dceojr9yz5ZIKoye8I9HOqPCBHfn-jT9aRYdoLx1kQ"/><img src="https://i.picsum.photos/id/253/200/200.jpg?hmac=_dceojr9yz5ZIKoye8I9HOqPCBHfn-jT9aRYdoLx1kQ"/></div>
-        <div class="image" style="--clip-start: circle(0); --clip-end: circle(125%);"><img src="https://i.picsum.photos/id/604/200/200.jpg?hmac=qgFjxODI1hMBMfHo68VvLeji-zvG9y-iPYhyW0EkvOs"/><img src="https://i.picsum.photos/id/604/200/200.jpg?hmac=qgFjxODI1hMBMfHo68VvLeji-zvG9y-iPYhyW0EkvOs"/></div>
-        <div class="image" style="--clip-start: inset(100% 100% 100% 100%); --clip-end: inset(0 0 0 0);"><img src="https://i.picsum.photos/id/119/200/200.jpg?hmac=JGrHG7yCKfebsm5jJSWw7F7x2oxeYnm5YE_74PhnRME"/><img src="https://i.picsum.photos/id/119/200/200.jpg?hmac=JGrHG7yCKfebsm5jJSWw7F7x2oxeYnm5YE_74PhnRME"/></div>
-        <div class="image" style="--clip-start: ellipse(0 0 at 0 100%); --clip-end: ellipse(150% 150% at 0 100%);"><img src="https://i.picsum.photos/id/520/200/200.jpg?hmac=gq6GVKg64GMqsvk_d6gzXZ7L1htska1jEdgBnAwm4xU"/><img src="https://i.picsum.photos/id/520/200/200.jpg?hmac=gq6GVKg64GMqsvk_d6gzXZ7L1htska1jEdgBnAwm4xU"/></div>
-        <div class="image" style="--clip-start: inset(0 0 100% 0); --clip-end: inset(0 0 0 0);"><img src="https://i.picsum.photos/id/553/200/200.jpg?hmac=HSLKzqqoxnajv4KjLxYSjZokWcuCCiZLGdRPUoryhXk"/><img src="https://i.picsum.photos/id/553/200/200.jpg?hmac=HSLKzqqoxnajv4KjLxYSjZokWcuCCiZLGdRPUoryhXk"/></div>
-        <div class="image" style="--clip-start: ellipse(0 0 at 100% 100%); --clip-end: ellipse(150% 150% at 100% 100%);"><img src="https://i.picsum.photos/id/988/200/200.jpg?hmac=-lwK-i6PssD9WlUeVPDIhOxDVxlzJKeM4MgEx_fIqJg"/><img src="https://i.picsum.photos/id/988/200/200.jpg?hmac=-lwK-i6PssD9WlUeVPDIhOxDVxlzJKeM4MgEx_fIqJg"/></div>
       </div>
     </div>
-    <br/>
+  </section>
 
-    {% endblock %}
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-3">
+        <div class="col-md-7 text-center heading-section ftco-animate">
+          <h2 class="mb-4"><span>Our</span> Sports Prizes</h2>
+        </div>
+      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Events</th>
+            <th scope="col">Winner's Prize</th>
+            <th scope="col">Runner Ups's Prize</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Cricket (M)</th>
+            <td>30,000/-</td>
+            <td>18,000/-</td>
+
+          </tr>
+          <tr>
+            <th scope="row">Cricket (M)</th>
+            <td>30,000/-</td>
+            <td>18,000/-</td>
+
+          </tr>
+          <tr>
+            <th scope="row">Cricket (M)</th>
+            <td>30,000/-</td>
+            <td>18,000/-</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <div class="tabs">
+    <div class="image-container">
+      <div class="image" style="--clip-start: ellipse(0 0 at 0 0); --clip-end: ellipse(150% 150% at 0 0);"><img
+          src="https://i.picsum.photos/id/21/200/200.jpg?hmac=a2iQ6UhOjpU6jn7QSsCpk1CiiKTxmW1R4UivDsv-n8o" /><img
+          src="https://i.picsum.photos/id/21/200/200.jpg?hmac=a2iQ6UhOjpU6jn7QSsCpk1CiiKTxmW1R4UivDsv-n8o" /></div>
+      <div class="image" style="--clip-start: inset(100% 0 0 0); --clip-end: inset(0 0 0 0);"><img
+          src="https://i.picsum.photos/id/139/200/200.jpg?hmac=FNSPvHsHcRzKQtNxKKauJgIXpoaAufCwYvr-1w5T3R4" /><img
+          src="https://i.picsum.photos/id/139/200/200.jpg?hmac=FNSPvHsHcRzKQtNxKKauJgIXpoaAufCwYvr-1w5T3R4" /></div>
+      <div class="image" style="--clip-start: ellipse(0 0 at 100% 0); --clip-end: ellipse(150% 150% at 100% 0);"><img
+          src="https://i.picsum.photos/id/642/200/200.jpg?hmac=MJkhEaTWaybCn0y7rKfh_irNHvVuqRHmxcpziWABTKw" /><img
+          src="https://i.picsum.photos/id/642/200/200.jpg?hmac=MJkhEaTWaybCn0y7rKfh_irNHvVuqRHmxcpziWABTKw" /></div>
+      <div class="image"
+        style="--clip-start: polygon(50% 50%,  50% 50%,  50% 50%, 50% 50%); --clip-end: polygon(-50% 50%, 50% -50%, 150% 50%, 50% 150%);">
+        <img src="https://i.picsum.photos/id/253/200/200.jpg?hmac=_dceojr9yz5ZIKoye8I9HOqPCBHfn-jT9aRYdoLx1kQ" /><img
+          src="https://i.picsum.photos/id/253/200/200.jpg?hmac=_dceojr9yz5ZIKoye8I9HOqPCBHfn-jT9aRYdoLx1kQ" /></div>
+      <div class="image" style="--clip-start: circle(0); --clip-end: circle(125%);"><img
+          src="https://i.picsum.photos/id/604/200/200.jpg?hmac=qgFjxODI1hMBMfHo68VvLeji-zvG9y-iPYhyW0EkvOs" /><img
+          src="https://i.picsum.photos/id/604/200/200.jpg?hmac=qgFjxODI1hMBMfHo68VvLeji-zvG9y-iPYhyW0EkvOs" /></div>
+      <div class="image" style="--clip-start: inset(100% 100% 100% 100%); --clip-end: inset(0 0 0 0);"><img
+          src="https://i.picsum.photos/id/119/200/200.jpg?hmac=JGrHG7yCKfebsm5jJSWw7F7x2oxeYnm5YE_74PhnRME" /><img
+          src="https://i.picsum.photos/id/119/200/200.jpg?hmac=JGrHG7yCKfebsm5jJSWw7F7x2oxeYnm5YE_74PhnRME" /></div>
+      <div class="image" style="--clip-start: ellipse(0 0 at 0 100%); --clip-end: ellipse(150% 150% at 0 100%);"><img
+          src="https://i.picsum.photos/id/520/200/200.jpg?hmac=gq6GVKg64GMqsvk_d6gzXZ7L1htska1jEdgBnAwm4xU" /><img
+          src="https://i.picsum.photos/id/520/200/200.jpg?hmac=gq6GVKg64GMqsvk_d6gzXZ7L1htska1jEdgBnAwm4xU" /></div>
+      <div class="image" style="--clip-start: inset(0 0 100% 0); --clip-end: inset(0 0 0 0);"><img
+          src="https://i.picsum.photos/id/553/200/200.jpg?hmac=HSLKzqqoxnajv4KjLxYSjZokWcuCCiZLGdRPUoryhXk" /><img
+          src="https://i.picsum.photos/id/553/200/200.jpg?hmac=HSLKzqqoxnajv4KjLxYSjZokWcuCCiZLGdRPUoryhXk" /></div>
+      <div class="image" style="--clip-start: ellipse(0 0 at 100% 100%); --clip-end: ellipse(150% 150% at 100% 100%);">
+        <img src="https://i.picsum.photos/id/988/200/200.jpg?hmac=-lwK-i6PssD9WlUeVPDIhOxDVxlzJKeM4MgEx_fIqJg" /><img
+          src="https://i.picsum.photos/id/988/200/200.jpg?hmac=-lwK-i6PssD9WlUeVPDIhOxDVxlzJKeM4MgEx_fIqJg" /></div>
+    </div>
+  </div>
+</section>
+  {% endblock %}
