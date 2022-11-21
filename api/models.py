@@ -6,6 +6,7 @@ class Sport(models.Model):
     description = models.TextField()
     rules = models.TextField()
     image = models.ImageField(upload_to='sport_images')
+    logo = models.ImageField(upload_to='sport_images', null=True, blank=True)
     slug = models.SlugField(max_length=200, unique=True, null=True, blank=True)
     venue = models.CharField(max_length=200)
     price = models.IntegerField()

@@ -6,13 +6,25 @@ class HomePageView(TemplateView):
     template_name = 'index.html'
 
 class EventsPageView(View):
+    # Custom function to reduce rules
+    def reducaeArray(arr,n):
+        newArr = []
+        for i in range(0,n):
+            newArr.append(arr[i])
+        return newArr
+
     def get(self, request, *args, **kwargs):
         introData = {
             'title': 'Events',
             'desc':'Lorem ipsum dummy text'
         }
+        allSport = Sport.objects.all()
+        for sport in allSport:
+            sport.rules = sport.rules.split(';');
+            sport.rules = EventsPageView.reducaeArray(sport.rules, 4)
         context = {
-                'introData': introData
+                'introData': introData,
+                'allSport': allSport
             }
         return render(request, 'events.html',context)
 

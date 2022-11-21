@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block body_block %}
 {% load static %}
-    
-   
-	{% include 'head_common.html' %}
 
-	{% block title %}<title>Events - MIT-WPU SUMMIT 2023</title> {% endblock %}
 
-    <!-- <section class="ftco-section services-section bg-light">
+{% include 'head_common.html' %}
+
+{% block title %}<title>Events - MIT-WPU SUMMIT 2023</title> {% endblock %}
+
+<!-- <section class="ftco-section services-section bg-light">
       <div class="container">
         <div class="row d-flex">
           <div class="col-md-3 d-flex align-self-stretch ftco-animate">
@@ -55,306 +55,93 @@
 <br>
 <br>
 <br>
-    <section>
-		<div class="container">
-			<div class="bg-image" style="background-image: url('/static/images/image_3.jpg');">
-				<div class="bg-image-content">
-					<h2>15 Lakh Prize Money!</h2>
-					<p>Get a chance to win amazing prizes worth upto 15 Lakh Rupees!!</p>
-				</div>
+<section>
+	<div class="container">
+		<div class="bg-image" style="background-image: url('/static/images/image_3.jpg');">
+			<div class="bg-image-content">
+				<h2>15 Lakh Prize Money!</h2>
+				<p>Get a chance to win amazing prizes worth upto 15 Lakh Rupees!!</p>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 
 <section class="ftco-section bg-light">
+	<div class="container">
+		<!-- <div class="row d-flex"> -->
+		<div class="row justify-content-center mb-5 pb-3">
+			<div class="col-md-12 heading-section ftco-animate">
+
+				<h2 class="mb-4"><span>Guidelines</span></h2>
+				<ul style="list-style:disc">
+					<li>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</li>
+					<li>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</li>
+					<li>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+	</div>
+</section>
+
+<section class="ftco-section bg-light">
+	<div class="container">
+		<div class="row justify-content-center mb-5 pb-3">
+			<div class="col-md-7 heading-section ftco-animate text-center">
+				<!-- <span class="subheading">Pricing Tables</span> -->
+				<h2 class="mb-1"><span>Sport</span>Details</h2>
+			</div>
+		</div>
+		<div class="row">
+			{% for sport in allSport %}
+				<div class="col-md-4 ftco-animate">
+					<div class="block-7">
+						<div class="text-center">
+							<img src="{% static 'images/cricket.png' %}" width="132" height="130">
+							<h3 class="heading-2 my-4">{{sport.name}}</h3>
+
+							<ul class="pricing-text mb-5">
+								{% for rule in sport.rules %}
+									<li>{{rule}}</li>
+								{% endfor %}
+								
+								
+							</ul>
+
+							<a href="{% url 'sport_detail' sport.slug %}" class="btn btn-primary d-block px-2 py-3">Register</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+
+		</div>
+
+	</div>
+</section>
+
+<section class="ftco-section-parallax">
+	<div class="parallax-img d-flex align-items-center">
 		<div class="container">
-			<!-- <div class="row d-flex"> -->
-				<div class="row justify-content-center mb-5 pb-3">
-					<div class="col-md-12 heading-section ftco-animate">
-						
-						<h2 class="mb-4"><span>Guidelines</span></h2>
-						<ul style="list-style:disc">
-							<li>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</li>
-							<li>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</li>
-							<li>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</li>
-						</ul>
-						
+			<div class="row d-flex justify-content-center">
+				<div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+					<h2>Subcribe to our Newsletter</h2>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
+						live the blind texts. Separated they live in</p>
+					<div class="row d-flex justify-content-center mt-4 mb-4">
+						<div class="col-md-8">
+							<form action="#" class="subscribe-form">
+								<div class="form-group d-flex">
+									<input type="text" class="form-control" placeholder="Enter email address">
+									<input type="submit" value="Subscribe" class="submit px-3">
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-		
-		<section class="ftco-section bg-light">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate text-center">
-            <!-- <span class="subheading">Pricing Tables</span> -->
-            <h2 class="mb-1"><span>Sport</span>Details</h2>
-          </div>
-        </div>
-        <div class="row">
-	        <div class="col-md-4 ftco-animate">
-	          <div class="block-7">
-	            <div class="text-center">
-					<img src="{% static 'images/cricket.png' %}"  width="132" height="130">
-					<!-- <figure class="imgprop">
-						<img width="132 height="130" src="	https://summit.mitwpu.edu.in/wp-content/uploads/2021/11/Artboard-1.png' %}">
-					</figure> -->
-	            <!-- <h2 class="heading">Personal</h2> -->
-	            <!-- <span class="price"><sup>$</sup> <span class="number">85</span></span> -->
-	            <!-- <span class="excerpt d-block">per Month</span> -->
-	            
-	            <h3 class="heading-2 my-4">Cricket</h3>
-	            
-	            <ul class="pricing-text mb-5">
-	              <li>The maximum number of players will be 16.</li>
-	              <li>Each team will have to pay for balls, which will be provided by MIT-WPU.</li>
-	              <li>Innings will be 20 overs.</li>
-	              
-	              <!-- <li>In case any team loses in the First Round due to ‘bowl out’ then 50% of their registration fees will be refunded to the respective team.</li>  -->
-	            </ul>
-
-	            <a href="#" class="btn btn-primary d-block px-2 py-3">Register</a>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="col-md-4 ftco-animate">
-	          <div class="block-7">
-	            <div class="text-center">
-					
-					<img src="{% static 'images/cricket.png' %}"  width="132" height="130">
-					<!-- <figure class="imgprop">
-						<img width="132 height="130" src="	https://summit.mitwpu.edu.in/wp-content/uploads/2021/11/Artboard-7.png' %}">
-					</figure> -->
-	            <!-- <h2 class="heading">Small Team</h2> -->
-	            <!-- <span class="price"><sup>$</sup> <span class="number">200</span></span> -->
-	            <!-- <span class="excerpt d-block">per Month</span> -->
-	            
-	            <h3 class="heading-2 my-4">Badminton</h3>
-	            
-	            <ul class="pricing-text mb-5">
-                <li>The maximum number of players will be 16.</li>
-	              <li>Each team will have to pay for balls, which will be provided by MIT-WPU.</li>
-	              <li>Innings will be 20 overs.</li>
-					
-
-	            </ul>
-
-	            <a href="#" class="btn btn-primary d-block px-2 py-3">Register</a>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="col-md-4 ftco-animate">
-	          <div class="block-7">
-	            <div class="text-center">
-					<!-- <figure class="imgprop">
-					<img width="132 height="130" src="https://summit.mitwpu.edu.in/wp-content/uploads/2021/11/Artboard-3.png' %}"
-					</figure> -->
-					<img src="{% static 'images/cricket.png' %}"  width="132" height="130">
-	            <!-- <h2 class="heading">Basketball</h2> -->
-	            <!-- <span class="price"><sup>$</sup> <span class="number">499</span></span> -->
-	            <!-- <span class="excerpt d-block">per Month</span> -->
-	            
-	            <h3 class="heading-2 my-4">Basketball</h3>
-	            
-	            <ul class="pricing-text mb-5">
-	              
-                <li>The maximum number of players will be 16.</li>
-	              <li>Each team will have to pay for balls, which will be provided by MIT-WPU.</li>
-	              <li>Innings will be 20 overs.</li>
-					
-	            </ul>
-
-	            <a href="#" class="btn btn-primary d-block px-2 py-3">Register</a>
-	            </div>
-	          </div>
-	        </div>
-
-			
-	      </div>
-		  
-
-		  <div class="row">
-	        <div class="col-md-4 ftco-animate">
-	          <div class="block-7">
-	            <div class="text-center">
-					<img src="{% static 'images/cricket.png' %}"  width="132" height="130">
-					<!-- <figure class="imgprop">
-						<img width="132 height="130" src="	https://summit.mitwpu.edu.in/wp-content/uploads/2021/11/Artboard-1.png' %}">
-					</figure> -->
-	            <!-- <h2 class="heading">Personal</h2> -->
-	            <!-- <span class="price"><sup>$</sup> <span class="number">85</span></span> -->
-	            <!-- <span class="excerpt d-block">per Month</span> -->
-	            
-	            <h3 class="heading-2 my-4">Cricket</h3>
-	            
-	            <ul class="pricing-text mb-5">
-	              <li>The maximum number of players will be 16.</li>
-	              <li>Each team will have to pay for balls, which will be provided by MIT-WPU.</li>
-	              <li>Innings will be 20 overs.</li>
-	              <!-- <li>In case any team loses in the First Round due to ‘bowl out’ then 50% of their registration fees will be refunded to the respective team.</li>  -->
-	            </ul>
-
-	            <a href="#" class="btn btn-primary d-block px-2 py-3">Register</a>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="col-md-4 ftco-animate">
-	          <div class="block-7">
-	            <div class="text-center">
-					
-					<img src="{% static 'images/cricket.png' %}"  width="132" height="130">
-					<!-- <figure class="imgprop">
-						<img width="132 height="130" src="	https://summit.mitwpu.edu.in/wp-content/uploads/2021/11/Artboard-7.png' %}">
-					</figure> -->
-	            <!-- <h2 class="heading">Small Team</h2> -->
-	            <!-- <span class="price"><sup>$</sup> <span class="number">200</span></span> -->
-	            <!-- <span class="excerpt d-block">per Month</span> -->
-	            
-	            <h3 class="heading-2 my-4">Badminton</h3>
-	            
-	            <ul class="pricing-text mb-5">
-                <li>The maximum number of players will be 16.</li>
-	              <li>Each team will have to pay for balls, which will be provided by MIT-WPU.</li>
-	              <li>Innings will be 20 overs.</li>
-					
-					
-
-	            </ul>
-
-	            <a href="#" class="btn btn-primary d-block px-2 py-3">Register</a>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="col-md-4 ftco-animate">
-	          <div class="block-7">
-	            <div class="text-center">
-					<!-- <figure class="imgprop">
-					<img width="132 height="130" src="https://summit.mitwpu.edu.in/wp-content/uploads/2021/11/Artboard-3.png' %}"
-					</figure> -->
-					<img src="{% static 'images/cricket.png' %}"  width="132" height="130">
-	            <!-- <h2 class="heading">Basketball</h2> -->
-	            <!-- <span class="price"><sup>$</sup> <span class="number">499</span></span> -->
-	            <!-- <span class="excerpt d-block">per Month</span> -->
-	            
-	            <h3 class="heading-2 my-4">Basketball</h3>
-	            
-	            <ul class="pricing-text mb-5">
-	              
-                <li>The maximum number of players will be 16.</li>
-	              <li>Each team will have to pay for balls, which will be provided by MIT-WPU.</li>
-	              <li>Innings will be 20 overs.</li>
-					
-	            </ul>
-
-	            <a href="#" class="btn btn-primary d-block px-2 py-3">Register</a>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-		  <div class="row">
-	        <div class="col-md-4 ftco-animate">
-	          <div class="block-7">
-	            <div class="text-center">
-					<img src="{% static 'images/cricket.png' %}"  width="132" height="130">
-					<!-- <figure class="imgprop">
-						<img width="132 height="130" src="	https://summit.mitwpu.edu.in/wp-content/uploads/2021/11/Artboard-1.png' %}">
-					</figure> -->
-	            <!-- <h2 class="heading">Personal</h2> -->
-	            <!-- <span class="price"><sup>$</sup> <span class="number">85</span></span> -->
-	            <!-- <span class="excerpt d-block">per Month</span> -->
-	            
-	            <h3 class="heading-2 my-4">Cricket</h3>
-	            
-	            <ul class="pricing-text mb-5">
-	              <li>The maximum number of players will be 16.</li>
-	              <li>Each team will have to pay for balls, which will be provided by MIT-WPU.</li>
-	              <li>Innings will be 20 overs.</li>
-	              <!-- <li>In case any team loses in the First Round due to ‘bowl out’ then 50% of their registration fees will be refunded to the respective team.</li>  -->
-	            </ul>
-
-	            <a href="#" class="btn btn-primary d-block px-2 py-3">Register</a>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="col-md-4 ftco-animate">
-	          <div class="block-7">
-	            <div class="text-center">
-					
-					<img src="{% static 'images/cricket.png' %}"  width="132" height="130">
-					<!-- <figure class="imgprop">
-						<img width="132 height="130" src="	https://summit.mitwpu.edu.in/wp-content/uploads/2021/11/Artboard-7.png' %}">
-					</figure> -->
-	            <!-- <h2 class="heading">Small Team</h2> -->
-	            <!-- <span class="price"><sup>$</sup> <span class="number">200</span></span> -->
-	            <!-- <span class="excerpt d-block">per Month</span> -->
-	            
-	            <h3 class="heading-2 my-4">Badminton</h3>
-	            
-	            <ul class="pricing-text mb-5">
-                <li>The maximum number of players will be 16.</li>
-	              <li>Each team will have to pay for balls, which will be provided by MIT-WPU.</li>
-	              <li>Innings will be 20 overs.</li>
-					
-
-	            </ul>
-
-	            <a href="#" class="btn btn-primary d-block px-2 py-3">Register</a>
-	            </div>
-	          </div>
-	        </div>
-	        <div class="col-md-4 ftco-animate">
-	          <div class="block-7">
-	            <div class="text-center">
-					<!-- <figure class="imgprop">
-					<img width="132 height="130" src="https://summit.mitwpu.edu.in/wp-content/uploads/2021/11/Artboard-3.png' %}"
-					</figure> -->
-					<img src="{% static 'images/cricket.png' %}"  width="132" height="130">
-	            <!-- <h2 class="heading">Basketball</h2> -->
-	            <!-- <span class="price"><sup>$</sup> <span class="number">499</span></span> -->
-	            <!-- <span class="excerpt d-block">per Month</span> -->
-	            
-	            <h3 class="heading-2 my-4">Basketball</h3>
-	            
-	            <ul class="pricing-text mb-5">
-	              
-                <li>The maximum number of players will be 16.</li>
-	              <li>Each team will have to pay for balls, which will be provided by MIT-WPU.</li>
-	              <li>Innings will be 20 overs.</li>
-					
-	            </ul>
-
-	            <a href="#" class="btn btn-primary d-block px-2 py-3">Register</a>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-		  
-      </div>
-    </section>
-
-		<section class="ftco-section-parallax">
-      <div class="parallax-img d-flex align-items-center">
-        <div class="container">
-          <div class="row d-flex justify-content-center">
-            <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-              <h2>Subcribe to our Newsletter</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-              <div class="row d-flex justify-content-center mt-4 mb-4">
-                <div class="col-md-8">
-                  <form action="#" class="subscribe-form">
-                    <div class="form-group d-flex">
-                      <input type="text" class="form-control" placeholder="Enter email address">
-                      <input type="submit" value="Subscribe" class="submit px-3">
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+	</div>
+</section>
 
 {% endblock %}
