@@ -61,3 +61,10 @@
 .bg-image-content > h2{
     color: white;
 }
+
+@media screen and (max-width: 768px){
+    .stats-counter{
+        padding: 0;
+    }
+}
+    
