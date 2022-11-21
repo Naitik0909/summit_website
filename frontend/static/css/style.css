@@ -4474,10 +4474,10 @@ input[type="button"].btn-block {
 }
 
 .nav-link,.nav-link-active {
-  display: block;
+  /* display: block; */
   padding: 0.5rem 1rem;
   color: #E8C26A;
-  font-weight: 800;
+  font-weight: 400;
 }
 
 .nav-link:hover,
@@ -10727,7 +10727,7 @@ h5,
 .ftco-navbar-light.scrolled .nav-link-active {
   padding-top: 0.9rem !important;
   padding-bottom: 0.9rem !important;
-  color: #000000 !important;
+  color: #E8C26A !important;
 }
 
 .ftco-navbar-light.scrolled .nav-link.active {
