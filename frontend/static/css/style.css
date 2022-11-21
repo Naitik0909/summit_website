@@ -727,7 +727,7 @@ pre code {
 .col-xl,
 .col-xl-auto {
   position: relative;
-  width: 150%;
+  width: 100%;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
@@ -3765,19 +3765,19 @@ input[type="button"].btn-block {
 .dropdown-item:focus {
   color: #16181b;
   text-decoration: none;
-  background-color: #f8f9fa;
+  background-color: #FFFEE0;
 }
 
 .dropdown-item.active,
 .dropdown-item:active {
-  color: #fff;
+  color: #000;
   text-decoration: none;
-  background-color: #78d5ef;
+  background-color: #FFFEE0;
 }
 
 .dropdown-item.disabled,
 .dropdown-item:disabled {
-  color: #6c757d;
+  color: black;
   background-color: transparent;
 }
 
@@ -4475,9 +4475,10 @@ input[type="button"].btn-block {
 
 .nav-link,.nav-link-active {
   /* display: block; */
-  padding: 0.5rem 1rem;
   color: #E8C26A;
-  font-weight: 400;
+  font-weight: 600;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
 }
 
 .nav-link:hover,
@@ -4635,7 +4636,9 @@ input[type="button"].btn-block {
 }
 .navbar-nav .nav-link-active {
   padding-right: 0;
-  padding-left: 0;
+  padding-left: 20px;
+  padding-top: 0.9rem!important;
+  padding-bottom: 0.9rem!important;
 }
 
 
@@ -10546,7 +10549,7 @@ h5,
   padding-left: 20px;
   padding-right: 20px;
   color: #000000;
-  font-weight: 400;
+  font-weight: 600;
   opacity: 1 !important;
 }
 
@@ -10710,7 +10713,7 @@ h5,
 
 .ftco-navbar-light.scrolled .navbar-toggler {
   border: none;
-  color: rgba(0, 0, 0, 0.5) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
   border-color: rgba(0, 0, 0, 0.5) !important;
   cursor: pointer;
   padding-right: 0;
@@ -12855,5 +12858,20 @@ textarea.form-control {
 @media screen and (max-width: 768px) {
   #map-container {
     max-width: 100% !important;
+  }
+}
+
+.font-black{
+  color: #000!important;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav-item{
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+  
+  .cta{
+    padding-top: 15px;
   }
 }
