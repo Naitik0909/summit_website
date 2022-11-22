@@ -17,9 +17,7 @@ class EventsPageView(View):
         print(request.resolver_match.view_name)
         introData = {
             'title': 'Events',
-            'desc':'Lorem ipsum dummy text',
-            'question' : 'Who are we ?',
-            'information' : 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum Far far away, behind the word mountains, far from the countries Vokalia and Consonantia ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
+            'desc':'Lorem ipsum dummy text'
         }
         allSport = Sport.objects.all()
         for sport in allSport:
@@ -34,9 +32,7 @@ class GuestsAndPricesPageView(View):
      def get(self, request, *args, **kwargs):
         introData = {
             'title': 'Guests & Prices',
-            'desc':'Lorem ipsum dummy text',
-            'question' : 'Who are we ?',
-            'information' : 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum Far far away, behind the word mountains, far from the countries Vokalia and Consonantia ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
+            'desc':'Lorem ipsum dummy text'
         }
         context = {
                 'introData': introData
@@ -47,17 +43,24 @@ class TeamAndContactPageView(View):
     def get(self, request, *args, **kwargs):
         introData = {
             'title': 'Contact Us',
-            'desc':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?',
-            'question' : 'Who are we ?',
-            'information' : 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum Far far away, behind the word mountains, far from the countries Vokalia and Consonantia ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?' 
+            'desc':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
         }
         context = {
                 'introData': introData
             }
         return render(request, 'team_and_contact.html',context)
 
-class ScoresAndFixturesPageView(TemplateView):
-    template_name = 'scores_and_fixtures.html'
+class ScoresAndFixturesPageView(View):
+    def get(self, request, *args, **kwargs):
+
+        introData = {
+            'title': 'Scores & Fixtures',
+            'desc':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
+        }
+        context = {
+                'introData': introData
+            }
+        return render(request, 'scores_and_fixtures.html',context)
 
 class SportDetailPageView(View):
 
@@ -72,7 +75,6 @@ class SportDetailPageView(View):
             introData = {
             'title': sportObject.name,
             'desc':sportObject.description
-            
             }   
             context = {
                 'sport': sportObject,
