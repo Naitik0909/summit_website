@@ -79,3 +79,25 @@ class SportDetailPageView(View):
         except Exception as e:
             print(e)
             # Return 404 page
+
+class SportRegisterPageView(View):
+
+    def get(self, request, *args, **kwargs):
+        sportSlug = self.kwargs['pk']
+        # if sport == "":
+            # Return 404 page
+        try:
+            sportObject = Sport.objects.get(slug=sportSlug)
+            introData = {
+            'title': sportObject.name,
+            'desc':sportObject.description
+            }   
+            context = {
+                'sport': sportObject,
+                'introData': introData
+            }
+            return render(request, 'sport_register.html', context)
+
+        except Exception as e:
+            print(e)
+            # Return 404 page
