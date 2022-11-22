@@ -17,7 +17,9 @@ class EventsPageView(View):
         print(request.resolver_match.view_name)
         introData = {
             'title': 'Events',
-            'desc':'Lorem ipsum dummy text'
+            'desc':'Lorem ipsum dummy text',
+            'question':'What are you looking for?',
+            'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
         }
         allSport = Sport.objects.all()
         for sport in allSport:
@@ -32,7 +34,10 @@ class GuestsAndPricesPageView(View):
      def get(self, request, *args, **kwargs):
         introData = {
             'title': 'Guests & Prices',
-            'desc':'Lorem ipsum dummy text'
+            'desc':'Lorem ipsum dummy text',
+            'question':'What are you looking for?',
+            'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
+       
         }
         context = {
                 'introData': introData
@@ -43,7 +48,10 @@ class TeamAndContactPageView(View):
     def get(self, request, *args, **kwargs):
         introData = {
             'title': 'Contact Us',
-            'desc':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
+            'desc':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?',
+            'question':'What are you looking for?',
+            'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
+       
         }
         context = {
                 'introData': introData
@@ -55,7 +63,10 @@ class ScoresAndFixturesPageView(View):
 
         introData = {
             'title': 'Scores & Fixtures',
-            'desc':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
+            'desc':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?',
+            'question':'What are you looking for?',
+            'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
+       
         }
         context = {
                 'introData': introData
