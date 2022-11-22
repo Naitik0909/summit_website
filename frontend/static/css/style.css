@@ -9,9 +9,7 @@
   font-family: 'Gilroy';
   src: url("/static/fonts/Gilroy-ExtraBold.otf") format("opentype");
 }
-::-webkit-scrollbar {
-  display: none;
-}
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;

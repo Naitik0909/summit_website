@@ -9,7 +9,23 @@
 /* tab setting */
 /* breakpoints */
 /* selectors relative to radio inputs */
+.tabs::-webkit-scrollbar {
+    display: none;
+}
+.tabs1::-webkit-scrollbar {
+    display: none;
+}
+.tabs2::-webkit-scrollbar {
+    display: none;
+}
+.tabs3::-webkit-scrollbar {
+    display: none;
+}
+.tabs4::-webkit-scrollbar {
+    display: none;
+}
 
+  
 .headingStyle {
  left: 50%;
  transform: translateX(-50%);
