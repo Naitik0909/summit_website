@@ -9,19 +9,19 @@
 /* tab setting */
 /* breakpoints */
 /* selectors relative to radio inputs */
-.tabs::-webkit-scrollbar {
+.tabs ul::-webkit-scrollbar  {
     display: none;
 }
-.tabs1::-webkit-scrollbar {
+.tabs1 ul::-webkit-scrollbar {
     display: none;
 }
-.tabs2::-webkit-scrollbar {
+.tabs2 ul::-webkit-scrollbar {
     display: none;
 }
-.tabs3::-webkit-scrollbar {
+.tabs3 ul::-webkit-scrollbar {
     display: none;
 }
-.tabs4::-webkit-scrollbar {
+.tabs4 ul::-webkit-scrollbar {
     display: none;
 }
 
