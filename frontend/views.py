@@ -18,9 +18,7 @@ class EventsPageView(View):
         introData = {
             'title': 'Events',
             'desc':'Lorem ipsum dummy text',
-            'question':'What are you looking for?',
-            'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
-        }
+            }
         allSport = Sport.objects.all()
         for sport in allSport:
             sport.rules = sport.rules.split(';');
