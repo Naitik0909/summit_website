@@ -33,8 +33,7 @@ class GuestsPageView(View):
         introData = {
             'title': 'Guests',
             'desc':'Lorem ipsum dummy text',
-            # 'question':'What are you looking for?',
-            'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
+            
        
         }
         context = {
@@ -43,17 +42,26 @@ class GuestsPageView(View):
         return render(request, 'guests.html',context)
 
 class PrizesPageView(View):
-     def get(self, request, *args, **kwargs):
+
+    def reducaeArray(arr,n):
+        newArr = []
+        for i in range(0,n):
+            newArr.append(arr[i])
+        return newArr
+
+    def get(self, request, *args, **kwargs):
+        print(request.resolver_match.view_name)
         introData = {
             'title': 'Prizes',
             'desc':'Lorem ipsum dummy text',
-            # 'question':'What are you looking for?',
-            'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
-       
-        }
-        context = {
-                'introData': introData
             }
+        allSport = Sport.objects.all()
+        for sport in allSport:
+            sport.rules = sport.rules.split(';');
+            sport.rules = PrizesPageView.reducaeArray(sport.rules, 4)
+        context = {
+                'introData': introData,
+                'allSport': allSport            }
         return render(request, 'prizes.html',context)
 
 class GalleryPageView(View):
@@ -61,9 +69,7 @@ class GalleryPageView(View):
         introData = {
             'title': 'Gallery',
             'desc':'Lorem ipsum dummy text',
-            # 'question':'What are you looking for?',
-            'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
-       
+           
         }
         context = {
                 'introData': introData
