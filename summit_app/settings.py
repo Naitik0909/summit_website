@@ -163,7 +163,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 MEDIA_URL = '/media/'
 
-# if (socket.gethostname() == 'Nishikas-MacBook-Air.local' or socket.gethostname()=='Ashishs-MacBook-Air.local') :
-#     django_on_heroku.settings(locals())
-# else:
-#     django_heroku.settings(locals())
+if (socket.gethostname() == 'Nishikas-MacBook-Air.local' or socket.gethostname()=='Ashishs-MacBook-Air.local') :
+    django_on_heroku.settings(locals())
+else:
+    django_heroku.settings(locals())
