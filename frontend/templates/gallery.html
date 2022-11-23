@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+{% block body_block %}
+{% load static %}
+{% block title %}<title>Guests - MIT-WPU SUMMIT 2023</title> {% endblock %}
+
+<!-- END nav -->
+
+<!-- <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('/static/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+       <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+          <div class="col-md-9 ftco-animate pb-5">
+            <h1 class="mb-3 bread">Speakers</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Speakers <i class="ion-ios-arrow-forward"></i></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section services-section bg-light">
+      <div class="container">
+        <div class="row d-flex">
+          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block">
+              <div class="icon"><span class="flaticon-placeholder"></span></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Venue</h3>
+                <p>	203 Fake St. Mountain View, San Francisco, California, USA</p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block">
+              <div class="icon"><span class="flaticon-world"></span></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Transport</h3>
+                <p>A small river named Duden flows by their place and supplies.</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block">
+              <div class="icon"><span class="flaticon-hotel"></span></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Hotel</h3>
+                <p>A small river named Duden flows by their place and supplies.</p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services d-block">
+              <div class="icon"><span class="flaticon-cooking"></span></div>
+              <div class="media-body">
+                <h3 class="heading mb-3">Restaurant</h3>
+                <p>A small river named Duden flows by their place and supplies.</p>
+              </div>
+            </div>      
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="ftco-section">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+          	<span class="subheading">Speaker</span>
+            <h2 class="mb-4"><span>Our</span> Speakers</h2>
+          </div>
+        </div>
+        <div class="row">
+        	<div class="col-md-4 speaker">
+        		<img src="{% static 'images/speaker-1.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
+        		<div class="text text-center pt-3">
+        			<h3>John Adams</h3>
+        			<span class="position">Web Developer</span>
+        			<ul class="ftco-social mt-3">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+        		</div>
+        	</div>
+					<div class="col-md-4 speaker">
+        		<img src="{% static 'images/speaker-2.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
+        		<div class="text text-center pt-3">
+        			<h3>John Adams</h3>
+        			<span class="position">Web Developer</span>
+        			<ul class="ftco-social mt-3">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+        		</div>
+        	</div>
+        	<div class="col-md-4 speaker">
+        		<img src="{% static 'images/speaker-3.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
+        		<div class="text text-center pt-3">
+        			<h3>John Adams</h3>
+        			<span class="position">Web Developer</span>
+        			<ul class="ftco-social mt-3">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+        		</div>
+        	</div>
+        	<div class="col-md-4 speaker">
+        		<img src="{% static 'images/speaker-4.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
+        		<div class="text text-center pt-3">
+        			<h3>John Adams</h3>
+        			<span class="position">Web Developer</span>
+        			<ul class="ftco-social mt-3">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+        		</div>
+        	</div>
+					<div class="col-md-4 speaker">
+        		<img src="{% static 'images/speaker-5.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
+        		<div class="text text-center pt-3">
+        			<h3>John Adams</h3>
+        			<span class="position">Web Developer</span>
+        			<ul class="ftco-social mt-3">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+        		</div>
+        	</div>
+        	<div class="col-md-4 speaker">
+        		<img src="{% static 'images/speaker-6.jpg' %}" class="img-fluid" alt="Colorlib HTML5 Template">
+        		<div class="text text-center pt-3">
+        			<h3>John Adams</h3>
+        			<span class="position">Web Developer</span>
+        			<ul class="ftco-social mt-3">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+        		</div>
+        	</div>
+        </div>
+    	</div>
+    </section> -->
+
+
+{% include 'head_common.html' %}
+
+<section class="ftco-section">
+
+
+
+  
+
+
+
+  <!-- Gallery -->
+  <div class="tabs">
+    <div class="image-container">
+      <div class="image" style="--clip-start: ellipse(0 0 at 0 0); --clip-end: ellipse(150% 150% at 0 0);"><img
+          src="https://i.picsum.photos/id/21/200/200.jpg?hmac=a2iQ6UhOjpU6jn7QSsCpk1CiiKTxmW1R4UivDsv-n8o" /><img
+          src="https://i.picsum.photos/id/21/200/200.jpg?hmac=a2iQ6UhOjpU6jn7QSsCpk1CiiKTxmW1R4UivDsv-n8o" /></div>
+      <div class="image" style="--clip-start: inset(100% 0 0 0); --clip-end: inset(0 0 0 0);"><img
+          src="https://i.picsum.photos/id/139/200/200.jpg?hmac=FNSPvHsHcRzKQtNxKKauJgIXpoaAufCwYvr-1w5T3R4" /><img
+          src="https://i.picsum.photos/id/139/200/200.jpg?hmac=FNSPvHsHcRzKQtNxKKauJgIXpoaAufCwYvr-1w5T3R4" /></div>
+      <div class="image" style="--clip-start: ellipse(0 0 at 100% 0); --clip-end: ellipse(150% 150% at 100% 0);"><img
+          src="https://i.picsum.photos/id/642/200/200.jpg?hmac=MJkhEaTWaybCn0y7rKfh_irNHvVuqRHmxcpziWABTKw" /><img
+          src="https://i.picsum.photos/id/642/200/200.jpg?hmac=MJkhEaTWaybCn0y7rKfh_irNHvVuqRHmxcpziWABTKw" /></div>
+      <div class="image"
+        style="--clip-start: polygon(50% 50%,  50% 50%,  50% 50%, 50% 50%); --clip-end: polygon(-50% 50%, 50% -50%, 150% 50%, 50% 150%);">
+        <img src="https://i.picsum.photos/id/253/200/200.jpg?hmac=_dceojr9yz5ZIKoye8I9HOqPCBHfn-jT9aRYdoLx1kQ" /><img
+          src="https://i.picsum.photos/id/253/200/200.jpg?hmac=_dceojr9yz5ZIKoye8I9HOqPCBHfn-jT9aRYdoLx1kQ" />
+      </div>
+      <div class="image" style="--clip-start: circle(0); --clip-end: circle(125%);"><img
+          src="https://i.picsum.photos/id/604/200/200.jpg?hmac=qgFjxODI1hMBMfHo68VvLeji-zvG9y-iPYhyW0EkvOs" /><img
+          src="https://i.picsum.photos/id/604/200/200.jpg?hmac=qgFjxODI1hMBMfHo68VvLeji-zvG9y-iPYhyW0EkvOs" /></div>
+      <div class="image" style="--clip-start: inset(100% 100% 100% 100%); --clip-end: inset(0 0 0 0);"><img
+          src="https://i.picsum.photos/id/119/200/200.jpg?hmac=JGrHG7yCKfebsm5jJSWw7F7x2oxeYnm5YE_74PhnRME" /><img
+          src="https://i.picsum.photos/id/119/200/200.jpg?hmac=JGrHG7yCKfebsm5jJSWw7F7x2oxeYnm5YE_74PhnRME" /></div>
+      <div class="image" style="--clip-start: ellipse(0 0 at 0 100%); --clip-end: ellipse(150% 150% at 0 100%);"><img
+          src="https://i.picsum.photos/id/520/200/200.jpg?hmac=gq6GVKg64GMqsvk_d6gzXZ7L1htska1jEdgBnAwm4xU" /><img
+          src="https://i.picsum.photos/id/520/200/200.jpg?hmac=gq6GVKg64GMqsvk_d6gzXZ7L1htska1jEdgBnAwm4xU" /></div>
+      <div class="image" style="--clip-start: inset(0 0 100% 0); --clip-end: inset(0 0 0 0);"><img
+          src="https://i.picsum.photos/id/553/200/200.jpg?hmac=HSLKzqqoxnajv4KjLxYSjZokWcuCCiZLGdRPUoryhXk" /><img
+          src="https://i.picsum.photos/id/553/200/200.jpg?hmac=HSLKzqqoxnajv4KjLxYSjZokWcuCCiZLGdRPUoryhXk" /></div>
+      <div class="image" style="--clip-start: ellipse(0 0 at 100% 100%); --clip-end: ellipse(150% 150% at 100% 100%);">
+        <img src="https://i.picsum.photos/id/988/200/200.jpg?hmac=-lwK-i6PssD9WlUeVPDIhOxDVxlzJKeM4MgEx_fIqJg" /><img
+          src="https://i.picsum.photos/id/988/200/200.jpg?hmac=-lwK-i6PssD9WlUeVPDIhOxDVxlzJKeM4MgEx_fIqJg" />
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

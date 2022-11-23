@@ -28,26 +28,56 @@ class EventsPageView(View):
                 'allSport': allSport            }
         return render(request, 'events.html',context)
 
-class GuestsAndPricesPageView(View):
+class GuestsPageView(View):
      def get(self, request, *args, **kwargs):
         introData = {
-            'title': 'Guests & Prices',
+            'title': 'Guests',
             'desc':'Lorem ipsum dummy text',
-            'question':'What are you looking for?',
+            # 'question':'What are you looking for?',
             'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
        
         }
         context = {
                 'introData': introData
             }
-        return render(request, 'guests_and_prices.html',context)
+        return render(request, 'guests.html',context)
+
+class PrizesPageView(View):
+     def get(self, request, *args, **kwargs):
+        introData = {
+            'title': 'Prizes',
+            'desc':'Lorem ipsum dummy text',
+            # 'question':'What are you looking for?',
+            'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
+       
+        }
+        context = {
+                'introData': introData
+            }
+        return render(request, 'prizes.html',context)
+
+class GalleryPageView(View):
+     def get(self, request, *args, **kwargs):
+        introData = {
+            'title': 'Gallery',
+            'desc':'Lorem ipsum dummy text',
+            # 'question':'What are you looking for?',
+            'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
+       
+        }
+        context = {
+                'introData': introData
+            }
+        return render(request, 'gallery.html',context)
+
+
 
 class TeamAndContactPageView(View):
     def get(self, request, *args, **kwargs):
         introData = {
             'title': 'Contact Us',
             'desc':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?',
-            'question':'What are you looking for?',
+            # 'question':'What are you looking for?',
             'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
        
         }
