@@ -1,6 +1,8 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 
+
+
 class Sport(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
