@@ -133,12 +133,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'mysite/static'),
 ]
 
-# AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
-# AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
-# AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
-AWS_ACCESS_KEY_ID = 'AKIAXMOBJBYY2A4HPUJ2'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'summit-media'
+AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 
@@ -167,7 +164,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 MEDIA_URL = '/media/'
 
-# if (socket.gethostname() == 'Nishikas-MacBook-Air.local' or socket.gethostname()=='Ashishs-MacBook-Air.local') :
-#     django_on_heroku.settings(locals())
-# else:
-#     django_heroku.settings(locals())
+if (socket.gethostname() == 'Nishikas-MacBook-Air.local' or socket.gethostname()=='Ashishs-MacBook-Air.local') :
+    django_on_heroku.settings(locals())
+else:
+    django_heroku.settings(locals())
