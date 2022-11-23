@@ -84,22 +84,15 @@ WSGI_APPLICATION = 'summit_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'da58hejupahdl2',
-#         'USER': 'shndhsylthjwst',
-#         'PASSWORD': 'e9d8f16f9ff91a8e1b56cd51db7fbe42ecee171c262d4a263321698252425f27',
-#         'HOST': 'ec2-34-248-169-69.eu-west-1.compute.amazonaws.com',
-#         'PORT': '5432',
-#     }
-# }
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+DATABASES = {  
+    'default': {  
+        'ENGINE': 'django.db.backends.mysql',  
+        'NAME' : env("DB_NAME"), 
+        'USER': env("DB_USER"),  
+        'PASSWORD': env("DB_PASSWORD"),
+        'HOST': env("DB_HOST"),
+        'PORT': '3306',  
+    }  
 }
 
 
