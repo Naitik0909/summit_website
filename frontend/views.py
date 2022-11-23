@@ -113,7 +113,8 @@ class SportDetailPageView(View):
             print(relatedSports)
             introData = {
             'title': sportObject.name,
-            'desc':sportObject.description
+            'desc':sportObject.description,
+            'image':sportObject.image.url,
             }   
             context = {
                 'sport': sportObject,
