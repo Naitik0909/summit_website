@@ -6,3 +6,4 @@ whitenoise
 django-environ
 mysqlclient
 django-storages
+boto3
