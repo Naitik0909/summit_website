@@ -5,3 +5,4 @@ django-heroku
 whitenoise
 django-environ
 mysqlclient
+django-storages
