@@ -59,6 +59,10 @@
     color: white;
 }
 
+.fixed-height{
+    height: 700px;
+}
+
 @media screen and (max-width: 768px){
     .stats-counter{
         padding: 0;
