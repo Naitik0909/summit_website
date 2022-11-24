@@ -10520,7 +10520,7 @@ h5,
 
 @media (max-width: 991.98px) {
   .ftco-navbar-light {
-    background: #000000 !important;
+    background: #0a9b81 !important;
     position: relative;
     top: 0;
   }
@@ -10554,7 +10554,11 @@ h5,
 }
 
 .ftco-navbar-light .navbar-nav>.nav-item>.nav-link:hover {
-  color: #000000;
+  color: #0A9B81;
+}
+
+.cta > a:hover{
+  color: white !important;
 }
 
 @media (max-width: 991.98px) {
@@ -10738,6 +10742,7 @@ h5,
 }
 
 .ftco-navbar-light.scrolled.awake {
+  background-color: #0A9B81 !important;
   margin-top: 0px;
   -webkit-transition: .3s all ease-out;
   -o-transition: .3s all ease-out;
@@ -12847,19 +12852,22 @@ textarea.form-control {
 }
 
 .nav-logo-main {
-  width: 100px;
+  width: 75px;
   margin-left: 10px;
 
 }
 
 .navbar,
 .ftco-navbar-light.scrolled {
-  background-color: #0A9B81 !important;
   top: 0px;
 }
 
 .ftco-navbar-light .navbar-nav>.nav-item>.nav-link {
-  color: #fff !important;
+  color: #ED8842;
+}
+
+.ftco-navbar-light.scrolled .nav-link{
+  color: white !important;
 }
 
 @media screen and (max-width: 768px) {
@@ -12881,4 +12889,31 @@ textarea.form-control {
   .cta{
     padding-top: 15px;
   }
+}
+
+.mit-white{
+  display: none;
+}
+
+.mit-color, .mit-white{
+  margin-bottom: 8px;
+  width: 165px;
+}
+
+.ftco-navbar-light.scrolled > .container > .navbar-brand > .mit-white{
+  display: inline!important;
+}
+
+.ftco-navbar-light.scrolled > .container > .navbar-brand > .mit-color{
+  display: none!important;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.justify-center > .img{
+  width: 400px;
+  height: 400px;
+  margin-top: 80px;
 }
