@@ -18,6 +18,7 @@ class EventsPageView(View):
         introData = {
             'title': 'Events',
             'desc':'Lorem ipsum dummy text',
+            'image':'/static/images/Banner_Homepage.svg',
             }
         allSport = Sport.objects.all()
         for sport in allSport:

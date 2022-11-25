@@ -1,5 +1,7 @@
 .stats-block{
     border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(10, 155, 129, 0.25);
+
 }
 
 .home-carousel{
@@ -60,7 +62,7 @@
 }
 
 .fixed-height{
-    height: 700px;
+    height: 500px;
 }
 
 @media screen and (max-width: 768px){
