@@ -45,7 +45,10 @@
 		$(window).resize(function(){
 			$('.js-fullheight').css('height', $(window).height());
 		});
-
+		$('.js-halfheight').css('height', $(window).height()/2);
+		$(window).resize(function(){
+			$('.js-halfheight').css('height', $(window).height()/2);
+		});
 	};
 	fullHeight();
 
