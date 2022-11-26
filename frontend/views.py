@@ -99,7 +99,7 @@ class ScoresAndFixturesPageView(View):
         introData = {
             'title': 'Scores & Fixtures',
             'desc':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?',
-            'question':'What are you looking for?',
+            # 'question':'What are you looking for?',
             'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
        
         }
