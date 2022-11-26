@@ -146,12 +146,17 @@ class SportRegisterPageView(View):
             sportObject = Sport.objects.get(slug=sportSlug)
             introData = {
             'title': sportObject.name,
-            'desc':sportObject.description
+            'desc':sportObject.description,
             }   
+            miniList = [*range(1, sportObject.minimumPlayers+1, 1)]
+            maxiList = [*range(sportObject.minimumPlayers+1, sportObject.maximumPlayers+1, 1)]
+            sportObject.minimumPlayers = miniList
+            sportObject.maximumPlayers = maxiList
             context = {
                 'sport': sportObject,
                 'introData': introData
             }
+            print(sportObject.minimumPlayers)
             return render(request, 'sport_register.html', context)
 
         except Exception as e:
