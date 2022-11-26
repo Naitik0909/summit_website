@@ -6,6 +6,9 @@
 
 {% block title %}<title>{{ sport.name }} - MIT-WPU SUMMIT 2023</title> {% endblock %}
 
+<!-- MDB -->
+<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css"
+rel="stylesheet"/> -->
 <link rel="stylesheet" href="{% static 'css/step_form.css' %}">
 
 <section class="ftco-section ftco-degree-bg">
@@ -134,46 +137,38 @@
                   </div>
               </div>
               <div class="form-outer">
-                  <form action="#" class="needs-validation" novalidate>
+                  <form action="#">
                       <div class="page slide-page">
                           <!-- <div class="title">Basic Info:</div> -->
 
                           <div class="row">
                             <div class="col">
                               <div class="form-outline mb-4">
-                                <input required name="Fullname" type="text" class="form-control form-control-lg" id="name">
-                                <label class="form-label" for="name"> Full Name *</label>
-                                <div class="valid-feedback">Looks good!</div>
+                                <input placeholder="First Name *" required name="first_name" type="text" class="form-control form-control-lg">
                               </div>
                             </div>
                             <div class="col">
                               <div class="form-outline mb-4">
-                                <input required name="contact_number" type="number" class="form-control form-control-lg" id="number">
-                                <label class="form-label" for="number"> Contact Number </label>
-                                <div class="invalid-feedback">Please choose a username.</div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <div class="col">
-                              <div class="form-outline mb-4">
-                                <input required name="email" type="email" class="form-control form-control-lg" id="email">
-                                <label class="form-label" for="email">Email *</label>
-                              </div>
-                            </div>
-                            <label class="form-label" for="customFile">College Id Photo</label>
-                            <div class="col">
-                              <div class="mb-4">
-                                <input type="file" class="form-control form-control-lg" id="customFile" />
+                                <input placeholder="Last Name *" required name="last_name" type="text" class="form-control form-control-lg">
                               </div>
                             </div>
                           </div>
                           <div class="row">
                             <div class="col">
                               <div class="form-outline mb-4">
-                                <input required name="Aadhar_number" type="number" class="form-control form-control-lg">
-                                <label class="form-label" for="number">Aadhar Card Number</label>
+                                <input placeholder="Email *" required name="email" type="email" class="form-control form-control-lg">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-outline mb-4">
+                                <input placeholder="Phone Number *" min="0" required name="phone_number" type="number" class="form-control form-control-lg">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-outline mb-4">
+                                <input placeholder="Aadhar Card Number *" min="0" required name="Aadhar_number" type="number" class="form-control form-control-lg">
                               </div>
                             </div>
                             <div class="col">
@@ -220,25 +215,37 @@
                               </div>
                             </div>
                           </div>
-            
-                            
-                          <div class="field">
-                              <button class="firstNext next btn btn-primary btn-block">Next</button>
+                          <div class="row">
+                            <div class="col" style="display: flex;
+                              justify-content: flex-end;
+                              margin-top: 8px;">
+                              <label class="form-label" for="customFile">College Id Photo</label>
+                            </div>
+                            <div class="col">
+                              <div class="mb-4">
+                                <input placeholder="Photo" type="file" class="form-control form-control-lg" id="customFile" />
+                              </div>
+                            </div>
                           </div>
-                      </div>
+                          
+                          
+                          <div class="field">
+                            <button class="firstNext next btn btn-primary btn-block">Next</button>
+                          </div>
+                        </div>
   
                       <div class="page">
                           <div class="row">
                             <div class="col">
                               <div class="form-outline mb-4">
                                 <input readonly name="sport" type="text" value="Cricket" class="form-control form-control-lg">
-                                <label for="message" class="form-label">Sport</label>
+                                <!-- <label for="message" class="form-label">Sport</label> -->
                               </div>
                             </div>
                             <div class="col">
                               <div class="form-outline mb-4">
-                                <input name="college_name" type="text" class="form-control form-control-lg">
-                                <label for="message" class="form-label">College Name</label>
+                                <input name="college_name" placeholder="College Name" type="text" class="form-control form-control-lg">
+                                <!-- <label for="message" class="form-label">College Name</label> -->
                               </div>
                             </div>
                           </div>
@@ -247,16 +254,17 @@
                             <div class="col">
                               <div class="form-outline mb-4">
                                 <select class="form-dropdown form-control form-control-lg" name="select" id="">
-                                  <option value="">Select a Pool</option>
-                                  <option value="engineering">Engineering</option>
-                                  <option value="open">Open</option>
+                                  <option value="">Need Accomadation?</option>
+                                  <option value="yes">Yes</option>
+                                  <option value="no">No</option>
                                 </select>
+                                <!-- <label for="message" class="form-label">Need Accomadation?(  yes/no Specifying price)</label> -->
                               </div>
                             </div>
                             <div class="col">
                               <div class="form-outline mb-4">
-                                <input name="ifopen" type="text" class="form-control form-control-lg">
-                                <label for="message" class="form-label">If Open(Name of School)</label>
+                                <input placeholder="Sports Incharge Name" name="sportsincharge_name" type="text" class="form-control form-control-lg">
+                                <!-- <label for="message" class="form-label">Sports Incharge Name</label> -->
                               </div>
                             </div>
                           </div>
@@ -264,34 +272,36 @@
                           <div class="row">
                             <div class="col">
                               <div class="form-outline mb-4">
-                                <input name="accomadation" type="text" class="form-control form-control-lg">
-                                <label for="message" class="form-label">Need Accomadation?(  yes/no Specifying price)</label>
+                                <input placeholder="Sports Incharge Number" name="sportsincharge_number" type="number" class="form-control form-control-lg">
+                                <!-- <label for="message" class="form-label">Sports Incharge Number</label> -->
                               </div>
                             </div>
                             <div class="col">
                               <div class="form-outline mb-4">
-                                <input name="sportsincharge_name" type="text" class="form-control form-control-lg">
-                                <label for="message" class="form-label">Sports Incharge Name</label>
+                                <input placeholder="Sports Incharge Email Id" name="sportsincharge_email" type="email" class="form-control form-control-lg">
+                                <!-- <label for="message" class="form-label">Sports Incharge Email id.</label> -->
                               </div>
                             </div>
                           </div>
-                          
+
                           <div class="row mb-4">
                             <div class="col">
                               <div class="form-outline mb-4">
-                                <input name="sportsincharge_number" type="number" class="form-control form-control-lg">
-                                <label for="message" class="form-label">Sports Incharge Number</label>
+                                <select onchange="handlePool()" class="form-dropdown form-control form-control-lg" name="select" id="pool">
+                                  <option value="">Select a Pool</option>
+                                  <option value="engineering">Engineering</option>
+                                  <option value="open">Open</option>
+                                </select>
                               </div>
                             </div>
                             <div class="col">
-                              <div class="form-outline mb-4">
-                                <input name="sportsincharge_email" type="email" class="form-control form-control-lg">
-                                <label for="message" class="form-label">Sports Incharge Email id.</label>
+                              <div id="show-if-open-pool" class="form-outline mb-4">
+                                <input name="ifopen" placeholder="School Name" type="text" class="form-control form-control-lg">
+                                <!-- <label for="message" class="form-label">If Open(Name of School)</label> -->
                               </div>
                             </div>
                           </div>
-                          
-        
+
                           <div class="field btns">
                               <button class="prev-1 prev btn btn-primary btn-block">Previous</button>
                               <button class="next-1 next btn btn-primary btn-block">Next</button>
@@ -349,4 +359,9 @@
       </div>
     </section> -->
     <script src="{% static 'js/step_form.js' %}"></script>
+    <!-- MDB -->
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+
 {% endblock %}

@@ -57,7 +57,10 @@ form .page .field input {
     transition: border-color 150ms ease;
 }
 form .page .field input.invalid-input {
-    border-color: var(--errorColor);
+    border-color: red;
+}
+input.invalid-input{
+    border: red solid!important;
 }
 form .page .field select {
     width: 100%;
@@ -111,8 +114,8 @@ form .page .btns button.next {
     margin-bottom: 8px;
 }
 .progress-bar-form .step .bullet {
-    height: 25px;
-    width: 25px;
+    height: 45px;
+    width: 45px;
     border: 2px solid #000;
     display: inline-block;
     border-radius: 50%;
@@ -130,7 +133,7 @@ form .page .btns button.next {
     color: black;
     position: absolute;
     left: 50%;
-    transform: translate(-50%, -10%);
+    transform: translate(-50%, 30%);
 }
 .progress-bar-form .step .bullet.active span {
     display: none;
@@ -139,12 +142,12 @@ form .page .btns button.next {
 .progress-bar-form .step .bullet:after {
     position: absolute;
     content: "";
-    bottom: 9px;
-    right: -163px;
+    bottom: 19px;
+    right: -142px;
     border: 1px solid black;
     height: 3px;
-    width: 140px;
-    background: black;
+    width: 117px;
+    background-color: #000;
 }
 .progress-bar-form .step .bullet.active:after {
     background: black;
@@ -219,7 +222,8 @@ form .page .btns button.next {
 }
 
 .check-icon{
-    width: 25px;
+    width: 42px;
+    margin-top: 2px;
 }
 
 .btn-block{
@@ -227,7 +231,15 @@ form .page .btns button.next {
 }
 
 .form-dropdown{
-    border: #acacaccc solid 1px!important;
-    height: 49.52px!important;
+    border: #ced4da solid 1px!important;
+    height: 48px!important;
     color: grey!important;
+}
+
+body{
+  font-family: 'Lato', sans-serif;
+}
+
+#show-if-open-pool{
+    display: none;
 }
