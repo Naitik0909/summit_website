@@ -6,109 +6,336 @@
 
 {% block title %}<title>{{ sport.name }} - MIT-WPU SUMMIT 2023</title> {% endblock %}
 
+<!-- MDB -->
+<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css"
+rel="stylesheet"/> -->
+<link rel="stylesheet" href="{% static 'css/step_form.css' %}">
 
-    <section class="ftco-section ftco-degree-bg">
-      <div class="container">
-        <div class="row">
-            
-          <div class="col-md-12 order-md-last ftco-animate" >
-            
-           
-              <!-- END comment-list -->
-              
-              <div class="comment-form-wrap pt-5">
-                <h3 class="mb-5">Register</h3>
-                <form action="#" class="p-6 bg-light">
-                  <h5> Player Information </h5>
-                  <div class="form-group">
-                    <label for="name"> Full Name *</label>
-                    <input name="Fullname" type="text" class="form-control" id="name">
-                  </div>
-                  <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input name="email" type="email" class="form-control" id="email">
-                  </div>
-                  <div class="form-group">
-                    <label for="number"> Contact Number </label>
-                    <input name="contact_number" type="number" class="form-control" id="number">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="photo">College Id Photo</label>
-                    <br>
-                    
-                    <input type="file" id="myFile" class="form-control" name="photo_filename">
-                    <!-- <br>
-                    <input type="submit"> -->
-                  </div>
-
-                  <div class="form-group">
-                    <label for="number">Aadhar Card Number</label>
-                    <input name="Aadhar_number" type="number" class="form-control" id="number">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="message">Sate</label>
-                    <input name="state" type="text" class="form-control" id="website">
-                  </div>
-
-                  <h5>Other Information</h5>
-
-                  <div class="form-group">
-                    <label for="message">Sport</label>
-                    <input name="sport" type="text" value="{{sport.name}}" class="form-control" id="website">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="message">College Name</label>
-                    <input name="college_name" type="text" class="form-control" id="website">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="message">Pool(Engineering/open)</label>
-                    <input name="Pool" type="text" class="form-control" id="website">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="message">If Open(Name of School)</label>
-                    <input name="ifopen" type="text" class="form-control" id="website">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="message">Need Accomadation?(  yes/no Specifying price)</label>
-                    <input name="accomadation" type="text" class="form-control" id="website">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="message">Sports Incharge Name</label>
-                    <input name="sportsincharge_name" type="text" class="form-control" id="website">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="message">Sports Incharge Number</label>
-                    <input name="sportsincharge_number" type="number" class="form-control" id="website">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="message">Sports Incharge Email id.</label>
-                    <input name="sportsincharge_email" type="email" class="form-control" id="website">
-                  </div>
-
-                  <div class="form-group">
-                    <input name="Aadhar_number" type="submit" value="Register" class="btn py-3 px-4 btn-primary">
-                  </div>
-
-                </form>
-              </div>
-            </div>
-
-          </div> 
+<section class="ftco-section ftco-degree-bg">
+  <div class="container">
+    <div class="row">
+        
+      <div class="col-md-12 order-md-last ftco-animate" >
+        
+       
+          <!-- END comment-list -->
           
+          <div class="comment-form-wrap pt-5">
+            <h3 class="mb-5">Register</h3>
+            <!-- <form action="#" class="p-6 bg-light">
+              <h5> Player Information </h5>
+              <div class="form-group">
+                <label for="name"> Full Name *</label>
+                <input name="Fullname" type="text" class="form-control form-control-lg" id="name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input name="email" type="email" class="form-control form-control-lg" id="email">
+              </div>
+              <div class="form-group">
+                <label for="number"> Contact Number </label>
+                <input name="contact_number" type="number" class="form-control form-control-lg" id="number">
+              </div>
 
+              <div class="form-group">
+                <label for="photo">College Id Photo</label>
+                <br>
+                
+                <input type="file" id="myFile" class="form-control form-control-lg" name="photo_filename">
+                <br>
+                <input type="submit"> 
+              </div>
+
+              <div class="form-group">
+                <label for="number">Aadhar Card Number</label>
+                <input name="Aadhar_number" type="number" class="form-control form-control-lg" id="number">
+              </div>
+
+              <div class="form-group">
+                <label for="message">Sate</label>
+                <input name="state" type="text" class="form-control form-control-lg" id="website">
+              </div>
+
+              <h5>Other Information</h5>
+
+              <div class="form-group">
+                <label for="message">Sport</label>
+                <input name="sport" type="text" value="Cricket" class="form-control form-control-lg" id="website">
+              </div>
+
+              <div class="form-group">
+                <label for="message">College Name</label>
+                <input name="college_name" type="text" class="form-control form-control-lg" id="website">
+              </div>
+
+              <div class="form-group">
+                <label for="message">Pool(Engineering/open)</label>
+                <input name="Pool" type="text" class="form-control form-control-lg" id="website">
+              </div>
+
+              <div class="form-group">
+                <label for="message">If Open(Name of School)</label>
+                <input name="ifopen" type="text" class="form-control form-control-lg" id="website">
+              </div>
+
+              <div class="form-group">
+                <label for="message">Need Accomadation?(  yes/no Specifying price)</label>
+                <input name="accomadation" type="text" class="form-control form-control-lg" id="website">
+              </div>
+
+              <div class="form-group">
+                <label for="message">Sports Incharge Name</label>
+                <input name="sportsincharge_name" type="text" class="form-control form-control-lg" id="website">
+              </div>
+
+              <div class="form-group">
+                <label for="message">Sports Incharge Number</label>
+                <input name="sportsincharge_number" type="number" class="form-control form-control-lg" id="website">
+              </div>
+
+              <div class="form-group">
+                <label for="message">Sports Incharge Email id.</label>
+                <input name="sportsincharge_email" type="email" class="form-control form-control-lg" id="website">
+              </div>
+
+              <div class="form-group">
+                <input name="Aadhar_number" type="submit" value="Register" class="btn py-3 px-4 btn-primary">
+              </div>
+
+            </form> -->
+
+            <div class="form-container">
+              <header>Signup Form</header>
+              <div class="progress-bar-form">
+                  <div class="step">
+                      <p>Basic Details</p>
+                      <div class="bullet">
+                          <span>1</span>
+                          
+                      </div>
+                      <div class="check">
+                        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                      </div>
+                  </div>
+                  <div class="step">
+                      <p>College Details</p>
+                      <div class="bullet">
+                          <span>2</span>
+                      </div>
+                      <div class="check">
+                        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                      </div>
+                  </div>
+                  <div class="step">
+                      <p>Team Details</p>
+                      <div class="bullet">
+                          <span>3</span>
+                      </div>
+                      <div class="check">
+                        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                      </div>
+                  </div>
+              </div>
+              <div class="form-outer">
+                  <form action="#">
+                      <div class="page slide-page">
+                          <!-- <div class="title">Basic Info:</div> -->
+
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-outline mb-4">
+                                <input placeholder="First Name *" required name="first_name" type="text" class="form-control form-control-lg">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-outline mb-4">
+                                <input placeholder="Last Name *" required name="last_name" type="text" class="form-control form-control-lg">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-outline mb-4">
+                                <input placeholder="Email *" required name="email" type="email" class="form-control form-control-lg">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-outline mb-4">
+                                <input placeholder="Phone Number *" min="0" required name="phone_number" type="number" class="form-control form-control-lg">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-outline mb-4">
+                                <input placeholder="Aadhar Card Number *" min="0" required name="Aadhar_number" type="number" class="form-control form-control-lg">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-outline mb-4">
+                                <select name="state" id="state" class="form-dropdown form-control form-control-lg">
+                                  <option value="">Select a State</option>
+                                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                  <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                  <option value="Assam">Assam</option>
+                                  <option value="Bihar">Bihar</option>
+                                  <option value="Chandigarh">Chandigarh</option>
+                                  <option value="Chhattisgarh">Chhattisgarh</option>
+                                  <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                  <option value="Daman and Diu">Daman and Diu</option>
+                                  <option value="Delhi">Delhi</option>
+                                  <option value="Lakshadweep">Lakshadweep</option>
+                                  <option value="Puducherry">Puducherry</option>
+                                  <option value="Goa">Goa</option>
+                                  <option value="Gujarat">Gujarat</option>
+                                  <option value="Haryana">Haryana</option>
+                                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                  <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                  <option value="Jharkhand">Jharkhand</option>
+                                  <option value="Karnataka">Karnataka</option>
+                                  <option value="Kerala">Kerala</option>
+                                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                  <option value="Maharashtra">Maharashtra</option>
+                                  <option value="Manipur">Manipur</option>
+                                  <option value="Meghalaya">Meghalaya</option>
+                                  <option value="Mizoram">Mizoram</option>
+                                  <option value="Nagaland">Nagaland</option>
+                                  <option value="Odisha">Odisha</option>
+                                  <option value="Punjab">Punjab</option>
+                                  <option value="Rajasthan">Rajasthan</option>
+                                  <option value="Sikkim">Sikkim</option>
+                                  <option value="Tamil Nadu">Tamil Nadu</option>
+                                  <option value="Telangana">Telangana</option>
+                                  <option value="Tripura">Tripura</option>
+                                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                  <option value="Uttarakhand">Uttarakhand</option>
+                                  <option value="West Bengal">West Bengal</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col" style="display: flex;
+                              justify-content: flex-end;
+                              margin-top: 8px;">
+                              <label class="form-label" for="customFile">College Id Photo</label>
+                            </div>
+                            <div class="col">
+                              <div class="mb-4">
+                                <input placeholder="Photo" type="file" class="form-control form-control-lg" id="customFile" />
+                              </div>
+                            </div>
+                          </div>
+                          
+                          
+                          <div class="field">
+                            <button class="firstNext next btn btn-primary btn-block">Next</button>
+                          </div>
+                        </div>
+  
+                      <div class="page">
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-outline mb-4">
+                                <input readonly name="sport" type="text" value="Cricket" class="form-control form-control-lg">
+                                <!-- <label for="message" class="form-label">Sport</label> -->
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-outline mb-4">
+                                <input name="college_name" placeholder="College Name" type="text" class="form-control form-control-lg">
+                                <!-- <label for="message" class="form-label">College Name</label> -->
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-outline mb-4">
+                                <select class="form-dropdown form-control form-control-lg" name="select" id="">
+                                  <option value="">Need Accomadation?</option>
+                                  <option value="yes">Yes</option>
+                                  <option value="no">No</option>
+                                </select>
+                                <!-- <label for="message" class="form-label">Need Accomadation?(  yes/no Specifying price)</label> -->
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-outline mb-4">
+                                <input placeholder="Sports Incharge Name" name="sportsincharge_name" type="text" class="form-control form-control-lg">
+                                <!-- <label for="message" class="form-label">Sports Incharge Name</label> -->
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-outline mb-4">
+                                <input placeholder="Sports Incharge Number" name="sportsincharge_number" type="number" class="form-control form-control-lg">
+                                <!-- <label for="message" class="form-label">Sports Incharge Number</label> -->
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-outline mb-4">
+                                <input placeholder="Sports Incharge Email Id" name="sportsincharge_email" type="email" class="form-control form-control-lg">
+                                <!-- <label for="message" class="form-label">Sports Incharge Email id.</label> -->
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row mb-4">
+                            <div class="col">
+                              <div class="form-outline mb-4">
+                                <select onchange="handlePool()" class="form-dropdown form-control form-control-lg" name="select" id="pool">
+                                  <option value="">Select a Pool</option>
+                                  <option value="engineering">Engineering</option>
+                                  <option value="open">Open</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div id="show-if-open-pool" class="form-outline mb-4">
+                                <input name="ifopen" placeholder="School Name" type="text" class="form-control form-control-lg">
+                                <!-- <label for="message" class="form-label">If Open(Name of School)</label> -->
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="field btns">
+                              <button class="prev-1 prev btn btn-primary btn-block">Previous</button>
+                              <button class="next-1 next btn btn-primary btn-block">Next</button>
+                          </div>
+                      </div>
+  
+                      <div class="page">
+                          <!-- <div class="title">Login Details:</div> -->
+                          <div class="field">
+                              <div class="label">Username</div>
+                              <input type="text" required />
+                          </div>
+                          <div class="field">
+                              <div class="label">Password</div>
+                              <input type="password" required />
+                          </div>
+                          <div class="field btns">
+                              <button class="prev-5 prev btn btn-primary btn-block">Previous</button>
+                              <button class="submit btn btn-primary btn-block">Submit</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+          <!-- new form end -->
+          </div>
         </div>
-      </div>
-    </section> <!-- .section -->
 
+      </div> 
+      
+
+    </div>
+  </div>
+</section> <!-- .section -->
 		<!-- <section class="ftco-section-parallax">
       <div class="parallax-img d-flex align-items-center">
         <div class="container">
@@ -120,7 +347,7 @@
                 <div class="col-md-8">
                   <form action="#" class="subscribe-form">
                     <div class="form-group d-flex">
-                      <input type="text" class="form-control" placeholder="Enter email address">
+                      <input type="text" class="form-control form-control-lg" placeholder="Enter email address">
                       <input type="submit" value="Subscribe" class="submit px-3">
                     </div>
                   </form>
@@ -131,4 +358,10 @@
         </div>
       </div>
     </section> -->
+    <script src="{% static 'js/step_form.js' %}"></script>
+    <!-- MDB -->
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
+
 {% endblock %}
