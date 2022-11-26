@@ -4,7 +4,7 @@
     background: var(--primary);
 }
 .form-container {
-    width: 500px;
+    max-width: 100%;
     margin: 0 auto;
     background: #e9e9e9;
     text-align: center;
@@ -140,11 +140,11 @@ form .page .btns button.next {
     position: absolute;
     content: "";
     bottom: 9px;
-    right: -101px;
+    right: -163px;
     border: 1px solid black;
     height: 3px;
-    width: 80px;
-    background: #262626;
+    width: 140px;
+    background: black;
 }
 .progress-bar-form .step .bullet.active:after {
     background: black;
@@ -224,4 +224,10 @@ form .page .btns button.next {
 
 .btn-block{
     margin-top: 0!important;
+}
+
+.form-dropdown{
+    border: #acacaccc solid 1px!important;
+    height: 49.52px!important;
+    color: grey!important;
 }

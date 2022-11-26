@@ -11049,7 +11049,7 @@ h5,
   border-radius: 15px;
   padding: 10px 15px !important;
   background: #0A9B81 !important;
-  border: 1px solid #ED8842 !important;
+  border: 1px solid #0A9B81 !important;
   color: #fff !important;
 }
 
@@ -11575,7 +11575,6 @@ background-color: #f9e0ae;
 }
 
 .form-control {
-  height: 52px !important;
   background: #fff !important;
   color: #000000 !important;
   font-size: 18px;
@@ -12944,4 +12943,8 @@ textarea.form-control {
   width: 450px;
   height: 400px;
   margin-top: 80px;
+}
+
+.form-outline .form-control.form-control-lg{
+  padding-bottom: 10px;
 }
