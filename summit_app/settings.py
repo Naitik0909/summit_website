@@ -6,7 +6,7 @@ import os
 import socket
 import environ
 
-if (socket.gethostname() == 'Nishikas-MacBook-Air.local' or socket.gethostname()=='Ashishs-MacBook-Air.local') :
+if socket.gethostname() == 'Nishikas-MacBook-Air.local' or socket.gethostname()=='Ashishs-MacBook-Air.local' or socket.gethostname() == 'ip-172-31-21-59':
     import django_on_heroku
 else:
     import django_heroku
@@ -164,7 +164,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 MEDIA_URL = '/media/'
 
-if (socket.gethostname() == 'Nishikas-MacBook-Air.local' or socket.gethostname()=='Ashishs-MacBook-Air.local') :
+if socket.gethostname() == 'Nishikas-MacBook-Air.local' or socket.gethostname()=='Ashishs-MacBook-Air.local' or socket.gethostname() == 'ip-172-31-21-59':
     django_on_heroku.settings(locals())
 else:
     django_heroku.settings(locals())
