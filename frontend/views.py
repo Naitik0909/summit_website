@@ -94,6 +94,19 @@ class TeamAndContactPageView(View):
             }
         return render(request, 'team_and_contact.html',context)
 
+    def post(self, request, *args, **kwargs):
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        message = request.POST.get('message')
+        query = Contact.objects.create(
+            name = name,
+            email = email,
+            phone = phone,
+            message = message
+        )
+        return redirect('home')
+
 class ScoresAndFixturesPageView(View):
     def get(self, request, *args, **kwargs):
 
