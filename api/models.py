@@ -31,3 +31,36 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+
+class Team(models.Model):
+
+    TEAM_TYPE_OPTIONS = (
+        ('Engineering', 'Engineering'),
+        ('Open', 'Open'),
+    )
+
+    name = models.CharField(max_length=200)
+    team_type = models.CharField(max_length=200, choices=TEAM_TYPE_OPTIONS)
+    institute_name = models.CharField(max_length=200)
+    sport = models.ForeignKey(Sport, on_delete=models.CASCADE)
+    logo = models.FileField(upload_to='team_images', null=True, blank=True)
+    datetime = models.DateTimeField(auto_now=True)
+    sport_incharge_name = models.CharField(max_length=200)
+    sport_incharge_number = models.CharField(max_length=200)
+    sport_incharge_email_id = models.CharField(max_length=200)
+    player_names = models.TextField(default="none")
+    captain_name = models.CharField(max_length=200, default="none")
+
+    def __str__(self):
+        return self.name
+
+class Player(models.Model):
+    name = models.CharField(max_length=200, null=True, blank=True)
+    email = models.EmailField(primary_key=True)
+    phone = models.CharField(max_length=200, null=True, blank=True)
+    college_id = models.FileField(upload_to='college_id', null=True, blank=True)
+    aadhar_card_number = models.CharField(max_length=200, null=True, blank=True)
+    team = models.ManyToManyField(Team, related_name='players', null=True, blank=True)
+
+    def __str__(self):
+        return self.name

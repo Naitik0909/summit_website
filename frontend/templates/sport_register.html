@@ -16,7 +16,11 @@ rel="stylesheet"/> -->
     <div class="row">
 
       <div class="col-md-12 order-md-last ftco-animate">
-
+        <!-- <form method="POST">
+          {% csrf_token %}
+          <input type="text" name="name">
+          <button type="sumbit">Submit</button>
+        </form> -->
 
         <!-- END comment-list -->
 
@@ -56,7 +60,8 @@ rel="stylesheet"/> -->
               </div>
             </div>
             <div class="form-outer">
-              <form action="#">
+              <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
                 <div class="page slide-page">
                   <!-- <div class="title">Basic Info:</div> -->
 
@@ -97,7 +102,7 @@ rel="stylesheet"/> -->
                     </div>
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <select name="state" id="state" class="form-dropdown form-control form-control-lg">
+                        <select name="state" id="state" name="state" class="form-dropdown form-control form-control-lg">
                           <option value="">Select a State</option>
                           <option value="Andhra Pradesh">Andhra Pradesh</option>
                           <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
@@ -147,7 +152,7 @@ rel="stylesheet"/> -->
                     </div>
                     <div class="col-sm-6">
                       <div class="mb-4">
-                        <input placeholder="Photo" type="file" class="form-control form-control-lg" id="customFile" />
+                        <input placeholder="Photo" name="college_id" type="file" class="form-control form-control-lg" id="customFile" />
                       </div>
                     </div>
                   </div>
@@ -162,7 +167,7 @@ rel="stylesheet"/> -->
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <input readonly name="sport" type="text" value="Cricket" class="form-control form-control-lg">
+                        <input readonly name="sport" type="text" value="{{sport.name}}" class="form-control form-control-lg">
                         <!-- <label for="message" class="form-label">Sport</label> -->
                       </div>
                     </div>
@@ -178,7 +183,7 @@ rel="stylesheet"/> -->
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <select class="form-dropdown form-control form-control-lg" name="select" id="">
+                        <select class="form-dropdown form-control form-control-lg" name="accomodation" id="">
                           <option value="">Need Accomadation?</option>
                           <option value="yes">Yes</option>
                           <option value="no">No</option>
@@ -215,7 +220,7 @@ rel="stylesheet"/> -->
                   <div class="row mb-4">
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <select onchange="handlePool()" class="form-dropdown form-control form-control-lg" name="select"
+                        <select onchange="handlePool()" class="form-dropdown form-control form-control-lg" name="pool"
                           id="pool">
                           <option value="">Select a Pool</option>
                           <option value="engineering">Engineering</option>
@@ -225,7 +230,7 @@ rel="stylesheet"/> -->
                     </div>
                     <div class="col-sm-6">
                       <div id="show-if-open-pool" class="form-outline mb-4">
-                        <input name="ifopen" placeholder="School Name" type="text" class="form-control form-control-lg">
+                        <input name="school_name" placeholder="School Name" type="text" class="form-control form-control-lg">
                         <!-- <label for="message" class="form-label">If Open(Name of School)</label> -->
                       </div>
                     </div>
@@ -245,7 +250,7 @@ rel="stylesheet"/> -->
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <input placeholder="Name" required name="Player_first_name_{{i}}" type="text"
+                        <input placeholder="Name" required name="player_name" type="text"
                           class="form-control form-control-lg"/>
                       </div>
                     </div>
@@ -262,7 +267,7 @@ rel="stylesheet"/> -->
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <input placeholder="Name " required name="Player_first_name_{{i}}" type="text"
+                        <input placeholder="Name " required name="player_name" type="text"
                           class="form-control form-control-lg"/>
                       </div>
                     </div>
@@ -277,7 +282,7 @@ rel="stylesheet"/> -->
                   <br/>
                   <div class="field btns">
                     <button class="prev-5 prev btn btn-primary btn-block">Previous</button>
-                    <button class="submit btn btn-primary btn-block">Submit</button>
+                    <button type="submit" class="submit btn btn-primary btn-block">Submit</button>
                   </div>
                 </div>
               </form>
