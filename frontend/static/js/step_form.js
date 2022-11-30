@@ -65,7 +65,6 @@ function initMultiStepForm() {
         });
     }
     submitBtn.addEventListener("click", function (event) {
-        event.preventDefault();
 
         inputsValid = validateInputs(this);
         // inputsValid = true;
@@ -75,10 +74,6 @@ function initMultiStepForm() {
             progressCheck[current - 1].classList.add("active");
             progressText[current - 1].classList.add("active");
             current += 1;
-            setTimeout(function () {
-                alert("Your Form Successfully Signed up");
-                location.reload();
-            }, 800);
         }
     });
 

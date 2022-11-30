@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, View
 
-from api.models import Sport
+from api.models import Sport, Team, Contact, Player
+from .utils import listToString
 class HomePageView(TemplateView):
     template_name = 'index.html'
 
@@ -117,7 +118,6 @@ class SportDetailPageView(View):
         try:
             sportObject = Sport.objects.get(slug=sportSlug)
             relatedSports = Sport.objects.exclude(slug=sportSlug).values('name', 'slug')
-            print(relatedSports)
             introData = {
             'title': sportObject.name,
             'desc':sportObject.description,
@@ -156,9 +156,51 @@ class SportRegisterPageView(View):
                 'sport': sportObject,
                 'introData': introData
             }
-            print(sportObject.minimumPlayers)
             return render(request, 'sport_register.html', context)
 
         except Exception as e:
             print(e)
             # Return 404 page
+
+    def post(self, request, *args, **kwargs):
+
+        # sportSlug = self.kwargs['pk']
+        # name = f"{request.POST.get('first_name')} {request.POST.get('last_name')}"
+        # email = request.POST.get('email')
+        # phone = request.POST.get('phone_number')
+        # aadhar_number = request.POST.get('Aadhar_number')
+        # state = request.POST.get('state')
+        # try:
+        #     college_id = request.FILES['college_id']
+        # except Exception as e:
+        #     print(e)
+        
+        # # Team details
+        # sport = Sport.objects.get(slug=sportSlug)
+        # college_name = request.POST.get('college_name')  
+        # institution_name = college_name if college_name != "" else request.POST.get('school_name')
+        # need_accomodation = request.POST.get('accomodation')
+        # sports_incharge_name = request.POST.get('sportsincharge_name')
+        # sports_incharge_number = request.POST.get('sportsincharge_number')
+        # sports_incharge_email = request.POST.get('sportsincharge_email')
+        # pool = request.POST.get('pool')
+        
+        # # Player details
+        # player_names = request.POST.getlist('player_name')
+        
+        # team = Team.objects.create(
+        #     sport = sport,
+        #     institution_name = institution_name,
+        #     need_accomodation = need_accomodation,
+        #     sports_incharge_name = sports_incharge_name,
+        #     sports_incharge_number = sports_incharge_number,
+        #     sports_incharge_email = sports_incharge_email,
+        #     pool = pool,
+        #     player_names = listToString(player_names)
+        # )
+
+        # player = Player.objects.get_or_create(email=email)
+        # player.
+
+
+        return redirect('home')
