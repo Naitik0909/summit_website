@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, View
 
 from api.models import Sport, Team, Contact, Player
-from .utils import listToString
+from .utils import listToString, stringToBool
 class HomePageView(TemplateView):
     template_name = 'index.html'
 
@@ -177,43 +177,56 @@ class SportRegisterPageView(View):
 
     def post(self, request, *args, **kwargs):
 
-        # sportSlug = self.kwargs['pk']
-        # name = f"{request.POST.get('first_name')} {request.POST.get('last_name')}"
-        # email = request.POST.get('email')
-        # phone = request.POST.get('phone_number')
-        # aadhar_number = request.POST.get('Aadhar_number')
-        # state = request.POST.get('state')
-        # try:
-        #     college_id = request.FILES['college_id']
-        # except Exception as e:
-        #     print(e)
+        sportSlug = self.kwargs['pk']
+        name = request.POST.get('fullname')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone_number')
+        state = request.POST.get('state')
         
-        # # Team details
-        # sport = Sport.objects.get(slug=sportSlug)
-        # college_name = request.POST.get('college_name')  
-        # institution_name = college_name if college_name != "" else request.POST.get('school_name')
-        # need_accomodation = request.POST.get('accomodation')
-        # sports_incharge_name = request.POST.get('sportsincharge_name')
-        # sports_incharge_number = request.POST.get('sportsincharge_number')
-        # sports_incharge_email = request.POST.get('sportsincharge_email')
-        # pool = request.POST.get('pool')
+        # Team details
+        sport = Sport.objects.get(slug=sportSlug)
+        college_name = request.POST.get('college_name')  
+        institution_name = college_name if college_name != "" else request.POST.get('school_name')
+        need_accomodation = request.POST.get('accomodation')
+        sports_incharge_name = request.POST.get('sportsincharge_name')
+        sports_incharge_number = request.POST.get('sportsincharge_number')
+        sports_incharge_email = request.POST.get('sportsincharge_email')
         
-        # # Player details
-        # player_names = request.POST.getlist('player_name')
-        
-        # team = Team.objects.create(
-        #     sport = sport,
-        #     institution_name = institution_name,
-        #     need_accomodation = need_accomodation,
-        #     sports_incharge_name = sports_incharge_name,
-        #     sports_incharge_number = sports_incharge_number,
-        #     sports_incharge_email = sports_incharge_email,
-        #     pool = pool,
-        #     player_names = listToString(player_names)
-        # )
+        # Player details
+        player_names = request.POST.getlist('player_names')
+        player_emails = request.POST.getlist('player_emails')
+        player_phones = request.POST.getlist('player_phones')
 
-        # player = Player.objects.get_or_create(email=email)
-        # player.
+        player_emails.append(email)
+        player_phones.append(phone)
+        player_names.append(name)
+
+        player_emails = [i for i in player_emails if i]
+        player_phones = [i for i in player_phones if i]
+        player_names = [i for i in player_names if i]
+        print(player_names)
+        
+        team = Team.objects.create(
+            name = college_name,
+            sport = sport,
+            institute_name = college_name,
+            need_accomodation = stringToBool(need_accomodation),
+            sport_incharge_name = sports_incharge_name,
+            sport_incharge_number = sports_incharge_number,
+            sport_incharge_email_id = sports_incharge_email,
+            player_names = listToString(player_names),
+            captain_name = name
+        )
+
+        for i in range(len(player_names)):
+            player = Player.objects.get_or_create(
+                email = player_emails[i],
+            )[0]
+            
+            player.name = player_names[i]
+            player.phone = player_phones[i]
+            player.team.add(team)
+            player.save()
 
 
         return redirect('home')

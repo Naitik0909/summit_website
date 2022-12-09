@@ -4,7 +4,7 @@
     background: var(--primary);
 }
 .form-container {
-    max-width: 690px;
+    max-width: 800px;
     margin: 0 auto;
     background: #e9e9e9;
     text-align: center;
@@ -143,7 +143,7 @@ form .page .btns button.next {
     position: absolute;
     content: "";
     bottom: 19px;
-    right: -142px;
+    right: -160px;
     border: 1px solid black;
     height: 3px;
     width: 117px;

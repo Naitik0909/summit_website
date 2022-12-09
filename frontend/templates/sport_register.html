@@ -28,7 +28,6 @@ rel="stylesheet"/> -->
           <h3 class="mb-5">Register</h3>
 
           <div class="form-container">
-            <header>Signup Form</header>
             <div class="progress-bar-form">
               <div class="step">
                 <p>Basic Details</p>
@@ -68,35 +67,21 @@ rel="stylesheet"/> -->
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <input placeholder="First Name *" required name="first_name" type="text"
+                        <input placeholder="Full Name *" required name="fullname" type="text"
                           class="form-control form-control-lg"/>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <input placeholder="Last Name *" required name="last_name" type="text"
-                          class="form-control form-control-lg">
+                        <input placeholder="Email *" required name="email" type="email"
+                        class="form-control form-control-lg">
                       </div>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col">
-                      <div class="form-outline mb-4">
-                        <input placeholder="Email *" required name="email" type="email"
-                          class="form-control form-control-lg">
-                      </div>
-                    </div>
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
                         <input placeholder="Phone Number *" min="0" required name="phone_number" type="number"
-                          class="form-control form-control-lg">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <div class="form-outline mb-4">
-                        <input placeholder="Aadhar Card Number *" min="0" required name="Aadhar_number" type="number"
                           class="form-control form-control-lg">
                       </div>
                     </div>
@@ -144,20 +129,7 @@ rel="stylesheet"/> -->
                       </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="col-sm-6" style="display: flex;
-                              justify-content: flex-end;
-                              margin-top: 8px;">
-                      <label class="form-label upload-label" for="customFile">College Id Photo</label>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="mb-4">
-                        <input placeholder="Photo" name="college_id" type="file" class="form-control form-control-lg" id="customFile" />
-                      </div>
-                    </div>
-                  </div>
-
-
+                 
                   <div class="field">
                     <button class="firstNext next btn btn-primary btn-block">Next</button>
                   </div>
@@ -200,7 +172,7 @@ rel="stylesheet"/> -->
                     </div>
                   </div>
 
-                  <div class="row">
+                  <div class="row mb-4">
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
                         <input placeholder="Sports Incharge Number" name="sportsincharge_number" type="number"
@@ -213,25 +185,6 @@ rel="stylesheet"/> -->
                         <input placeholder="Sports Incharge Email Id" name="sportsincharge_email" type="email"
                           class="form-control form-control-lg">
                         <!-- <label for="message" class="form-label">Sports Incharge Email id.</label> -->
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row mb-4">
-                    <div class="col-sm-6">
-                      <div class="form-outline mb-4">
-                        <select onchange="handlePool()" class="form-dropdown form-control form-control-lg" name="pool"
-                          id="pool">
-                          <option value="">Select a Pool</option>
-                          <option value="engineering">Engineering</option>
-                          <option value="open">Open</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div id="show-if-open-pool" class="form-outline mb-4">
-                        <input name="school_name" placeholder="School Name" type="text" class="form-control form-control-lg">
-                        <!-- <label for="message" class="form-label">If Open(Name of School)</label> -->
                       </div>
                     </div>
                   </div>
@@ -250,13 +203,21 @@ rel="stylesheet"/> -->
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <input placeholder="Name" required name="player_name" type="text"
+                        <input placeholder="Full Name" required name="player_names" type="text"
                           class="form-control form-control-lg"/>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <input placeholder="Age" required name="Player_age_{{i}}" type="text"
+                        <input placeholder="Email" required name="player_emails" type="email"
+                          class="form-control form-control-lg">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-outline mb-4">
+                        <input placeholder="Phone Number" required name="player_phones" type="number"
                           class="form-control form-control-lg">
                       </div>
                     </div>
@@ -267,13 +228,21 @@ rel="stylesheet"/> -->
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <input placeholder="Name " required name="player_name" type="text"
+                        <input placeholder="Full Name" name="player_names" type="text"
                           class="form-control form-control-lg"/>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <input placeholder="Age " required name="Player_age_{{i}}" type="text"
+                        <input placeholder="Email" name="player_emails" type="email"
+                          class="form-control form-control-lg">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-outline mb-4">
+                        <input placeholder="Phone Number" name="player_phones" type="number"
                           class="form-control form-control-lg">
                       </div>
                     </div>
