@@ -3,11 +3,16 @@ from .models import Sport, Contact, Team, Player
 
 class TeamPlayersListFilter(admin.SimpleListFilter):
     title = 'Team'
-    parameter_name = 'filter-by-team'
+    parameter_name = 'team'
 
     def lookups(self, request, model_admin):
-        teams = Team.objects.all()
         team_list = []
+        selected_sport = request.GET.get('sport', '')
+        if selected_sport:
+            sport = Sport.objects.get(id=selected_sport)
+            teams = Team.objects.filter(sport=sport)
+        else:
+            teams = Team.objects.all()
         for team in teams:
             team_list.append((team.id, f"{team.name} - {team.sport.name}"))
         return team_list
@@ -19,20 +24,42 @@ class TeamPlayersListFilter(admin.SimpleListFilter):
             team = Team.objects.get(id=team_id)
             return queryset.filter(team=team)
 
+class PlayerSportsListFilter(admin.SimpleListFilter):
+    title = 'Sport'
+    parameter_name = 'sport'
+
+    def lookups(self, request, model_admin):
+        sports = Sport.objects.all()
+        sport_list = []
+        for sport in sports:
+            sport_list.append((sport.id, f"{sport.name}"))
+        return sport_list
+
+    def queryset(self, request, queryset):
+
+        sport_id = self.value()
+        if sport_id is not None:
+            sport = Sport.objects.get(id=sport_id)
+            return queryset.filter(team__sport=sport).distinct()
+
 @admin.register(Sport)
 class SportAdmin(admin.ModelAdmin):
     list_display = ("name", "venue", "price", "datetime", "minimumPlayers", "maximumPlayers")
     list_filter = ("venue", "price", "datetime", "minimumPlayers", "maximumPlayers")
+    search_fields = ("name",)
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
     list_display = ("name", "email", "phone","message")
+    search_fields = ("name", "email", "phone")
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
     list_display = ("name", "institute_name", "sport", "datetime", "captain_name", "player_names", "sport_incharge_name", "sport_incharge_number", "sport_incharge_email_id")
+    search_fields = ("name", "institute_name", "sport", "captain_name", "sport_incharge_name", "sport_incharge_number", "sport_incharge_email_id")
 
 @admin.register(Player)
 class PlayerAdmin(admin.ModelAdmin):
     list_display = ("name", "email", "phone")
-    list_filter = (TeamPlayersListFilter, )
+    list_filter = (PlayerSportsListFilter, TeamPlayersListFilter) 
+    search_fields = ("name", "email", "phone", "team__name")
