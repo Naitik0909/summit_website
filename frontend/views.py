@@ -22,9 +22,8 @@ class EventsPageView(View):
             'image':'/static/images/Banner_Homepage.svg',
             }
         allSport = Sport.objects.all()
-        for sport in allSport:
-            sport.rules = sport.rules.split(';');
-            sport.rules = EventsPageView.reducaeArray(sport.rules, 4)
+        # for sport in allSport:
+        #     sport.rules = sport.rules.split(';')
         context = {
                 'introData': introData,
                 'allSport': allSport            }

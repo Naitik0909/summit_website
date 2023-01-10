@@ -20,6 +20,13 @@ class Sport(models.Model):
         self.slug = slugify(self.name)
         super(Sport, self).save()
 
+    def split_rules(self):
+        print("splitting rules")
+        return self.rules.split(';')
+    
+    def split_description(self):
+        return self.description.split(';')
+
     def __str__(self):
         return self.name
 

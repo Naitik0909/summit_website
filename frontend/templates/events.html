@@ -85,7 +85,7 @@
 							<h3 class="heading-2 my-4">{{sport.name}}</h3>
 
 							<ul class="pricing-text mb-5">
-								{% for rule in sport.rules %}
+								{% for rule in sport.split_description %}
 									<li>{{rule}}</li>
 								{% endfor %}
 								
