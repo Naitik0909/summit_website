@@ -16,23 +16,22 @@
               <h3 >Rules</h3>
               <ul class="comment-list">
                 {% for rule in rules %}
-                <li class="comment">
-                  <div class="vcard bio">
+                <li class="mb-0">
+                  <!-- <div class="vcard bio">
                     <img src="{% static 'images/person_1.jpg' %}" alt="Image placeholder">
-                  </div>
-                  <div class="comment-body">
-                    <h3>{{ rule }}</h3>                    
-                  </div>
+                  </div> -->
+                  <!-- <div class="comment-body"> -->
+                    <p style="color: black">• {{ rule }}</p>                    
+                  <!-- </div> -->
                 </li>
                 {% endfor %}
                
                   </ul>
                 </li>
-
                
               </ul>
              
-              <div  class="container" >
+              <!-- <div  class="container" >
                 <div style="padding: 40px 0;" class="row d-flex">
                   <div class="col-md-3 d-flex align-self-stretch ftco-animate">
                     <div class="media block-6 services d-block">
@@ -71,7 +70,7 @@
                     </div>      
                   </div>
                 </div>
-              </div>
+              </div> -->
              
             
            <!-- <h2 class="mb-3 mt-3">Disclaimer</h2>
@@ -82,7 +81,7 @@
               <!-- END comment-list -->
               
              </div>
-              <div class="form-group">
+             <div class="form-group">
                 <a href="{% url 'sport_register' sport.slug %}" class="btn py-3 px-4 btn-primary">Register</a>
               </div>
           </div> <!-- .col-md-8 -->
@@ -92,7 +91,7 @@
               <div class="categories">
                 <h3>Sports</h3>
                 {% for sport in relatedSports %}
-                  <li><a href="{% url 'sport_detail' sport.slug %}">{{ sport.name }}<span>(12)</span></a></li>
+                  <li><a href="{% url 'sport_detail' sport.slug %}">{{ sport.name }}</a></li>
                 {% endfor %}
               </div>
             </div>

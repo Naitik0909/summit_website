@@ -9,6 +9,7 @@ urlpatterns = [
     path('guests/', views.GuestsPageView.as_view(), name='guests'),
     path('prizes/', views.PrizesPageView.as_view(), name='prizes'),
     path('gallery/', views.GalleryPageView.as_view(), name='gallery'),
+    path('about/', views.AboutUsView.as_view(), name='about'),
     path('team_and_contact/', views.TeamAndContactPageView.as_view(), name='team_and_contact'),
     path('scores_and_fixtures/', views.ScoresAndFixturesPageView.as_view(), name='scores_and_fixtures'),
     path('sport_detail/<pk>', views.SportDetailPageView.as_view(), name='sport_detail'),
