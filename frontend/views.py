@@ -22,8 +22,10 @@ class EventsPageView(View):
             'image':'/static/images/Banner_Homepage.svg',
             }
         allSport = Sport.objects.all()
-        # for sport in allSport:
-        #     sport.rules = sport.rules.split(';')
+        for sport in allSport:
+            sport.rules = sport.rules.split(';')
+            n = len(sport.rules) if len(sport.rules) < 4 else 4
+            sport.rules = PrizesPageView.reducaeArray(sport.rules, n)
         context = {
                 'introData': introData,
                 'allSport': allSport            }
@@ -70,8 +72,9 @@ class PrizesPageView(View):
             }
         allSport = Sport.objects.all()
         for sport in allSport:
-            sport.rules = sport.rules.split(';');
-            sport.rules = PrizesPageView.reducaeArray(sport.rules, 4)
+            sport.rules = sport.rules.split(';')
+            n = len(sport.rules) if len(sport.rules) < 4 else 4
+            sport.rules = PrizesPageView.reducaeArray(sport.rules, n)
         context = {
                 'introData': introData,
                 'allSport': allSport            }

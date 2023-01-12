@@ -85,11 +85,9 @@
 							<h3 class="heading-2 my-4">{{sport.name}}</h3>
 
 							<ul class="pricing-text mb-5">
-								{% for rule in sport.split_description %}
+								{% for rule in sport.rules %}
 									<li>{{rule}}</li>
-								{% endfor %}
-								
-								
+								{% endfor %}					
 							</ul>
 
 							<a href="{% url 'sport_detail' sport.slug %}" class="btn btn-primary d-block px-2 py-3">Register</a>

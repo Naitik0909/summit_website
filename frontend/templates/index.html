@@ -188,6 +188,10 @@
 	</div>
 </section>
 
+<section>
+	<img style="width: 100%;" src="{% static 'images/w.png' %}" alt="">
+</section>
+
 <!-- <section class="ftco-section">
     	<div class="container">
     		<div class="row justify-content-center mb-5 pb-3">
@@ -384,7 +388,7 @@
 					<div class="row d-flex">
 						<div class="col-md-6 justify-center d-flex">
 							<div class="img d-flex align-self-stretch"
-								style="background-image:url(/static/images/person_1.jpg);">
+								style="background-image:url(/static/images/girishji.png);">
 							</div>
 						</div>
 						<div class="col-md-6 pl-md-5 py-5">
@@ -410,8 +414,6 @@
 											<i class="icon-quote-right"></i>
 										</span>
 									</p>
-									<a href="#" class="btn btn-primary d-block px-2 py-3 btn-short">Know More</a>
-
 								</div>
 							</div>
 						</div>
@@ -447,8 +449,6 @@
 											<i class="icon-quote-right"></i>
 										</span>
 									</p>
-									<a href="#" class="btn btn-primary d-block px-2 py-3 btn-short">Know More</a>
-
 								</div>
 							</div>
 						</div>
@@ -556,6 +556,48 @@
 			</div>
 		</div>
 	</div>
+</section>
+
+<section class="mb-5">
+	<div class="container">
+		<h2>Frequently Asked Questions</h2>
+		<div class="accordion">
+		  <div class="accordion-item">
+			<button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Which colleges and universities can participate?
+			</span><span class="icon" aria-hidden="true"></span></button>
+			<div class="accordion-content">
+			  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+			</div>
+		  </div>
+		  <div class="accordion-item">
+			<button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Can I play more than one sport?
+			</span><span class="icon" aria-hidden="true"></span></button>
+			<div class="accordion-content">
+			  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+			</div>
+		  </div>
+		  <div class="accordion-item">
+			<button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">Is it necessary to participate as a university team or a college team?
+			</span><span class="icon" aria-hidden="true"></span></button>
+			<div class="accordion-content">
+			  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+			</div>
+		  </div>
+		  <div class="accordion-item">
+			<button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">How do I register my team?
+			</span><span class="icon" aria-hidden="true"></span></button>
+			<div class="accordion-content">
+			  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+			</div>
+		  </div>
+		  <div class="accordion-item">
+			<button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">Will we be provided with any accommodation?</span><span class="icon" aria-hidden="true"></span></button>
+			<div class="accordion-content">
+			  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+			</div>
+		  </div>
+		</div>
+	  </div>
 </section>
 
 <!-- <section class="ftco-section bg-light">
@@ -761,4 +803,24 @@
 			</div>
 		</div>
 	</div>
-</section> -->{% endblock %}
+</section> -->
+
+<script type="text/javascript">
+	console.log("hello");
+	const items = document.querySelectorAll(".accordion button");
+
+	function toggleAccordion() {
+	const itemToggle = this.getAttribute('aria-expanded');
+	
+	for (i = 0; i < items.length; i++) {
+		items[i].setAttribute('aria-expanded', 'false');
+	}
+	
+	if (itemToggle == 'false') {
+		this.setAttribute('aria-expanded', 'true');
+	}
+	}
+
+	items.forEach(item => item.addEventListener('click', toggleAccordion));
+</script>
+{% endblock %}
