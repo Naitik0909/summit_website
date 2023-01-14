@@ -44,8 +44,8 @@ class PlayerSportsListFilter(admin.SimpleListFilter):
 
 @admin.register(Sport)
 class SportAdmin(admin.ModelAdmin):
-    list_display = ("name", "venue", "price", "datetime", "minimumPlayers", "maximumPlayers")
-    list_filter = ("venue", "price", "datetime", "minimumPlayers", "maximumPlayers")
+    list_display = ("name", "venue", "priceMale","priceFemale", "datetime", "minimumPlayersMale", "maximumPlayersMale","minimumPlayersFemale","maximumPlayersFemale")
+    list_filter = ("venue",  "priceMale","priceFemale", "datetime", "minimumPlayersMale", "maximumPlayersMale","minimumPlayersFemale","maximumPlayersFemale")
     search_fields = ("name",)
 
 @admin.register(Contact)

@@ -11,10 +11,13 @@ class Sport(models.Model):
     logo = models.FileField(upload_to='sport_images', null=True, blank=True)
     slug = models.SlugField(max_length=200, unique=True, null=True, blank=True)
     venue = models.CharField(max_length=200)
-    price = models.IntegerField()
+    priceMale = models.IntegerField(null=True, blank=True)
+    priceFemale = models.IntegerField(null=True, blank=True)
     datetime = models.DateTimeField()
-    minimumPlayers = models.IntegerField( null=True)
-    maximumPlayers = models.IntegerField( null=True)
+    minimumPlayersMale = models.IntegerField( null=True, blank=True)
+    maximumPlayersMale = models.IntegerField( null=True, blank=True)
+    minimumPlayersFemale = models.IntegerField( null=True, blank=True)
+    maximumPlayersFemale = models.IntegerField( null=True, blank=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
