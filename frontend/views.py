@@ -166,7 +166,9 @@ class SportDetailPageView(View):
 class SportRegisterPageView(View):
 
     def get(self, request, *args, **kwargs):
-        sportSlug = self.kwargs['pk']
+        params = self.kwargs['pk'].split('-')
+        sportSlug = params[0]
+        gender = params[1]
         # if sport == "":
             # Return 404 page
         try:
@@ -174,9 +176,13 @@ class SportRegisterPageView(View):
             introData = {
             'title': sportObject.name,
             'desc':sportObject.description,
-            }   
-            miniList = [*range(1, sportObject.minimumPlayers+1, 1)]
-            maxiList = [*range(sportObject.minimumPlayers+1, sportObject.maximumPlayers+1, 1)]
+            }
+            if gender == 'men':
+                miniList = [*range(1, sportObject.minimumPlayersMale+1, 1)]
+                maxiList = [*range(sportObject.minimumPlayersMale+1, sportObject.maximumPlayersMale+1, 1)]
+            elif gender == 'women':
+                miniList = [*range(1, sportObject.minimumPlayersFemale+1, 1)]
+                maxiList = [*range(sportObject.minimumPlayersFemale+1, sportObject.maximumPlayersFemale+1, 1)]
             sportObject.minimumPlayers = miniList
             sportObject.maximumPlayers = maxiList
             context = {
