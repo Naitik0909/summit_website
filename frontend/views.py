@@ -144,7 +144,7 @@ class SportDetailPageView(View):
             # Return 404 page
         try:
             sportObject = Sport.objects.get(slug=sportSlug)
-            relatedSports = Sport.objects.exclude(slug=sportSlug).values('name', 'slug')
+            relatedSports = Sport.objects.exclude(slug=sportSlug)
             introData = {
             'title': sportObject.name,
             'desc':sportObject.description,
@@ -152,7 +152,6 @@ class SportDetailPageView(View):
             }   
             context = {
                 'sport': sportObject,
-                'rules' : sportObject.rules.split(';'),
                 'relatedSports' : relatedSports,
                 'introData': introData
                 
@@ -166,7 +165,7 @@ class SportDetailPageView(View):
 class SportRegisterPageView(View):
 
     def get(self, request, *args, **kwargs):
-        params = self.kwargs['pk'].split('-')
+        params = self.kwargs['pk'].split('_')
         sportSlug = params[0]
         gender = params[1]
         # if sport == "":

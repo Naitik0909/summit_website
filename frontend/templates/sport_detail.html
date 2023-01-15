@@ -13,9 +13,12 @@
             
           <div class="col-md-8 order-md-last ftco-animate" >
             <div >
-              <h3 >Rules</h3>
+              <h3>
+                <img width="35" src="{{ sport.logo.url }}" alt="">
+                Rules
+              </h3>
               <ul class="comment-list">
-                {% for rule in rules %}
+                {% for rule in sport.split_rules %}
                 <li class="mb-0">
                   <!-- <div class="vcard bio">
                     <img src="{% static 'images/person_1.jpg' %}" alt="Image placeholder">
@@ -82,16 +85,22 @@
               
              </div>
              <div class="form-group">
-                <a href="{% url 'sport_register' sport.slug %}" class="btn py-3 px-4 btn-primary">Register</a>
+                <a href="{% url 'sport_register' sport.slug %}_men" class="btn py-3 px-4 btn-primary">Register (Men)</a>
+                &ensp;
+                <a href="{% url 'sport_register' sport.slug %}_women" class="btn py-3 px-4 btn-primary">Register (Women)</a>
               </div>
           </div> <!-- .col-md-8 -->
           <div class="col-md-4 sidebar ftco-animate">
            
             <div class="sidebar-box ftco-animate">
               <div class="categories">
-                <h3>Sports</h3>
+                <h3>Other Sports</h3>
                 {% for sport in relatedSports %}
-                  <li><a href="{% url 'sport_detail' sport.slug %}">{{ sport.name }}</a></li>
+                  <li>
+                    <a href="{% url 'sport_detail' sport.slug %}">
+                    <img width="25" height="25" src="{{ sport.logo.url }}" alt="">
+                    &nbsp;{{ sport.name }}</a>
+                  </li>
                 {% endfor %}
               </div>
             </div>

@@ -327,8 +327,8 @@
 
 
 function makeTimer() {
-
-		var endTime = new Date("16 January 2023 19:30:00 GMT+01:00");			
+		console.log("HELLO HELLO");
+		var endTime = new Date("20 February 2023 19:30:00 GMT+01:00");			
 		endTime = (Date.parse(endTime) / 1000);
 
 		var now = new Date();
@@ -353,7 +353,7 @@ function makeTimer() {
 }
 
 setInterval(function() { makeTimer(); }, 1000);
-
+console.log("LOADED");
 
 
 })(jQuery);
