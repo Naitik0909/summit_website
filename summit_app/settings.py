@@ -27,11 +27,14 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 SECRET_KEY = env("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(env("DEBUG")))
 
 ALLOWED_HOSTS = [
     'http://127.0.0.1:8000',
-    'https://summit-website.herokuapp.com'
+    '127.0.0.1',
+    'https://20.204.12.13',
+    'http://20.204.12.13',
+    '20.204.12.13',
 ]
 
 
@@ -130,7 +133,7 @@ USE_TZ = True
 #AWS credentails
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'mysite/static'),
+    os.path.join(BASE_DIR, 'staticfiles'),
 ]
 
 AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
