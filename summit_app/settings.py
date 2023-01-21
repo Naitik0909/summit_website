@@ -35,6 +35,8 @@ ALLOWED_HOSTS = [
     'https://20.204.12.13',
     'http://20.204.12.13',
     '20.204.12.13',
+    'http://summit.mitwpu.edu.in',
+    'https://summit.mitwpu.edu.in',
 ]
 
 
