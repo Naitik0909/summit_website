@@ -12065,10 +12065,13 @@ textarea.form-control {
 }
 
 .testimony-wrap .name {
-  font-weight: 400;
-  font-size: 18px;
+  font-weight: 800;
+  font-size: 22px;
   margin-bottom: 0;
-  color: #000000;
+  color: white;
+  background: #e47a4a;
+  margin-top: -10px;
+  border-radius: 5px;
 }
 
 .testimony-wrap .position {
@@ -12947,4 +12950,13 @@ textarea.form-control {
 
 .form-outline .form-control.form-control-lg{
   padding-bottom: 10px;
+}
+
+.img-thumbnail{
+  background: linear-gradient(360deg, #fdfbe1 0%, #e8c269 0%, #ed8842 100%);
+  width: 200px;
+}
+
+.bg-light-yellow{
+  background-color: #fffeeb !important;
 }

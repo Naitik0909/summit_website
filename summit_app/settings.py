@@ -30,13 +30,8 @@ SECRET_KEY = env("DJANGO_SECRET_KEY")
 DEBUG = bool(int(env("DEBUG")))
 
 ALLOWED_HOSTS = [
-    'http://127.0.0.1:8000',
     '127.0.0.1',
-    'https://20.204.12.13',
-    'http://20.204.12.13',
     '20.204.12.13',
-    'http://summit.mitwpu.edu.in',
-    'https://summit.mitwpu.edu.in',
     'summit.mitwpu.edu.in',
 ]
 

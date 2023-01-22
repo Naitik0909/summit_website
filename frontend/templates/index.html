@@ -34,11 +34,11 @@
 		<div class="carousel-item fixed-height">
 			<div class="fixed-height"
 				style="display: flex;
-		align-items: center;background-image: url('https://summit.mitwpu.edu.in/wp-content/uploads/2021/11/IMG_8250_11-1536x1024.jpg')">
+		align-items: center;background-image: url('/static/images/home_carousel.jpg')">
 				<div style="display: flex;justify-content: center;
 				flex-direction: column;align-items: center;" class="container">
 					<h2 style="color:white">MIT WPU Summit 2023</h2>
-					<a href="#" class="btn btn-primary d-block px-2 py-3 btn-short">Know More</a>
+					<a href="{% url 'about' %}" class="btn btn-primary d-block px-2 py-3 btn-short">Know More</a>
 				</div>
 			</div>
 
@@ -374,7 +374,7 @@
 			</div>
 		</section>
 		 -->
-<section class="ftco-counter img mt-5">
+<section class="ftco-counter img mt-5" style="min-height: 800px;">
 	<div class="container">
 		<div class="row justify-content-center mb-5 pb-3">
 			<div class="col-md-7 text-center heading-section ftco-animate">
@@ -400,15 +400,16 @@
 										<span class="quote align-items-center justify-content-center">
 											<i class="icon-quote-left"></i>
 										</span> <br>
-										It gives me immense pleasure to know that the 16th National Level Sports Meet, "Summit '23," is taking place from 20ᵗʰ to 24th February 2023. It is encouraging to
+										It gives me immense pleasure to know that the 16th National Level Sports Meet, 
+										"Summit '23," is taking place. It is encouraging to
 										learn that MIT-WPU Summit will include private universities from throughout the
-										country in addition to engineering colleges.
+										country in addition to engineering colleges. <br>
 
 										I appreciate the vision and significant steps taken by Revered Prof. Dr. Vishwanath
 										Karad, Shri. Rahul V. Karad and MIT-WPU to ensure the students' overall progress
-										and participation in sports. Sports not only promote physical benefits but also
-										assists individuals in developing perseverance, teamwork, and discipline.
-										I believe Summit '23 will prove to be a truly unique event and a fantastic learning environment for students across the nation. I want to emphasize that anything is possible for youngsters if they put forth the necessary work, dedication, and commitment. I convey my best wishes to all the students who are participating in this event and congratulate the coordinators while extending them my best wishes for success at Summit '23.
+										and participation in sports.
+										I believe Summit '23 will prove to be a truly unique event and a fantastic 
+										learning environment for students across the nation.
 										<br>
 										<span class="quote align-items-center justify-content-center">
 											<i class="icon-quote-right"></i>
@@ -466,7 +467,7 @@
 		</div>
 	</div>
 </section>
-<section class="ftco-section testimony-section">
+<section class="ftco-section testimony-section mb-4">
 	<div class="container">
 		<div class="row justify-content-center mb-5 pb-3">
 			<div class="col-md-7 text-center heading-section ftco-animate">
@@ -479,79 +480,205 @@
 				<div class="carousel-testimony owl-carousel ftco-owl">
 					<div class="item">
 						<div class="testimony-wrap text-center py-4 pb-5">
-							<div class="user-img mb-4" style="background-image: url(/static/images/person_1.jpg)">
-								<!-- <span class="quote d-flex align-items-center justify-content-center">
-									<i class="icon-quote-left"></i>
-								</span> -->
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/poonam_raut.png)">
 							</div>
-							<div class="text">
-								<!-- <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
-									and Consonantia, there live the blind texts.</p> -->
-								<p class="name">Roger Scott</p>
-								<span class="position">Marketing Manager</span>
+							<div class="text guests-wrap">
+								<p class="name">Poonam Raut</p>
+								<!-- <span class="position">Marketing Manager</span> -->
 							</div>
 						</div>
 					</div>
 					<div class="item">
 						<div class="testimony-wrap text-center py-4 pb-5">
-							<div class="user-img mb-4" style="background-image: url(/static/images/person_2.jpg)">
-								<!-- <span class="quote d-flex align-items-center justify-content-center">
-									<i class="icon-quote-left"></i>
-								</span> -->
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/baichung_bhutia.png)">
 							</div>
-							<div class="text">
-								<!-- <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
-									and Consonantia, there live the blind texts.</p> -->
-								<p class="name">Roger Scott</p>
-								<span class="position">Interface Designer</span>
+							<div class="text guests-wrap">
+								<p class="name">Baichung Bhutia</p>
+								<!-- <span class="position">Marketing Manager</span> -->
 							</div>
 						</div>
 					</div>
 					<div class="item">
 						<div class="testimony-wrap text-center py-4 pb-5">
-							<div class="user-img mb-4" style="background-image: url(/static/images/person_3.jpg)">
-								<!-- <span class="quote d-flex align-items-center justify-content-center">
-									<i class="icon-quote-left"></i>
-								</span> -->
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/vvs_laxman.png)">
 							</div>
 							<div class="text">
-								<!-- <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
-									and Consonantia, there live the blind texts.</p> -->
-								<p class="name">Roger Scott</p>
-								<span class="position">UI Designer</span>
+								<p class="name">V.V.S Laxman</p>
+								<!-- <span class="position">Marketing Manager</span> -->
 							</div>
 						</div>
 					</div>
 					<div class="item">
 						<div class="testimony-wrap text-center py-4 pb-5">
-							<div class="user-img mb-4" style="background-image: url(/static/images/person_1.jpg)">
-								<!-- <span class="quote d-flex align-items-center justify-content-center">
-									<i class="icon-quote-left"></i>
-								</span> -->
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/vijendra_singh.png)">
 							</div>
-							<div class="text">
-								<!-- <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
-									and Consonantia, there live the blind texts.</p> -->
-								<p class="name">Roger Scott</p>
-								<span class="position">Web Developer</span>
+							<div class="text guests-wrap">
+								<p class="name">Vijender Singh</p>
+								<!-- <span class="position">Marketing Manager</span> -->
 							</div>
 						</div>
 					</div>
 					<div class="item">
 						<div class="testimony-wrap text-center py-4 pb-5">
-							<div class="user-img mb-4" style="background-image: url(/static/images/person_1.jpg)">
-								<!-- <span class="quote d-flex align-items-center justify-content-center">
-									<i class="icon-quote-left"></i>
-								</span> -->
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/yogeshwar_dutt.png)">
 							</div>
-							<div class="text">
-								<!-- <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
-									and Consonantia, there live the blind texts.</p> -->
-								<p class="name">Roger Scott</p>
-								<span class="position">System Analyst</span>
+							<div class="text guests-wrap">
+								<p class="name">Yogeshwar Dutt</p>
+								<!-- <span class="position">Marketing Manager</span> -->
 							</div>
 						</div>
 					</div>
+					<div class="item">
+						<div class="testimony-wrap text-center py-4 pb-5">
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/irfan_pathan.png)">
+							</div>
+							<div class="text guests-wrap">
+								<p class="name">Irfan Pathan</p>
+								<!-- <span class="position">Marketing Manager</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimony-wrap text-center py-4 pb-5">
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/mary_kom.png)">
+							</div>
+							<div class="text guests-wrap">
+								<p class="name">M.C Mary Kom</p>
+								<!-- <span class="position">Marketing Manager</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimony-wrap text-center py-4 pb-5">
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/dilip_vengsarkar.png)">
+							</div>
+							<div class="text guests-wrap">
+								<p class="name">Dilip Vengsarkar</p>
+								<!-- <span class="position">Marketing Manager</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimony-wrap text-center py-4 pb-5">
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/kiran_more.png)">
+							</div>
+							<div class="text guests-wrap">
+								<p class="name">Kiran More</p>
+								<!-- <span class="position">Marketing Manager</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimony-wrap text-center py-4 pb-5">
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/sreejesh.png)">
+							</div>
+							<div class="text guests-wrap">
+								<p class="name">Sreejesh P.R</p>
+								<!-- <span class="position">Marketing Manager</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimony-wrap text-center py-4 pb-5">
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/cheteshwar_pujara.png)">
+							</div>
+							<div class="text guests-wrap">
+								<p class="name">Cheteshwar Pujara</p>
+								<!-- <span class="position">Marketing Manager</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimony-wrap text-center py-4 pb-5">
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/mithali_raj.png)">
+							</div>
+							<div class="text guests-wrap">
+								<p class="name">Mithali Raj</p>
+								<!-- <span class="position">Marketing Manager</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimony-wrap text-center py-4 pb-5">
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/abhijit_kunte.png)">
+							</div>
+							<div class="text guests-wrap">
+								<p class="name">Abhijit Kunte</p>
+								<!-- <span class="position">Marketing Manager</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimony-wrap text-center py-4 pb-5">
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/rehan.png)">
+							</div>
+							<div class="text guests-wrap">
+								<p class="name">Rehan Poncha</p>
+								<!-- <span class="position">Marketing Manager</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimony-wrap text-center py-4 pb-5">
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/kedar_jadhav.png)">
+							</div>
+							<div class="text guests-wrap">
+								<p class="name">Kedar Jadhav</p>
+								<!-- <span class="position">Marketing Manager</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimony-wrap text-center py-4 pb-5">
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/ronjan.png)">
+							</div>
+							<div class="text guests-wrap">
+								<p class="name">Ronjan Sodhi</p>
+								<!-- <span class="position">Marketing Manager</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimony-wrap text-center py-4 pb-5">
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/chandu_borde.png)">
+							</div>
+							<div class="text guests-wrap">
+								<p class="name">Chandu Borde</p>
+								<!-- <span class="position">Marketing Manager</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimony-wrap text-center py-4 pb-5">
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/sandeep_singh.png)">
+							</div>
+							<div class="text guests-wrap">
+								<p class="name">Sandeep Singh</p>
+								<!-- <span class="position">Marketing Manager</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimony-wrap text-center py-4 pb-5">
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/nitin.png)">
+							</div>
+							<div class="text guests-wrap">
+								<p class="name">Nitin Madane</p>
+								<!-- <span class="position">Marketing Manager</span> -->
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="testimony-wrap text-center py-4 pb-5">
+							<div class="user-img mb-4" style="background-image: url(/static/images/guests/shital.png)">
+							</div>
+							<div class="text guests-wrap">
+								<p class="name">Shital Mahajan</p>
+								<!-- <span class="position">Marketing Manager</span> -->
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>
