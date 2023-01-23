@@ -14,6 +14,6 @@ urlpatterns = [
     path('scores_and_fixtures/', views.ScoresAndFixturesPageView.as_view(), name='scores_and_fixtures'),
     path('sport_detail/<pk>', views.SportDetailPageView.as_view(), name='sport_detail'),
     path('sport_register/<pk>', views.SportRegisterPageView.as_view(), name='sport_register'),
-
+    path('partial_form/', views.PartialForm.as_view(), name='partial_form')
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

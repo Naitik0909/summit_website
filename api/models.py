@@ -55,6 +55,7 @@ class Team(models.Model):
     sport_incharge_email_id = models.CharField(max_length=200)
     player_names = models.TextField(default="none")
     captain_name = models.CharField(max_length=200, default="none")
+    transaction_id = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
         return self.name

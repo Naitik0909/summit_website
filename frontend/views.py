@@ -18,7 +18,7 @@ class EventsPageView(View):
         print(request.resolver_match.view_name)
         introData = {
             'title': 'Events',
-            'desc':'Lorem ipsum dummy text',
+            'desc':'',
             'image':'/static/images/Banner_Homepage.svg',
             }
         allSport = Sport.objects.all()
@@ -47,9 +47,8 @@ class GuestsPageView(View):
      def get(self, request, *args, **kwargs):
         introData = {
             'title': 'Guests',
-            'desc':'Lorem ipsum dummy text',
-            
-       
+            'desc':'',
+            'image':'/static/images/Banner_Homepage.svg',
         }
         context = {
                 'introData': introData
@@ -68,7 +67,8 @@ class PrizesPageView(View):
         print(request.resolver_match.view_name)
         introData = {
             'title': 'Prizes',
-            'desc':'Lorem ipsum dummy text',
+            'desc':'',
+            'image':'/static/images/Banner_Homepage.svg',
             }
         allSport = Sport.objects.all()
         for sport in allSport:
@@ -84,7 +84,8 @@ class GalleryPageView(View):
      def get(self, request, *args, **kwargs):
         introData = {
             'title': 'Gallery',
-            'desc':'Lorem ipsum dummy text',
+            'desc':'',
+            'image':'/static/images/Banner_Homepage.svg',
            
         }
         context = {
@@ -98,9 +99,10 @@ class TeamAndContactPageView(View):
     def get(self, request, *args, **kwargs):
         introData = {
             'title': 'Contact Us',
-            'desc':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?',
+            'desc':'',
+            'image':'/static/images/Banner_Homepage.svg',
             # 'question':'What are you looking for?',
-            'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
+            # 'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
        
         }
         context = {
@@ -126,9 +128,11 @@ class ScoresAndFixturesPageView(View):
 
         introData = {
             'title': 'Scores & Fixtures',
-            'desc':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?',
+            'image':'/static/images/Banner_Homepage.svg',
+
+            # 'desc':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?',
             # 'question':'What are you looking for?',
-            'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
+            # 'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
        
         }
         context = {
@@ -175,6 +179,7 @@ class SportRegisterPageView(View):
             introData = {
             'title': sportObject.name,
             'desc':sportObject.description,
+            'image':'/static/images/Banner_Homepage.svg',
             }
             if gender == 'men':
                 miniList = [*range(1, sportObject.minimumPlayersMale+1, 1)]
@@ -249,3 +254,16 @@ class SportRegisterPageView(View):
 
 
         return redirect('home')
+
+class PartialForm(View):
+
+
+    def get(self, request, *args, **kwargs):
+        introData = {
+                'title': "Update Form Details",
+                'image':'/static/images/Banner_Homepage.svg',
+                }
+        context = {
+            "introData": introData
+        }
+        return render(request, 'partial_form.html', context=context)

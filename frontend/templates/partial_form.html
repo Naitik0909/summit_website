@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body_block %}
+{% load static %}
+{% block title %}<title>Guests - MIT-WPU SUMMIT 2023</title> {% endblock %}
+
+{% include 'head_common.html' %}
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            <form method="post" class="bg-light p-5 contact-form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="">Enter your transaction ID</label>
+                    <input name="transaction_id" type="text" class="form-control" required placeholder="Transaction ID">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-primary py-3 px-5">
+                </div>
+            </form>
+        </div>
+</div>
+
+</section>
+
+
+{% endblock %}
