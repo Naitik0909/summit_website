@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block body_block %}
+{% load static %}
+{% block title %}<title>Guests - MIT-WPU SUMMIT 2023</title> {% endblock %}
+
+{% include 'head_common.html' %}
+
+<section class="ftco-section">
+    <div class="container">
+        <!-- {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} -->
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                
+            </div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="row">
+            <form method="post" class="bg-light p-5 contact-form">
+                {% csrf_token %}
+
+                {% for i in sport.minimumPlayers %}
+                 
+                  <div class="label" style="text-align: start;">Player {{i}} details *</div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input placeholder="Full Name" required name="player_names" type="text"
+                          class="form-control form-control-lg"/>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input placeholder="Email" required name="player_emails" type="email"
+                          class="form-control form-control-lg">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input placeholder="Phone Number" required name="player_phones" type="number"
+                          class="form-control form-control-lg">
+                      </div>
+                    </div>
+                  </div>
+                                    {% endfor %}
+                  {% for i in sport.maximumPlayers %}
+                  <div class="label" style="text-align: start;">Player {{i}} details </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input placeholder="Full Name" name="player_names" type="text"
+                          class="form-control form-control-lg"/>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input placeholder="Email" name="player_emails" type="email"
+                          class="form-control form-control-lg">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input placeholder="Phone Number" name="player_phones" type="number"
+                          class="form-control form-control-lg">
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-primary py-3 px-5">
+                </div>
+            </form>
+        </div>
+</div>
+
+</section>
+
+
+{% endblock %}

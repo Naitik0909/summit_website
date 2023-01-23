@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, View
+from django.contrib import messages
 
 from api.models import Sport, Team, Contact, Player
 from .utils import listToString, stringToBool
@@ -257,13 +258,41 @@ class SportRegisterPageView(View):
 
 class PartialForm(View):
 
-
     def get(self, request, *args, **kwargs):
         introData = {
-                'title': "Update Form Details",
+                'title': "Update Team Details",
                 'image':'/static/images/Banner_Homepage.svg',
                 }
         context = {
             "introData": introData
         }
         return render(request, 'partial_form.html', context=context)
+
+    def post(self, request, *args, **kwargs):
+        transaction_id = request.POST.get('transaction_id')
+        # validate transaction ID
+        # if invalid:
+        #     messages.info(request, 'Your password has been changed successfully!')
+        #     return redirect('partial_form')
+        # else
+        # team = Team.objects.get(transaction_id=transaction_id)
+        # add data to sesstion storage
+
+        return redirect('update_team')
+
+class UpdateTeamPage(View):
+    def get(self, request, *args, **kwargs):
+        introData = {
+        'title': "Update Team Details",
+        'image':'/static/images/Banner_Homepage.svg',
+        }
+        sportObject = Sport.objects.get(slug="table-tennis")
+        miniList = [*range(1, sportObject.minimumPlayersFemale+1, 1)]
+        maxiList = [*range(sportObject.minimumPlayersFemale+1, sportObject.maximumPlayersFemale+1, 1)]
+        sportObject.minimumPlayers = miniList
+        sportObject.maximumPlayers = maxiList
+        context = {
+            "introData": introData,
+            "sport": sportObject
+        }
+        return render(request, 'update_team.html', context=context)
