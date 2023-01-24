@@ -26,7 +26,9 @@
             {% endfor %}
         {% endif %}
 
-        <div class="row">
+        <h1>{{ team.name }}</h1>
+
+        <div class="row" style="justify-content: center;">
             <form method="post" class="bg-light p-5 contact-form">
                 {% csrf_token %}
 
@@ -36,13 +38,13 @@
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <input placeholder="Full Name" required name="player_names" type="text"
+                        <input id="name-{{i}}" placeholder="Full Name" required name="player_names" type="text"
                           class="form-control form-control-lg"/>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <input placeholder="Email" required name="player_emails" type="email"
+                        <input id="email-{{i}}" placeholder="Email" required name="player_emails" type="email"
                           class="form-control form-control-lg">
                       </div>
                     </div>
@@ -50,7 +52,7 @@
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <input placeholder="Phone Number" required name="player_phones" type="number"
+                        <input id="phone-{{i}}" placeholder="Phone Number" required name="player_phones" type="number"
                           class="form-control form-control-lg">
                       </div>
                     </div>
@@ -61,13 +63,13 @@
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <input placeholder="Full Name" name="player_names" type="text"
+                        <input id="name-{{i}}" placeholder="Full Name" name="player_names" type="text"
                           class="form-control form-control-lg"/>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <input placeholder="Email" name="player_emails" type="email"
+                        <input id="email-{{i}}" placeholder="Email" name="player_emails" type="email"
                           class="form-control form-control-lg">
                       </div>
                     </div>
@@ -75,7 +77,7 @@
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <input placeholder="Phone Number" name="player_phones" type="number"
+                        <input id="phone-{{i}}" placeholder="Phone Number" name="player_phones" type="number"
                           class="form-control form-control-lg">
                       </div>
                     </div>
@@ -91,5 +93,21 @@
 
 </section>
 
+<script>
 
-{% endblock %}
+  // Logic to prefill values from context
+
+  var names = {{ names|safe }};
+  var emails = {{ emails|safe }};
+  var phones = {{ phones|safe }};
+  var i = 0;
+  while(i<names.length){
+    $(`#name-${i+1}`).val(names[i]);
+    $(`#email-${i+1}`).val(emails[i]);
+    $(`#phone-${i+1}`).val(phones[i]);
+    i++;
+  }
+
+</script>
+
+{% endblock %}use jinja in n
