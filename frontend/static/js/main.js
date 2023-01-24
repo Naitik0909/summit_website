@@ -327,7 +327,6 @@
 
 
 function makeTimer() {
-		console.log("HELLO HELLO");
 		var endTime = new Date("20 February 2023 19:30:00 GMT+01:00");			
 		endTime = (Date.parse(endTime) / 1000);
 

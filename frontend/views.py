@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, View
+from django.contrib import messages
 
 from api.models import Sport, Team, Contact, Player
 from .utils import listToString, stringToBool
@@ -181,12 +182,14 @@ class SportRegisterPageView(View):
             'desc':sportObject.description,
             'image':'/static/images/Banner_Homepage.svg',
             }
+
+            # excluding captain
             if gender == 'men':
-                miniList = [*range(1, sportObject.minimumPlayersMale+1, 1)]
-                maxiList = [*range(sportObject.minimumPlayersMale+1, sportObject.maximumPlayersMale+1, 1)]
+                miniList = [*range(1, sportObject.minimumPlayersMale, 1)]
+                maxiList = [*range(sportObject.minimumPlayersMale, sportObject.maximumPlayersMale, 1)]
             elif gender == 'women':
-                miniList = [*range(1, sportObject.minimumPlayersFemale+1, 1)]
-                maxiList = [*range(sportObject.minimumPlayersFemale+1, sportObject.maximumPlayersFemale+1, 1)]
+                miniList = [*range(1, sportObject.minimumPlayersFemale, 1)]
+                maxiList = [*range(sportObject.minimumPlayersFemale, sportObject.maximumPlayersFemale, 1)]
             sportObject.minimumPlayers = miniList
             sportObject.maximumPlayers = maxiList
             context = {
@@ -228,7 +231,6 @@ class SportRegisterPageView(View):
         player_emails = [i for i in player_emails if i]
         player_phones = [i for i in player_phones if i]
         player_names = [i for i in player_names if i]
-        print(player_names)
         
         team = Team.objects.create(
             name = college_name,
@@ -252,18 +254,64 @@ class SportRegisterPageView(View):
             player.team.add(team)
             player.save()
 
-
+        messages.info(request, 'Your team has been successfully registered!')
         return redirect('home')
 
-class PartialForm(View):
-
-
+class UpdateTeamPage(View):
     def get(self, request, *args, **kwargs):
+        
+        transaction_id = self.kwargs['pk']
+        # team = Team.objects.get(transaction_id=transaction_id)
+        team = Team.objects.get(id=int(transaction_id))
+        players = Player.objects.filter(team=team)
+        names = []
+        emails = []
+        phones = []
+        
+        for player in players:
+            names.append(player.name)
+            emails.append(player.email)
+            phones.append(player.phone)
+
         introData = {
-                'title': "Update Form Details",
-                'image':'/static/images/Banner_Homepage.svg',
-                }
-        context = {
-            "introData": introData
+        'title': "Update Team Details",
+        'image':'/static/images/Banner_Homepage.svg',
         }
-        return render(request, 'partial_form.html', context=context)
+        sportObject = Sport.objects.get(slug="table-tennis")
+        miniList = [*range(1, sportObject.minimumPlayersMale+1, 1)]
+        maxiList = [*range(sportObject.minimumPlayersMale+1, sportObject.maximumPlayersMale+1, 1)]
+        sportObject.minimumPlayers = miniList
+        sportObject.maximumPlayers = maxiList
+
+        context = {
+            "introData": introData,
+            "sport": sportObject,
+            "names": names,
+            "emails": emails,
+            "phones": phones,
+            "team": team,
+        }
+        return render(request, 'update_team.html', context=context)
+
+    def post(self, request, *args, **kwargs):
+
+        transaction_id = self.kwargs['pk']
+        team = Team.objects.get(id=int(transaction_id))
+
+        # Player details
+        player_emails = [i for i in request.POST.getlist('player_emails') if i]
+        player_phones = [i for i in request.POST.getlist('player_phones') if i]
+        player_names = [i for i in request.POST.getlist('player_names') if i]
+
+        for i in range(len(player_names)):
+            player = Player.objects.get_or_create(
+                email = player_emails[i],
+            )[0]
+            
+            player.name = player_names[i]
+            player.phone = player_phones[i]
+            player.team.add(team)
+            player.save()
+
+        messages.info(request, 'Your team has been successfully edited!')
+        return redirect('home')
