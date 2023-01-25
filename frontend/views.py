@@ -19,7 +19,7 @@ class EventsPageView(View):
         print(request.resolver_match.view_name)
         introData = {
             'title': 'Events',
-            'desc':'',
+            'desc':'MIT-WPU Summit 2023 is back with 11 sports. Check them out below',
             'image':'/static/images/Banner_Homepage.svg',
             }
         allSport = Sport.objects.all()
@@ -152,7 +152,7 @@ class SportDetailPageView(View):
             relatedSports = Sport.objects.exclude(slug=sportSlug)
             introData = {
             'title': sportObject.name,
-            'desc':sportObject.description,
+            'desc':'MIT-WPU Summit 2023 is back with 11 sports. Check them out below',
             'image':sportObject.image.url,
             }   
             context = {
@@ -179,7 +179,7 @@ class SportRegisterPageView(View):
             sportObject = Sport.objects.get(slug=sportSlug)
             introData = {
             'title': sportObject.name,
-            'desc':sportObject.description,
+            'desc':'MIT-WPU Summit 2023 is back with 11 sports. Check them out below',
             'image':'/static/images/Banner_Homepage.svg',
             }
 
