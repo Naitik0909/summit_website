@@ -238,7 +238,7 @@ body{
   font-family: 'Lato', sans-serif;
 }
 
-#show-if-open-pool{
+#show-if-open-pool, #accomodation_choice{
     display: none;
 }
 

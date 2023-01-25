@@ -1,13 +1,14 @@
 
 initMultiStepForm();
 
-function handlePool(){
-    var pool = $('#pool').find(":selected").text();
-    if(pool == 'Open'){
-        $('#show-if-open-pool').show();
+function handleAccomodation(){
+    var accomodation = $('#accomodation').find(":selected").text();
+    console.log(accomodation);
+    if(accomodation == 'Yes'){
+        $('#accomodation_choice').show();
     }
     else{
-        $('#show-if-open-pool').hide();
+        $('#accomodation_choice').hide();
     }
 }
 

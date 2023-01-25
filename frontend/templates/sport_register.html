@@ -152,16 +152,6 @@ rel="stylesheet"/> -->
                   </div>
 
                   <div class="row">
-                    <div class="col-sm-6">
-                      <div class="form-outline mb-4">
-                        <select class="form-dropdown form-control form-control-lg" name="accomodation" id="">
-                          <option value="">Need Accomadation?</option>
-                          <option value="yes">Yes</option>
-                          <option value="no">No</option>
-                        </select>
-                        <!-- <label for="message" class="form-label">Need Accomadation?(  yes/no Specifying price)</label> -->
-                      </div>
-                    </div>
                     <div class="col">
                       <div class="form-outline mb-4">
                         <input placeholder="Sports Incharge Name" name="sportsincharge_name" type="text"
@@ -169,9 +159,6 @@ rel="stylesheet"/> -->
                         <!-- <label for="message" class="form-label">Sports Incharge Name</label> -->
                       </div>
                     </div>
-                  </div>
-
-                  <div class="row mb-4">
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
                         <input placeholder="Sports Incharge Number" name="sportsincharge_number" type="number"
@@ -179,11 +166,37 @@ rel="stylesheet"/> -->
                         <!-- <label for="message" class="form-label">Sports Incharge Number</label> -->
                       </div>
                     </div>
+                  </div>
+
+                  <div class="row">
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
                         <input placeholder="Sports Incharge Email Id" name="sportsincharge_email" type="email"
                           class="form-control form-control-lg">
                         <!-- <label for="message" class="form-label">Sports Incharge Email id.</label> -->
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-outline mb-4">
+                        <select class="form-dropdown form-control form-control-lg" name="accomodation" id="accomodation" onchange="handleAccomodation()">
+                          <option selected value="">Need Accomadation?</option>
+                          <option value="yes">Yes</option>
+                          <option value="no">No</option>
+                        </select>
+                        <!-- <label for="message" class="form-label">Need Accomadation?(  yes/no Specifying price)</label> -->
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-4">
+                    <div class="col-sm-6">
+                      <div class="form-outline mb-4">
+                        <select class="form-dropdown form-control form-control-lg" name="accomodation_choice" id="accomodation_choice">
+                          <option value="">Choose an accomodation preference</option>
+                          <option value="Below 400">Below Rs.400</option>
+                          <option value="Above 600">Above Rs.600</option>
+                        </select>
+                        <!-- <label for="message" class="form-label">Need Accomadation?(  yes/no Specifying price)</label> -->
                       </div>
                     </div>
                   </div>

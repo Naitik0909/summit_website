@@ -46,8 +46,10 @@ class Team(models.Model):
 
     name = models.CharField(max_length=200)
     need_accomodation = models.BooleanField(default=False)
+    accomodation_preference = models.CharField(max_length=50, default="")
     institute_name = models.CharField(max_length=200)
     sport = models.ForeignKey(Sport, on_delete=models.CASCADE)
+    is_male_team = models.BooleanField(default=True)
     logo = models.FileField(upload_to='team_images', null=True, blank=True)
     datetime = models.DateTimeField(auto_now=True)
     sport_incharge_name = models.CharField(max_length=200)

@@ -13,6 +13,16 @@
 					<div class="row no-gutters slider-text fixed-height align-items-center justify-content-start"
 						data-scrollax-parent="true">
 						<div class="col-xl-10 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+							{% if messages %}
+								{% for message in messages %}
+								<div style="max-width: fit-content;" class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+									{{ message }}
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								{% endfor %}
+							{% endif %}
 							<!-- <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"> Developer <br><span>Conference 2019</span></h1> -->
 							<h2 style="margin-left: 2.5rem;">MIT WPU SUMMIT</h2>
 							<div id="timer" class="d-flex mb-3">
@@ -37,17 +47,6 @@
 		align-items: center;background-image: url('/static/images/home_carousel.jpg')">
 				<div style="display: flex;justify-content: center;
 				flex-direction: column;align-items: center;" class="container">
-					{% if messages %}
-						{% for message in messages %}
-						<div style="max-width: fit-content;" class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-							{{ message }}
-							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-							
-						</div>
-						{% endfor %}
-					{% endif %}
 					<h2 style="color:white">MIT WPU Summit 2023</h2>
 					<a href="{% url 'about' %}" class="btn btn-primary d-block px-2 py-3 btn-short">Know More</a>
 				</div>

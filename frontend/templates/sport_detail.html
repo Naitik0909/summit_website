@@ -84,11 +84,17 @@
               <!-- END comment-list -->
               
              </div>
-             <div class="form-group">
+            {% if sport.name == "Chess" %}
+              <div class="form-group">
+                <a href="{% url 'sport_register' sport.slug %}_all" class="btn py-3 px-4 btn-primary">Register</a>
+              </div>
+            {% else %}
+              <div class="form-group">
                 <a href="{% url 'sport_register' sport.slug %}_men" class="btn py-3 px-4 btn-primary">Register (Men)</a>
                 &ensp;
                 <a href="{% url 'sport_register' sport.slug %}_women" class="btn py-3 px-4 btn-primary">Register (Women)</a>
               </div>
+            {% endif %}
           </div> <!-- .col-md-8 -->
           <div class="col-md-4 sidebar ftco-animate">
            

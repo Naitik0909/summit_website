@@ -173,6 +173,8 @@ class SportRegisterPageView(View):
         params = self.kwargs['pk'].split('_')
         sportSlug = params[0]
         gender = params[1]
+        if gender == "all":
+            gender = "men"
         # if sport == "":
             # Return 404 page
         try:
@@ -204,7 +206,8 @@ class SportRegisterPageView(View):
 
     def post(self, request, *args, **kwargs):
 
-        sportSlug = self.kwargs['pk']
+        params = self.kwargs['pk'].split('_')
+        sportSlug = params[0]
         name = request.POST.get('fullname')
         email = request.POST.get('email')
         phone = request.POST.get('phone_number')
@@ -215,6 +218,7 @@ class SportRegisterPageView(View):
         college_name = request.POST.get('college_name')  
         institution_name = college_name if college_name != "" else request.POST.get('school_name')
         need_accomodation = request.POST.get('accomodation')
+        accomodation_preference = request.POST.get('accomodation_choice')
         sports_incharge_name = request.POST.get('sportsincharge_name')
         sports_incharge_number = request.POST.get('sportsincharge_number')
         sports_incharge_email = request.POST.get('sportsincharge_email')
@@ -237,11 +241,13 @@ class SportRegisterPageView(View):
             sport = sport,
             institute_name = college_name,
             need_accomodation = stringToBool(need_accomodation),
+            accomodation_preference = accomodation_preference,
             sport_incharge_name = sports_incharge_name,
             sport_incharge_number = sports_incharge_number,
             sport_incharge_email_id = sports_incharge_email,
             player_names = listToString(player_names),
-            captain_name = name
+            captain_name = name,
+            is_male_team = True if params[1] == 'men' else False
         )
 
         for i in range(len(player_names)):
@@ -252,6 +258,7 @@ class SportRegisterPageView(View):
             player.name = player_names[i]
             player.phone = player_phones[i]
             player.team.add(team)
+            player.state = state
             player.save()
 
         messages.info(request, 'Your team has been successfully registered!')
@@ -302,6 +309,10 @@ class UpdateTeamPage(View):
         player_emails = [i for i in request.POST.getlist('player_emails') if i]
         player_phones = [i for i in request.POST.getlist('player_phones') if i]
         player_names = [i for i in request.POST.getlist('player_names') if i]
+
+        # update team
+        team.player_names = listToString(player_names)
+        team.save()
 
         for i in range(len(player_names)):
             player = Player.objects.get_or_create(
