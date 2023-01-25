@@ -11927,13 +11927,20 @@ textarea.form-control {
   background-repeat: no-repeat;
   background-position: center center;
 }
+.sponser-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 
 .testimony-section {
   position: relative;
+  
 }
 
 .testimony-section .owl-carousel {
   margin: 0;
+  
 }
 
 .testimony-section .owl-carousel .owl-stage-outer {
@@ -12033,6 +12040,15 @@ textarea.form-control {
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  margin-top: -75px;
+}
+
+.testimony-wrap .sponser-img {
+  width: 100%;
+  
+  
   position: relative;
   margin: 0 auto;
   margin-top: -75px;
