@@ -22,14 +22,15 @@ class EventsPageView(View):
             'desc':'MIT-WPU Summit 2023 is back with 11 sports. Check them out below',
             'image':'/static/images/Banner_Homepage.svg',
             }
-        allSport = Sport.objects.all()
+        # Exclude additional categories of swimming
+        allSport = Sport.objects.exclude(logo='')
         for sport in allSport:
             sport.rules = sport.rules.split(';')
             n = len(sport.rules) if len(sport.rules) < 4 else 4
             sport.rules = PrizesPageView.reducaeArray(sport.rules, n)
         context = {
                 'introData': introData,
-                'allSport': allSport            }
+                'allSport': allSport,            }
         return render(request, 'events.html',context)
 
 class AboutUsView(View):
