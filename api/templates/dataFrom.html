@@ -3,7 +3,6 @@
 </head>
 <body>
 	<form method="POST" name="customerData" action="{% url 'ccave_request_handler' %}">
-		{% csrf_token %}
 		<table width="40%" height="100" border='1' align="center">
 			<caption>
 				<font size="4" color="blue"><b>Integration Kit</b></font>
@@ -19,11 +18,11 @@
 			</tr>
 			<tr>
 				<td>Merchant Id</td>
-				<td><input type="text" name="merchant_id" id="merchant_id" value="2954" /> </td>
+				<td><input type="text" name="merchant_id" id="merchant_id" value="210486" /> </td>
 			</tr>
 			<tr>
 				<td>Order Id</td>
-				<td><input type="text" name="order_id" value="" /></td>
+				<td><input type="text" name="order_id" value="sdfadf34123141" /></td>
 			</tr>
 			<tr>
 				<td>Currency</td>
@@ -31,23 +30,23 @@
 			</tr>
 			<tr>
 				<td>Amount</td>
-				<td><input type="text" name="amount" value="1.00" /></td>
+				<td><input type="text" name="amount" value="1" /></td>
 			</tr>
 			<tr>
 				<td>Redirect URL</td>
 				<td><input type="text" name="redirect_url"
-					value="http://192.168.2.49:8085/ccavResponseHandler" />
+					value="http://127.0.0.1:8000{% url 'ccave_response_handler' %}" />
 				</td>
 			</tr>
 			<tr>
 				<td>Cancel URL</td>
 				<td><input type="text" name="cancel_url"
-					value="http://192.168.2.49:8085/ccavResponseHandler" />
+					value="http://127.0.0.1:8000{% url 'ccave_response_handler' %}" />
 				</td>
 			</tr>
 			<tr>
 				<td>Language</td>
-				<td><input type="text" name="language" id="language" value="EN" /></td>
+				<td><input type="text" name="language" id="language" value="en" /></td>
 			</tr>
 			<tr>
 				<td colspan="2">Billing information(optional):</td>
