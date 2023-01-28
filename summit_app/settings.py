@@ -48,6 +48,8 @@ INSTALLED_APPS = [
 
     'frontend',
     'api',
+
+    'csvexport',
     'storages',
 ]
 

@@ -1,4 +1,6 @@
 from django.contrib import admin
+from csvexport.actions import csvexport
+
 from .models import Sport, Contact, Team, Player
 
 class TeamPlayersListFilter(admin.SimpleListFilter):
@@ -47,19 +49,24 @@ class SportAdmin(admin.ModelAdmin):
     list_display = ("name", "venue", "priceMale","priceFemale", "datetime", "minimumPlayersMale", "maximumPlayersMale","minimumPlayersFemale","maximumPlayersFemale")
     list_filter = ("venue",  "priceMale","priceFemale", "datetime", "minimumPlayersMale", "maximumPlayersMale","minimumPlayersFemale","maximumPlayersFemale")
     search_fields = ("name",)
+    actions = [csvexport]
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
     list_display = ("name", "email", "phone","message")
     search_fields = ("name", "email", "phone")
+    actions = [csvexport]
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
     list_display = ("name", "institute_name", "sport", "datetime", "captain_name", "player_names", "sport_incharge_name", "sport_incharge_number", "sport_incharge_email_id")
-    search_fields = ("name", "institute_name", "sport", "captain_name", "sport_incharge_name", "sport_incharge_number", "sport_incharge_email_id")
+    search_fields = ("name", "institute_name", "captain_name", "sport_incharge_name", "sport_incharge_number", "sport_incharge_email_id")
+    list_filter = ("sport", )
+    actions = [csvexport]
 
 @admin.register(Player)
 class PlayerAdmin(admin.ModelAdmin):
     list_display = ("name", "email", "phone")
     list_filter = (PlayerSportsListFilter, TeamPlayersListFilter) 
     search_fields = ("name", "email", "phone", "team__name")
+    actions = [csvexport]
