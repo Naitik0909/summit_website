@@ -89,13 +89,38 @@
                 <a href="{% url 'sport_register' sport.slug %}_all" class="btn py-3 px-4 btn-primary">Register</a>
               </div>
             {% else %}
-              <div class="form-group">
-                <a href="{% url 'sport_register' sport.slug %}_men" class="btn py-3 px-4 btn-primary">Register (Men)</a>
-                &ensp;
-                {% if sport.minimumPlayersFemale %}
-                <a href="{% url 'sport_register' sport.slug %}_women" class="btn py-3 px-4 btn-primary">Register (Women)</a>
-                {% endif %}
-              </div>
+              {% if "Swimming" in sport.name %}
+                <div class="form-outline mb-4">
+                  <select style="width: 300px;max-width: 100%;" class="form-dropdown form-control form-control-lg" name="swimming_category" id="swimming_category" onchange="handleSwimmingCategory()">
+                    <option selected value="">Select a category</option>
+                    <option value="swimming-freestyle-50m">Freestyle - 50m</option>
+                    <option value="swimming-backstroke-50m">Backstroke - 50m</option>
+                    <option value="swimming-breaststroke-50m">Breaststroke - 50m</option>
+                    <option value="swimming-butterfly-50m">Butterfly - 50m</option>
+                    <option value="swimming-freestyle-100m">Freestyle - 100m</option>
+                    <option value="swimming-backstroke-100m">Backstroke - 100m</option>
+                    <option value="swimming-breaststroke-100m">Breaststroke - 100m</option>
+                    <option value="swimming-butterfly-100m">Butterfly - 100m</option>
+                    <option value="swimming-freestyle-relay-50m">Freestyle Relay - 50m</option>
+                    <option value="swimming-medley-relay-50m">Medley Relay - 50m</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <a style="display: none;" href="{% url 'sport_register' sport.slug %}_men" id="register-men" class="btn py-3 px-4 btn-primary">Register (Men)</a>
+                  &ensp;
+                  {% if sport.minimumPlayersFemale %}
+                  <a style="display: none;" href="{% url 'sport_register' sport.slug %}_women" id="register-women" class="btn py-3 px-4 btn-primary">Register (Women)</a>
+                  {% endif %}
+                </div>
+              {% else %}
+                <div class="form-group">
+                  <a href="{% url 'sport_register' sport.slug %}_men" class="btn py-3 px-4 btn-primary">Register (Men)</a>
+                  &ensp;
+                  {% if sport.minimumPlayersFemale %}
+                  <a href="{% url 'sport_register' sport.slug %}_women" class="btn py-3 px-4 btn-primary">Register (Women)</a>
+                  {% endif %}
+                </div>
+              {% endif %}
             {% endif %}
           </div> <!-- .col-md-8 -->
           <div class="col-md-4 sidebar ftco-animate">
@@ -156,27 +181,21 @@
         </div>
       </div>
     </section> <!-- .section -->
+  
+    <script>
+      function handleSwimmingCategory(){
+        const selectedCategory = $("#swimming_category").val();
+        if(selectedCategory == ""){
+          $("#register-men").hide();
+          $("#register-women").hide();
+        }
+        else{
+          $("#register-men").show();
+          $("#register-women").show();
+          $("#register-men").attr('href', `/sport_register/${selectedCategory}_men`);
+          $("#register-women").attr('href', `/sport_register/${selectedCategory}_women`);
+        }
+      }
+    </script>
 
-		<!-- <section class="ftco-section-parallax">
-      <div class="parallax-img d-flex align-items-center">
-        <div class="container">
-          <div class="row d-flex justify-content-center">
-            <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-              <h2>Subcribe to our Newsletter</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-              <div class="row d-flex justify-content-center mt-4 mb-4">
-                <div class="col-md-8">
-                  <form action="#" class="subscribe-form">
-                    <div class="form-group d-flex">
-                      <input type="text" class="form-control" placeholder="Enter email address">
-                      <input type="submit" value="Subscribe" class="submit px-3">
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
 {% endblock %}

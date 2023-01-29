@@ -266,7 +266,7 @@ class SportRegisterPageView(View):
             is_male_team = True if (gender == 'men' or gender == 'all' or gender == '') else False
         )
 
-        for i in range(len(player_names)):
+        for i in range(len(player_emails)):
             player = Player.objects.get_or_create(
                 email = player_emails[i],
             )[0]
@@ -285,7 +285,8 @@ class SportRegisterPageView(View):
         else:
             basePrice = sport.priceFemale
         
-        # TODO: Handle swimming pricing/head
+        if("Swimming" in sport.name):
+            basePrice = basePrice * len(player_emails)
 
         reqObj = {
             'merchant_id': settings.CC_AVENUE_MERCHANT_ID,
@@ -347,7 +348,8 @@ class UpdateTeamPage(View):
     def post(self, request, *args, **kwargs):
 
         transaction_id = self.kwargs['pk']
-        team = Team.objects.get(id=int(transaction_id))
+        payment = Payment.objects.get(tracking_id=int(transaction_id))
+        team = Team.objects.get(payment=payment)
 
         # Player details
         player_emails = [i for i in request.POST.getlist('player_emails') if i]

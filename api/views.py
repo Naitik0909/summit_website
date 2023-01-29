@@ -4,10 +4,12 @@ from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from django.contrib import messages
+from django.http import JsonResponse
+from django.core.exceptions import ObjectDoesNotExist
 
 from pay_ccavenue import CCAvenue
 
-from api.models import Payment, Team
+from api.models import Payment, Team, Player
 from frontend.email_handler import send_registration_mail
 
 from datetime import datetime
@@ -58,7 +60,6 @@ class CCAveResposeHandler(View):
 
             format = '%d/%m/%Y %H:%M:%S'
             failed = False
-            print("Payment details ", decResp)
             payment = Payment.objects.create(
                 tracking_id = decResp["tracking_id"],
                 amount = decResp["amount"],
@@ -106,3 +107,28 @@ class CCAveResposeHandler(View):
             messages.warning(request, "Something went wrong. Please try again later.")
             return redirect('home')
         return render(request, "response1.html", context=context)
+
+@csrf_exempt
+def validateSwimming(request):
+    if request.method == "POST":
+        response = []
+        player_emails = request.POST.getlist('emails[]')
+        print(request.POST)
+        for email in player_emails:
+            try:
+                player = Player.objects.get(email=email)
+            except ObjectDoesNotExist:
+                response.append(True)
+                continue
+                
+            registration_count = 0
+            for team in player.team.all():
+                if "Swimming" in team.sport.name and "Relay" not in team.sport.name:
+                    registration_count+=1
+            if registration_count >= 2:
+                response.append(False)
+            else:
+                response.append(True)
+        return JsonResponse(response, safe=False)
+    else:
+        return redirect('home')

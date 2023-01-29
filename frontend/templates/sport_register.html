@@ -58,7 +58,7 @@ rel="stylesheet"/> -->
               </div>
             </div>
             <div class="form-outer">
-              <form id="register_form" method="POST" enctype="multipart/form-data">
+              <form onsubmit="onSubmit()" id="register_form" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="page slide-page">
                   <!-- <div class="title">Basic Info:</div> -->
@@ -278,9 +278,11 @@ rel="stylesheet"/> -->
                   </div>
                   {% endfor %}
                   <br/>
-                  <div class="row" style="justify-content: center;">
+                  <div id="total_amount" class="row" style="justify-content: center;">
                       <b><p style="color: black" >Total amount payable: Rs.{{ amount }}</p></b>
                   </div>
+                  <img style="display: none;" id="loader" src="{% static 'images/loader.gif' %}" alt="">
+                  <b><p style="color: black" id="unauthorizedEmailError"></p></b>
                   <br>
                   <div class="field btns">
                     <button class="prev-5 prev btn btn-primary btn-block">Previous</button>

@@ -114,9 +114,57 @@ function initMultiStepForm() {
 //   });
 // })();
 
+// $(document).ready(function () {
+//     $("#register_form").submit(function () {
+//         $(".final-submit").attr("disabled", true);
+//         return true;
+//     });
+// });
+
+// FOR SWIMMING EVENTS
 $(document).ready(function () {
-    $("#register_form").submit(function () {
-        $(".final-submit").attr("disabled", true);
-        return true;
-    });
+    if(window.location.href.includes('swimming')){
+        $("#total_amount").hide();
+    }
 });
+
+
+function onSubmit(){
+    if(window.location.href.includes('swimming')){
+        $(".final-submit").attr("disabled", true);
+        $("#loader").show();
+        event.preventDefault();
+        // get element by name jquery
+        let emails = document.querySelectorAll("input[name=player_emails]");
+        let email_list = [document.getElementsByName('email')[0].value];
+        for (let i = 0; i < emails.length; i++) {
+            email_list.push(emails[i].value);
+        }
+        // post api call
+        var data = {
+            'emails': email_list,
+        };
+        $.ajax({
+            url: '/api/validateSwimming/',
+            type: 'POST',
+            data: data,
+            success: function (data) {
+                $("#loader").hide();
+                for(let i = 0; i < data.length; i++){
+                    if(!data[i]){
+                        $("#unauthorizedEmailError").show();
+                        $(".final-submit").attr("disabled", false);
+                        $("#unauthorizedEmailError").text(`Player with email- ${email_list[i]} has already registered for 2 other Swimming events.`)
+                        return;
+                    }
+                }
+                $("#unauthorizedEmailError").show();
+                $("#unauthorizedEmailError").text(`Redirecting to payment page...`)
+                document.getElementById("register_form").submit();
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    }
+}

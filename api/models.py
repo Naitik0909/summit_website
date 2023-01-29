@@ -89,7 +89,7 @@ class Team(models.Model):
     payment = models.OneToOneField(Payment, null=True, blank=True, on_delete=models.SET_NULL)
 
     def __str__(self):
-        return self.name
+        return self.name + " - " + self.sport.name
 
 class Player(models.Model):
     name = models.CharField(max_length=200, null=True, blank=True)
