@@ -43,6 +43,29 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
 
+class Payment(models.Model):
+
+    tracking_id = models.CharField(max_length=20, null=True, blank=True)
+    bank_ref_no = models.CharField(max_length=20, null=True, blank=True)
+    order_status = models.CharField(max_length=20, null=True, blank=True)
+    failure_message = models.CharField(max_length=255, null=True, blank=True)
+    payment_mode = models.CharField(max_length=20, null=True, blank=True)
+    card_name = models.CharField(max_length=20, null=True, blank=True)
+    status_code = models.CharField(max_length=10, null=True, blank=True)
+    status_message = models.CharField(max_length=20, null=True, blank=True)
+    amount = models.CharField(max_length=20, null=True, blank=True)
+    trans_date = models.DateTimeField(null=True, blank=True)
+
+    # Billng details
+    billing_name = models.CharField(max_length=50, null=True, blank=True)
+    billing_address = models.CharField(max_length=255, null=True, blank=True)
+    billing_city = models.CharField(max_length=50, null=True, blank=True)
+    billing_state = models.CharField(max_length=20, null=True, blank=True)
+    billing_zipcode = models.CharField(max_length=10, null=True, blank=True)
+    billing_telephone = models.CharField(max_length=20, null=True, blank=True)
+    billing_email = models.CharField(max_length=100, null=True, blank=True)
+    
+
 class Team(models.Model):
 
     name = models.CharField(max_length=200)
@@ -59,6 +82,11 @@ class Team(models.Model):
     player_names = models.TextField(default="none")
     captain_name = models.CharField(max_length=200, default="none")
     transaction_id = models.CharField(max_length=100, null=True, blank=True)
+    
+    # TODO: make unique later
+    order_id = models.CharField(max_length=255, null=True, blank=True)
+    is_payment_successful = models.BooleanField(default=False)
+    payment = models.OneToOneField(Payment, null=True, blank=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.name
@@ -71,3 +99,4 @@ class Player(models.Model):
     state = models.CharField(max_length=50, null=True, blank=True)
     def __str__(self):
         return self.name
+

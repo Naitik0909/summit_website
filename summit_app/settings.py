@@ -167,10 +167,20 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 MEDIA_URL = '/media/'
 
+# Sendgrid
+FROM_EMAIL = 'summit@mitwpu.edu.in'
+
+
 # CCAVENUE
 
 CC_AVENUE_WORKING_KEY = env("CC_AVENUE_WORKING_KEY")
 CC_AVENUE_ACCESS_CODE = env("CC_AVENUE_ACCESS_CODE")
+CC_AVENUE_MERCHANT_ID = env("CCAVENUE_MERCHANT_CODE")
+CC_AVENUE_SUCCESS_URL = env("CCAVENUE_REDIRECT_URL")
+CC_AVENUE_FAILURE_URL = env("CCAVENUE_CANCEL_URL")
+CC_AVENUE_URL = env("CC_AVENUE_URL")
+CC_AVENUE_CURRENCY = "INR"
+CC_AVENUE_LANG = "en"
 
 # if socket.gethostname() == 'Nishikas-MacBook-Air.local' or socket.gethostname()=='naitik-ASUS-TUF' or socket.gethostname() == 'ip-172-31-21-59':
 #     django_on_heroku.settings(locals())

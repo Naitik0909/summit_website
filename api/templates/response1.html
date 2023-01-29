@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body_block %}
+{% load static %}
+
+{% block title %}<title>Payments - MIT-WPU SUMMIT 2023</title> {% endblock %}
+
+<section style="margin-top:200px; text-align: center" >
+    <div class="container" style="color: black;">
+        <h2>Your Payment Status </h2>
+        <br>
+        <p><b>Order Status</b> - {{ response.order_status }}</p>
+        {% if response.failed %}
+            <p><b>Failure Message</b> - {{ response.failure_message }}</p>
+        {% endif %}
+        <p><b>Amount</b> - Rs.{{ response.amount }}</p>
+        <p><b>Order ID</b> - {{ response.order_id }}</p>
+        <p><b>Tracking ID</b> - {{ response.tracking_id }}</p>
+        <p><b>Bank Reference Number</b> - {{ response.bank_ref_no }}</p>
+        <p><b>Payment Method</b> - {{ response.payment_mode }}</p>
+
+    </div>
+</section>
+
+{% endblock %}

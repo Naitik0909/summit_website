@@ -7,3 +7,6 @@ django-storages
 boto3
 django-admin-csvexport
 pycryptodome
+pay_ccavenue
+shortuuid
+sendgrid

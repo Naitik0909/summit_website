@@ -84,7 +84,7 @@
               <!-- END comment-list -->
               
              </div>
-            {% if sport.name == "Chess" %}
+            {% if sport.name == "Chess" or "Esport" in sport.name %}
               <div class="form-group">
                 <a href="{% url 'sport_register' sport.slug %}_all" class="btn py-3 px-4 btn-primary">Register</a>
               </div>
@@ -92,7 +92,9 @@
               <div class="form-group">
                 <a href="{% url 'sport_register' sport.slug %}_men" class="btn py-3 px-4 btn-primary">Register (Men)</a>
                 &ensp;
+                {% if sport.minimumPlayersFemale %}
                 <a href="{% url 'sport_register' sport.slug %}_women" class="btn py-3 px-4 btn-primary">Register (Women)</a>
+                {% endif %}
               </div>
             {% endif %}
           </div> <!-- .col-md-8 -->

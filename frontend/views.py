@@ -1,14 +1,20 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, View
 from django.contrib import messages
+from pay_ccavenue import CCAvenue
+from django.conf import settings
 
-from api.models import Sport, Team, Contact, Player
+from api.models import Sport, Team, Contact, Player, Payment
 from .utils import listToString, stringToBool
+from .email_handler import send_registration_mail
+
+from datetime import datetime
+import shortuuid
+
 class HomePageView(TemplateView):
     template_name = 'index.html'
 
 class EventsPageView(View):
-    # Custom function to reduce rules
     def reducaeArray(arr,n):
         newArr = []
         for i in range(0,n):
@@ -16,7 +22,6 @@ class EventsPageView(View):
         return newArr
 
     def get(self, request, *args, **kwargs):
-        print(request.resolver_match.view_name)
         introData = {
             'title': 'Events',
             'desc':'MIT-WPU Summit 2023 is back with 11 sports. Check them out below',
@@ -66,7 +71,6 @@ class PrizesPageView(View):
         return newArr
 
     def get(self, request, *args, **kwargs):
-        print(request.resolver_match.view_name)
         introData = {
             'title': 'Prizes',
             'desc':'',
@@ -150,7 +154,7 @@ class SportDetailPageView(View):
             # Return 404 page
         try:
             sportObject = Sport.objects.get(slug=sportSlug)
-            relatedSports = Sport.objects.exclude(slug=sportSlug)
+            relatedSports = Sport.objects.exclude(slug=sportSlug).exclude(logo='')
             introData = {
             'title': sportObject.name,
             'desc':'MIT-WPU Summit 2023 is back with 11 sports. Check them out below',
@@ -174,41 +178,50 @@ class SportRegisterPageView(View):
         params = self.kwargs['pk'].split('_')
         sportSlug = params[0]
         gender = params[1]
+        amount = 0
         if gender == "all":
             gender = "men"
         # if sport == "":
             # Return 404 page
-        try:
-            sportObject = Sport.objects.get(slug=sportSlug)
-            introData = {
-            'title': sportObject.name,
-            'desc':'MIT-WPU Summit 2023 is back with 11 sports. Check them out below',
-            'image':'/static/images/Banner_Homepage.svg',
-            }
+        # try:
+        sportObject = Sport.objects.get(slug=sportSlug)
+        introData = {
+        'title': sportObject.name,
+        'desc':'MIT-WPU Summit 2023 is back with 11 sports. Check them out below',
+        'image':'/static/images/Banner_Homepage.svg',
+        }
 
-            # excluding captain
-            if gender == 'men':
-                miniList = [*range(1, sportObject.minimumPlayersMale, 1)]
-                maxiList = [*range(sportObject.minimumPlayersMale, sportObject.maximumPlayersMale, 1)]
-            elif gender == 'women':
-                miniList = [*range(1, sportObject.minimumPlayersFemale, 1)]
-                maxiList = [*range(sportObject.minimumPlayersFemale, sportObject.maximumPlayersFemale, 1)]
-            sportObject.minimumPlayers = miniList
-            sportObject.maximumPlayers = maxiList
-            context = {
-                'sport': sportObject,
-                'introData': introData
-            }
-            return render(request, 'sport_register.html', context)
+        # excluding captain
+        if gender == 'men':
+            miniList = [*range(1, sportObject.minimumPlayersMale, 1)]
+            maxiList = [*range(sportObject.minimumPlayersMale, sportObject.maximumPlayersMale, 1)]
+            amount = sportObject.priceMale
+        elif gender == 'women':
+            miniList = [*range(1, sportObject.minimumPlayersFemale, 1)]
+            maxiList = [*range(sportObject.minimumPlayersFemale, sportObject.maximumPlayersFemale, 1)]
+            amount = sportObject.priceFemale
 
-        except Exception as e:
-            print(e)
+        sportObject.minimumPlayers = miniList
+        sportObject.maximumPlayers = maxiList
+        context = {
+            'sport': sportObject,
+            'introData': introData,
+            'amount': amount,
+        }
+        return render(request, 'sport_register.html', context)
+
+        # except Exception as e:
+        #     print(e)
             # Return 404 page
 
     def post(self, request, *args, **kwargs):
 
         params = self.kwargs['pk'].split('_')
         sportSlug = params[0]
+        gender = params[1]
+        if gender == "all":
+            gender = "men"
+
         name = request.POST.get('fullname')
         email = request.POST.get('email')
         phone = request.POST.get('phone_number')
@@ -236,8 +249,10 @@ class SportRegisterPageView(View):
         player_emails = [i for i in player_emails if i]
         player_phones = [i for i in player_phones if i]
         player_names = [i for i in player_names if i]
-        
+
+        order_id = datetime.now().strftime('%Y%m-%d%H-%M%S-') + str(shortuuid.uuid())
         team = Team.objects.create(
+            order_id = order_id,
             name = college_name,
             sport = sport,
             institute_name = college_name,
@@ -248,7 +263,7 @@ class SportRegisterPageView(View):
             sport_incharge_email_id = sports_incharge_email,
             player_names = listToString(player_names),
             captain_name = name,
-            is_male_team = True if params[1] == 'men' else False
+            is_male_team = True if (gender == 'men' or gender == 'all' or gender == '') else False
         )
 
         for i in range(len(player_names)):
@@ -262,15 +277,43 @@ class SportRegisterPageView(View):
             player.state = state
             player.save()
 
-        messages.info(request, 'Your team has been successfully registered!')
-        return redirect('home')
+        # Send request to payment gateway
+
+        basePrice = 0
+        if(team.is_male_team):
+            basePrice = sport.priceMale
+        else:
+            basePrice = sport.priceFemale
+        
+        # TODO: Handle swimming pricing/head
+
+        reqObj = {
+            'merchant_id': settings.CC_AVENUE_MERCHANT_ID,
+            'order_id': order_id,
+            'currency': settings.CC_AVENUE_CURRENCY,
+            'redirect_url':settings.CC_AVENUE_SUCCESS_URL,
+            'cancel_url': settings.CC_AVENUE_FAILURE_URL,
+            'language': settings.CC_AVENUE_LANG,
+            'amount': basePrice,
+        }
+        ccavenue = CCAvenue()
+        encrypt_data = ccavenue.encrypt(reqObj)
+        context = {
+            "encReq": encrypt_data,
+            "xscode": settings.CC_AVENUE_ACCESS_CODE,
+            "ccAveURL": settings.CC_AVENUE_URL
+        }
+        return render(request, 'redirectPage.html', context=context)
+
+        # messages.info(request, 'Your team has been successfully registered!')
+        # return redirect('home')
 
 class UpdateTeamPage(View):
     def get(self, request, *args, **kwargs):
         
         transaction_id = self.kwargs['pk']
-        # team = Team.objects.get(transaction_id=transaction_id)
-        team = Team.objects.get(id=int(transaction_id))
+        payment = Payment.objects.get(tracking_id=int(transaction_id))
+        team = Team.objects.get(payment=payment)
         players = Player.objects.filter(team=team)
         names = []
         emails = []
@@ -285,7 +328,7 @@ class UpdateTeamPage(View):
         'title': "Update Team Details",
         'image':'/static/images/Banner_Homepage.svg',
         }
-        sportObject = Sport.objects.get(slug="table-tennis")
+        sportObject = team.sport
         miniList = [*range(1, sportObject.minimumPlayersMale+1, 1)]
         maxiList = [*range(sportObject.minimumPlayersMale+1, sportObject.maximumPlayersMale+1, 1)]
         sportObject.minimumPlayers = miniList

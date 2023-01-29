@@ -58,7 +58,7 @@ rel="stylesheet"/> -->
               </div>
             </div>
             <div class="form-outer">
-              <form method="POST" enctype="multipart/form-data">
+              <form id="register_form" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="page slide-page">
                   <!-- <div class="title">Basic Info:</div> -->
@@ -209,18 +209,23 @@ rel="stylesheet"/> -->
 
                 <div style="overflow: scroll;max-height: 450px;" class="page">
 
+                  <!-- <div class="title">Players Details:</div> -->
+                  <b><p style="color: black;">Add all the remaining players, EXCLUDING the captain</p></b>
+                  <p style="color: black; font-weight: 300">Don't have data of all your team players yet? Don't worry! <br>
+                    You can update your optional team players' information even after registration. <br>
+                    We will send you a link to update your team details.
+                  </p>
+
                   <div class="row mb-4">
                     <div class="col-sm-6">
+                      <div class="label" style="text-align: start;">Upload College Document</div>
                       <div class="form-outline mb-4">
                         <input placeholder="Upload file" name="fileupload" type="file"
                           class="form-control form-control-lg">
                         <!-- <label for="message" class="form-label">Sports Incharge Number</label> -->
                       </div>
                     </div>
-                    
                   </div>
-                  <!-- <div class="title">Players Details:</div> -->
-                  <p>Add all the players EXCLUDING the captain</p>
                   {% for i in sport.minimumPlayers %}
                  
                   <div class="label" style="text-align: start;">Player {{i}} details *</div>
@@ -273,9 +278,13 @@ rel="stylesheet"/> -->
                   </div>
                   {% endfor %}
                   <br/>
+                  <div class="row" style="justify-content: center;">
+                      <b><p style="color: black" >Total amount payable: Rs.{{ amount }}</p></b>
+                  </div>
+                  <br>
                   <div class="field btns">
                     <button class="prev-5 prev btn btn-primary btn-block">Previous</button>
-                    <button type="submit" class="submit btn btn-primary btn-block">Submit</button>
+                    <button type="submit" class="submit btn btn-primary btn-block final-submit">Submit</button>
                   </div>
                 </div>
               </form>

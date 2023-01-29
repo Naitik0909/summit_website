@@ -113,3 +113,10 @@ function initMultiStepForm() {
 //     }, false);
 //   });
 // })();
+
+$(document).ready(function () {
+    $("#register_form").submit(function () {
+        $(".final-submit").attr("disabled", true);
+        return true;
+    });
+});

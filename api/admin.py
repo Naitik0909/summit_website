@@ -1,7 +1,7 @@
 from django.contrib import admin
 from csvexport.actions import csvexport
 
-from .models import Sport, Contact, Team, Player
+from .models import Sport, Contact, Team, Player, Payment
 
 class TeamPlayersListFilter(admin.SimpleListFilter):
     title = 'Team'
@@ -69,4 +69,10 @@ class PlayerAdmin(admin.ModelAdmin):
     list_display = ("name", "email", "phone")
     list_filter = (PlayerSportsListFilter, TeamPlayersListFilter) 
     search_fields = ("name", "email", "phone", "team__name")
+    actions = [csvexport]
+
+@admin.register(Payment)
+class PaymentAdmin(admin.ModelAdmin):
+    list_display = ("tracking_id", "trans_date", "amount", "bank_ref_no", "order_status", "failure_message", "payment_mode", "card_name", "status_code", "status_message", "amount", "billing_name", "billing_address", "billing_city", "billing_state", "billing_zipcode", "billing_telephone", "billing_email")
+    search_fields = ("amount", "bank_ref_no",)
     actions = [csvexport]
