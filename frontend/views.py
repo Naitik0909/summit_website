@@ -25,7 +25,7 @@ class EventsPageView(View):
         introData = {
             'title': 'Events',
             'desc':'MIT-WPU Summit 2023 is back with 11 sports. Check them out below',
-            'image':'/static/images/Banner_Homepage.svg',
+            'image':'/static/images/events.png',
             }
         # Exclude additional categories of swimming
         allSport = Sport.objects.exclude(logo='')
@@ -55,7 +55,7 @@ class GuestsPageView(View):
         introData = {
             'title': 'Guests',
             'desc':'',
-            'image':'/static/images/Banner_Homepage.svg',
+            'image':'/static/images/guests.png',
         }
         context = {
                 'introData': introData
@@ -74,9 +74,9 @@ class PrizesPageView(View):
         introData = {
             'title': 'Prizes',
             'desc':'',
-            'image':'/static/images/Banner_Homepage.svg',
+            'image':'/static/images/prizes.png',
             }
-        allSport = Sport.objects.all()
+        allSport = Sport.objects.exclude(logo="")
         for sport in allSport:
             sport.rules = sport.rules.split(';')
             n = len(sport.rules) if len(sport.rules) < 4 else 4
@@ -106,7 +106,7 @@ class TeamAndContactPageView(View):
         introData = {
             'title': 'Contact Us',
             'desc':'',
-            'image':'/static/images/Banner_Homepage.svg',
+            'image':'/static/images/contact-us.png',
             # 'question':'What are you looking for?',
             # 'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
        

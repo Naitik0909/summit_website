@@ -34,7 +34,7 @@
 }
 
 .bg-image{
-    height: 500px;
+    height: 700px;
     background-repeat: no-repeat;
     margin: 0 auto;
     background-size: cover;
@@ -45,7 +45,7 @@
 }
 
 .bg-image-content{
-    background: #05424d70;
+    background: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
