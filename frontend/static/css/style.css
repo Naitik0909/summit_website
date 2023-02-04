@@ -12976,3 +12976,7 @@ textarea.form-control {
 .bg-light-yellow{
   background-color: #fffeeb !important;
 }
+
+.justify-text{
+  text-align-last: center !important;
+}

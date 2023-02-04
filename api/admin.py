@@ -53,7 +53,8 @@ class SportAdmin(admin.ModelAdmin):
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ("name", "email", "phone","message")
+    list_display = ("name", "phone","message", "created_at", "is_resolved", "remarks")
+    list_filter = ("is_resolved", )
     search_fields = ("name", "email", "phone")
     actions = [csvexport]
 
@@ -61,8 +62,16 @@ class ContactAdmin(admin.ModelAdmin):
 class TeamAdmin(admin.ModelAdmin):
     list_display = ("name", "institute_name", "sport", "datetime", "captain_name", "player_names", "sport_incharge_name", "sport_incharge_number", "sport_incharge_email_id")
     search_fields = ("name", "institute_name", "captain_name", "sport_incharge_name", "sport_incharge_number", "sport_incharge_email_id")
-    list_filter = ("sport", )
+    list_filter = ("sport", "is_payment_successful", )
     actions = [csvexport]
+
+    def changelist_view(self, request, extra_context=None):
+        if not request.GET: #No filter
+            temp = request.GET.copy()
+            temp["is_payment_successful__exact"] = "1" #Set default filter
+            request.GET = temp
+        return super(TeamAdmin,self).changelist_view(request, extra_context=extra_context)
+
 
 @admin.register(Player)
 class PlayerAdmin(admin.ModelAdmin):
