@@ -232,6 +232,8 @@ class SportRegisterPageView(View):
         college_name = request.POST.get('college_name')  
         institution_name = college_name if college_name != "" else request.POST.get('school_name')
         need_accomodation = request.POST.get('accomodation')
+        need_transport = request.POST.get('need_transport')
+        need_meal = request.POST.get('need_meal')
         accomodation_preference = request.POST.get('accomodation_choice')
         sports_incharge_name = request.POST.get('sportsincharge_name')
         sports_incharge_number = request.POST.get('sportsincharge_number')
@@ -257,6 +259,8 @@ class SportRegisterPageView(View):
             sport = sport,
             institute_name = college_name,
             need_accomodation = stringToBool(need_accomodation),
+            need_transport = stringToBool(need_transport),
+            need_meal = stringToBool(need_meal),
             accomodation_preference = accomodation_preference,
             sport_incharge_name = sports_incharge_name,
             sport_incharge_number = sports_incharge_number,

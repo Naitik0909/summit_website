@@ -72,6 +72,8 @@ class Team(models.Model):
 
     name = models.CharField(max_length=200)
     need_accomodation = models.BooleanField(default=False)
+    need_transport = models.BooleanField(default=False)
+    need_meal = models.BooleanField(default=False)
     accomodation_preference = models.CharField(max_length=50, default="")
     institute_name = models.CharField(max_length=200)
     sport = models.ForeignKey(Sport, on_delete=models.CASCADE)
