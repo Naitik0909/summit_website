@@ -111,6 +111,10 @@ class CCAveResposeHandler(View):
             tz = pytz.timezone("Asia/Kolkata") 
             time = datetime.now(tz)
             currTime = time.strftime("%d-%m-%Y - %H:%M:%S")
+            # Append-adds at last
+            file1 = open("summit_err_log.txt", "a")  # append mode
+            file1.write(currTime+"---------Exception in payments--------- "+str(e))
+            file1.close()
             print(currTime+"---------Exception in payments---------", str(e))
             messages.warning(request, "Something went wrong. Please try again later.")
             return redirect('home')
