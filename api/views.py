@@ -103,7 +103,7 @@ class CCAveResposeHandler(View):
             }
         
         except Exception as e:
-            print("---------Exception---------", e)
+            print("---------Exception in payments---------", str(e))
             messages.warning(request, "Something went wrong. Please try again later.")
             return redirect('home')
         return render(request, "response1.html", context=context)
