@@ -60,9 +60,9 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
-    list_display = ("name", "institute_name", "sport", "datetime", "captain_name", "player_names", "sport_incharge_name", "sport_incharge_number", "sport_incharge_email_id")
-    search_fields = ("name", "institute_name", "captain_name", "sport_incharge_name", "sport_incharge_number", "sport_incharge_email_id")
-    list_filter = ("sport", "is_payment_successful", )
+    list_display = ("name", "institute_name", "sport", "datetime", "captain_name", "player_names", "sport_incharge_name", "sport_incharge_number", "sport_incharge_email_id", "need_transport")
+    search_fields = ("name", "institute_name", "captain_name", "sport_incharge_name", "sport_incharge_number", "sport_incharge_email_id", "order_id")
+    list_filter = ("sport", "is_payment_successful", "is_male_team", "need_accomodation", "need_transport")
     actions = [csvexport]
 
     def changelist_view(self, request, extra_context=None):

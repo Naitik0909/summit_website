@@ -9,6 +9,7 @@ function handleAccomodation(){
     }
     else{
         $('#accomodation_choice').hide();
+        $('#accomodation_choice').val("");
     }
 }
 
@@ -92,6 +93,18 @@ function initMultiStepForm() {
                 inputs[i].classList.remove("invalid-input");
             }
         }
+        const dropdowns = ths.parentElement.parentElement.querySelectorAll("select");
+        // ignore last dropdown since it might be hidden
+        for (let i = 0; i < dropdowns.length-1; i++) {
+            const valid = dropdowns[i].value;
+            if(valid == ""){
+                inputsValid = false;
+                dropdowns[i].classList.add("invalid-input");
+            } else {
+                dropdowns[i].classList.remove("invalid-input");
+            }
+        }
+        console.log("HERE", dropdowns.length)
         return inputsValid;
     }
 }
@@ -130,6 +143,8 @@ $(document).ready(function () {
 
 
 function onSubmit(){
+    event.preventDefault();
+    console.log("Form submitted");
     if(window.location.href.includes('swimming')){
         $(".final-submit").attr("disabled", true);
         $("#loader").show();

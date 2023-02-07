@@ -66,6 +66,9 @@ class Payment(models.Model):
     billing_zipcode = models.CharField(max_length=10, null=True, blank=True)
     billing_telephone = models.CharField(max_length=20, null=True, blank=True)
     billing_email = models.CharField(max_length=100, null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.tracking_id} - {self.amount}"
     
 
 class Team(models.Model):
@@ -74,18 +77,19 @@ class Team(models.Model):
     need_accomodation = models.BooleanField(default=False)
     need_transport = models.BooleanField(default=False)
     need_meal = models.BooleanField(default=False)
-    accomodation_preference = models.CharField(max_length=50, default="")
+    accomodation_preference = models.CharField(max_length=50, default="", null=True, blank=True)
     institute_name = models.CharField(max_length=200)
     sport = models.ForeignKey(Sport, on_delete=models.CASCADE)
     is_male_team = models.BooleanField(default=True)
     logo = models.FileField(upload_to='team_images', null=True, blank=True)
     datetime = models.DateTimeField(auto_now=True)
-    sport_incharge_name = models.CharField(max_length=200)
-    sport_incharge_number = models.CharField(max_length=200)
-    sport_incharge_email_id = models.CharField(max_length=200)
+    sport_incharge_name = models.CharField(max_length=200, null=True, blank=True)
+    sport_incharge_number = models.CharField(max_length=200, null=True, blank=True)
+    sport_incharge_email_id = models.CharField(max_length=200, null=True, blank=True)
     player_names = models.TextField(default="none")
-    captain_name = models.CharField(max_length=200, default="none")
+    captain_name = models.CharField(max_length=200, default="none", null=True, blank=True)
     transaction_id = models.CharField(max_length=100, null=True, blank=True)
+    institution_type = models.CharField(max_length=100, null=True, blank=True)
     
     # TODO: make unique later
     order_id = models.CharField(max_length=255, null=True, blank=True)
