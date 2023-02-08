@@ -143,8 +143,6 @@ $(document).ready(function () {
 
 
 function onSubmit(){
-    event.preventDefault();
-    console.log("Form submitted");
     if(window.location.href.includes('swimming')){
         $(".final-submit").attr("disabled", true);
         $("#loader").show();
