@@ -5,7 +5,7 @@ from pay_ccavenue import CCAvenue
 from django.conf import settings
 
 from api.models import Sport, Team, Contact, Player, Payment
-from .utils import listToString, stringToBool, addGST
+from .utils import listToString, stringToBool
 from .email_handler import send_registration_mail
 
 from datetime import datetime
@@ -301,7 +301,7 @@ class SportRegisterPageView(View):
             'redirect_url':settings.CC_AVENUE_SUCCESS_URL,
             'cancel_url': settings.CC_AVENUE_FAILURE_URL,
             'language': settings.CC_AVENUE_LANG,
-            'amount': addGST(basePrice),
+            'amount': basePrice,
         }
         ccavenue = CCAvenue()
         encrypt_data = ccavenue.encrypt(reqObj)
