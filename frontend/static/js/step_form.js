@@ -130,6 +130,20 @@ $(document).ready(function () {
 
 
 function onSubmit(){
+
+    let emails = document.querySelectorAll("input[name=player_emails]");
+    let phone_numbers = document.querySelectorAll("input[name=player_phones]");
+    let player_names = document.querySelectorAll("input[name=player_names]");
+
+    if(emails.size()==phone_numbers.size() && emails.size()==player_names.size()){
+        console.log("All enteries are correct")
+    }
+    else{
+        console.log("Feilds missing")
+    }
+
+    event.preventDefault();
+
     if(window.location.href.includes('swimming')){
         $(".final-submit").attr("disabled", true);
         $("#loader").show();
