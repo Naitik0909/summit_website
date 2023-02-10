@@ -125,7 +125,6 @@ def validateSwimming(request):
     if request.method == "POST":
         response = []
         player_emails = request.POST.getlist('emails[]')
-        print(request.POST)
         for email in player_emails:
             try:
                 player = Player.objects.get(email=email)
@@ -134,7 +133,7 @@ def validateSwimming(request):
                 continue
                 
             registration_count = 0
-            for team in player.team.all():
+            for team in player.team.filter(is_payment_successful=True):
                 if "Swimming" in team.sport.name and "Relay" not in team.sport.name:
                     registration_count+=1
             if registration_count >= 2:
