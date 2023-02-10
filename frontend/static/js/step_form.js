@@ -148,14 +148,23 @@ function onSubmit(){
     let phone_numbers = document.querySelectorAll("input[name=player_phones]");
     let player_names = document.querySelectorAll("input[name=player_names]");
 
-    if(emails.size()==phone_numbers.size() && emails.size()==player_names.size()){
-        console.log("All enteries are correct")
-    }
-    else{
-        console.log("Feilds missing")
-    }
+    // console.log(emails);
+    // console.log(phone_numbers);
+    // console.log(player_names);
 
-    event.preventDefault();
+    // console.log(Array.from(emails).filter((str) => str.value !== '').length);
+    // console.log(Array.from(phone_numbers).filter((str) => str.value !== '').length);
+    // console.log(Array.from(player_names).filter((str) => str.value !== '').length);
+
+    let email_len = Array.from(emails).filter((str) => str.value !== '').length;
+    let phone_len = Array.from(phone_numbers).filter((str) => str.value !== '').length;
+    let player_len = Array.from(player_names).filter((str) => str.value !== '').length
+
+    if(!(email_len == phone_len && phone_len == player_len)){
+        alert("Please make sure that each Player's information is filled completely, not partially");
+        event.preventDefault();
+    }
+   
 
     if(window.location.href.includes('swimming')){
         $(".final-submit").attr("disabled", true);
