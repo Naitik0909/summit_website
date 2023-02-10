@@ -62,6 +62,9 @@ form .page .field input.invalid-input {
 input.invalid-input{
     border: red solid!important;
 }
+select.invalid-input{
+    border: red solid!important;
+}
 form .page .field select {
     width: 100%;
     padding-left: 10px;

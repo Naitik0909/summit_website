@@ -67,23 +67,23 @@
 				<li class="nav-item"><a href="{% url 'guests' %}" class="nav-link{% if request.resolver_match.view_name == 'guests' %}-active{% endif %}">Guests</a></li>
         <li class="nav-item"><a href="{% url 'prizes' %}" class="nav-link{% if request.resolver_match.view_name == 'prizes' %}-active{% endif %}">Prizes</a></li>
 				<li class="nav-item"><a href="{% url 'team_and_contact' %}" class="nav-link{% if request.resolver_match.view_name == 'team_and_contact' %}-active{% endif %}">Our team & Contact Us</a></li>
-				<li class="nav-item"><a href="{% url 'scores_and_fixtures' %}" class="nav-link{% if request.resolver_match.view_name == 'scores_and_fixtures' %}-active{% endif %}">Live Score & Fixtures</a></li>
+				<!-- <li class="nav-item"><a href="{% url 'scores_and_fixtures' %}" class="nav-link{% if request.resolver_match.view_name == 'scores_and_fixtures' %}-active{% endif %}">Live Score & Fixtures</a></li> -->
 				<li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Brochure
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{% static 'brochures/2022 Summit.pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2023</a>
-            <a class="dropdown-item" href="{% static 'brochures/2021_Summit.pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2021</a>
-            <a class="dropdown-item" href="{% static 'brochures/2019 Summit Brochure 2019.pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2019</a>
-            <a class="dropdown-item" href="{% static 'brochures/2018 MIT-WPU SUMMIT _18 Brochure.pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2018</a>
-            <a class="dropdown-item" href="{% static 'brochures/2017 Summit 2017-18 Brochure (2).pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2017</a>
-            <a class="dropdown-item" href="{% static 'brochures/2016 SUMMIT 16 BROCHURE revised 02 (27th july 2016).pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2016</a>
-            <a class="dropdown-item" href="{% static 'brochures/2015 SUMMIT 2015 brochure.pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2015</a>
-            <a class="dropdown-item" href="{% static 'brochures/2014 Summit Brochure 2014.pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2014</a>
-            <a class="dropdown-item" href="{% static 'brochures/2013 Summit brochure 2013.pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2013</a>
-            <a class="dropdown-item" href="{% static 'brochures/2012 Summit_12_Brochure.pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2012</a>
-            <a class="dropdown-item" href="{% static 'brochures/2011 Summit_11_Brochure.pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2011</a>
+            <a class="dropdown-item" target="_blank" href="{% static 'brochures/2022 Summit.pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2023</a>
+            <a class="dropdown-item" target="_blank" href="{% static 'brochures/2021_Summit.pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2021</a>
+            <a class="dropdown-item" target="_blank" href="{% static 'brochures/2019 Summit Brochure 2019.pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2019</a>
+            <a class="dropdown-item" target="_blank" href="{% static 'brochures/2018 MIT-WPU SUMMIT _18 Brochure.pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2018</a>
+            <a class="dropdown-item" target="_blank" href="{% static 'brochures/2017 Summit 2017-18 Brochure (2).pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2017</a>
+            <a class="dropdown-item" target="_blank" href="{% static 'brochures/2016 SUMMIT 16 BROCHURE revised 02 (27th july 2016).pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2016</a>
+            <a class="dropdown-item" target="_blank" href="{% static 'brochures/2015 SUMMIT 2015 brochure.pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2015</a>
+            <a class="dropdown-item" target="_blank" href="{% static 'brochures/2014 Summit Brochure 2014.pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2014</a>
+            <a class="dropdown-item" target="_blank" href="{% static 'brochures/2013 Summit brochure 2013.pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2013</a>
+            <a class="dropdown-item" target="_blank" href="{% static 'brochures/2012 Summit_12_Brochure.pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2012</a>
+            <a class="dropdown-item" target="_blank" href="{% static 'brochures/2011 Summit_11_Brochure.pdf' %}"><i class="fa-solid fa-file-pdf stat-icon"></i>&ensp;Summit 2011</a>
         </li>
 				<li class="nav-item cta "><a href="{% url 'events' %}" class="nav-link">Register Now</a></li>
 		
@@ -135,7 +135,7 @@
                       <li><a href="{% url 'guests' %}" class="nav-link">Guests</a></li>
                       <li><a href="{% url 'prizes' %}" class="nav-link">Prizes</a></li>
                       <li><a href="{% url 'team_and_contact' %}" class="nav-link">Our team & Contact Us</a></li>
-                      <li><a href="{% url 'scores_and_fixtures' %}" class="nav-link">Live Score & Fixtures</a></li>
+                      <!-- <li><a href="{% url 'scores_and_fixtures' %}" class="nav-link">Live Score & Fixtures</a></li> -->
                       <li><a href="{% url 'guests' %}" class="nav-link">Brochure</a></li>
                       <li><a href="{% url 'gallery' %}" class="nav-link">Gallery</a></li>
                     </ul>

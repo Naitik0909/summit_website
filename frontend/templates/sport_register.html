@@ -66,7 +66,7 @@ rel="stylesheet"/> -->
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <input placeholder="Full Name *" required name="fullname" type="text"
+                        <input placeholder="Full Name *" name="fullname" type="text"
                           class="form-control form-control-lg"/>
                       </div>
                     </div>
@@ -144,7 +144,7 @@ rel="stylesheet"/> -->
                     </div>
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <input name="college_name" placeholder="College Name" type="text"
+                        <input required name="college_name" placeholder="College Name *" type="text"
                           class="form-control form-control-lg">
                         <!-- <label for="message" class="form-label">College Name</label> -->
                       </div>
@@ -154,32 +154,55 @@ rel="stylesheet"/> -->
                   <div class="row">
                     <div class="col">
                       <div class="form-outline mb-4">
-                        <input placeholder="Sports Incharge Name" name="sportsincharge_name" type="text"
+                        <select class="form-dropdown form-control form-control-lg" name="institution_type">
+                          <option value="">Institution Type *</option>
+                          <option value="Private University">Private University</option>
+                          <option value="Engineering College">Engineering College</option>
+                        </select>
+                        <!-- <label for="message" class="form-label">Need Accomadation?(  yes/no Specifying price)</label> -->
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-outline mb-4">
+                        <input required placeholder="Sports Incharge Name *" name="sportsincharge_name" type="text"
                           class="form-control form-control-lg">
                         <!-- <label for="message" class="form-label">Sports Incharge Name</label> -->
                       </div>
                     </div>
+                  </div>
+                  
+                  <div class="row">
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <input placeholder="Sports Incharge Number" name="sportsincharge_number" type="number"
+                        <input required placeholder="Sports Incharge Number *" name="sportsincharge_number" type="number"
                           class="form-control form-control-lg">
                         <!-- <label for="message" class="form-label">Sports Incharge Number</label> -->
                       </div>
                     </div>
+                    <div class="col-sm-6">
+                      <div class="form-outline mb-4">
+                        <input required placeholder="Sports Incharge Email Id *" name="sportsincharge_email" type="email"
+                          class="form-control form-control-lg">
+                        <!-- <label for="message" class="form-label">Sports Incharge Email id.</label> -->
+                      </div>
+                    </div>
                   </div>
-
+                  
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <input placeholder="Sports Incharge Email Id" name="sportsincharge_email" type="email"
-                          class="form-control form-control-lg">
-                        <!-- <label for="message" class="form-label">Sports Incharge Email id.</label> -->
+                        <select class="form-dropdown form-control form-control-lg" name="need_meal">
+                          <option value="">Need Meals? *</option>
+                          <option value="no">No</option>
+                          <option value="yes">Yes(Rs.300)</option>
+                        </select>
+                        <!-- <label for="message" class="form-label">Need Accomadation?(  yes/no Specifying price)</label> -->
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
                         <select class="form-dropdown form-control form-control-lg" name="accomodation" id="accomodation" onchange="handleAccomodation()">
-                          <option selected value="">Need Accomadation?</option>
+                          <option selected value="">Need Transportation(Rs.300) and Accomadation(starting Rs.400)? *</option>
                           <option value="yes">Yes</option>
                           <option value="no">No</option>
                         </select>
@@ -187,17 +210,19 @@ rel="stylesheet"/> -->
                       </div>
                     </div>
                   </div>
-
+                  
                   <div class="row mb-4">
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
                         <select class="form-dropdown form-control form-control-lg" name="accomodation_choice" id="accomodation_choice">
                           <option value="">Choose an accomodation preference</option>
-                          <option value="Below 400">Below Rs.400</option>
-                          <option value="Above 600">Above Rs.600</option>
+                          <option value="Below 400">Below or equal to Rs.400</option>
+                          <option value="Above 600">Above Rs.400</option>
                         </select>
                         <!-- <label for="message" class="form-label">Need Accomadation?(  yes/no Specifying price)</label> -->
                       </div>
+                    </div>
+                    <div class="col">
                     </div>
                   </div>
 
@@ -216,29 +241,26 @@ rel="stylesheet"/> -->
                     We will send you a link to update your team details.
                   </p>
 
-                  <div class="row mb-4">
-                    <div class="col-sm-6">
-                      <div class="label" style="text-align: start;">Upload College Document</div>
-                      <div class="form-outline mb-4">
-                        <input placeholder="Upload file" name="fileupload" type="file"
-                          class="form-control form-control-lg">
-                        <!-- <label for="message" class="form-label">Sports Incharge Number</label> -->
-                      </div>
-                    </div>
-                  </div>
+                  <p style="color: black; text-align: left;">
+                   NOTE- Individual players bonify , college id and government id cards will be required for
+                     <b>offline  team verification </b> 
+                  </p>
                   {% for i in sport.minimumPlayers %}
-                 
-                  <div class="label" style="text-align: start;">Player {{i}} details *</div>
+                  <div class="label" style="text-align: start;">Player {{i}} details
+                    {% if 'Swimming' in sport.name %}* {% else %} (optional){% endif %} 
+                  </div>
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <input placeholder="Full Name" required name="player_names" type="text"
+                        <input placeholder="Full Name" 
+                        {% if 'Swimming' in sport.name %}required{% endif %}  name="player_names" type="text"
                           class="form-control form-control-lg"/>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <input placeholder="Email" required name="player_emails" type="email"
+                        <input placeholder="Email"  
+                        {% if 'Swimming' in sport.name %}required{% endif %} name="player_emails" type="email"
                           class="form-control form-control-lg">
                       </div>
                     </div>
@@ -246,14 +268,16 @@ rel="stylesheet"/> -->
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">
-                        <input placeholder="Phone Number" required name="player_phones" type="number"
+                        <input placeholder="Phone Number" 
+                        {% if 'Swimming' in sport.name %}required{% endif %} 
+                         name="player_phones" type="number"
                           class="form-control form-control-lg">
                       </div>
                     </div>
                   </div>
                                     {% endfor %}
                   {% for i in sport.maximumPlayers %}
-                  <div class="label" style="text-align: start;">Player {{i}} details </div>
+                  <div class="label" style="text-align: start;">Player {{i}} details (Optional)</div>
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-outline mb-4">

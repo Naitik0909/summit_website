@@ -17,3 +17,10 @@ def stringToBool(s):
          return True
     else:
         return False
+
+def addGST(price):
+    try:
+        cal_price = float(price)
+        return cal_price + (cal_price * 0.18)
+    except:
+        return price
