@@ -83,6 +83,6 @@ class PlayerAdmin(admin.ModelAdmin):
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):
     list_display = ("tracking_id", "trans_date", "amount", "bank_ref_no", "order_status", "failure_message", "payment_mode", "card_name", "status_code", "status_message", "amount", "billing_name", "billing_address", "billing_city", "billing_state", "billing_zipcode", "billing_telephone", "billing_email")
-    search_fields = ("amount", "bank_ref_no",)
+    search_fields = ("amount", "bank_ref_no", "tracking_id")
     list_filter = ("order_status", "payment_mode", "billing_state", "billing_city")
     actions = [csvexport]
