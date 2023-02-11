@@ -60,9 +60,9 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
-    list_display = ("name", "institute_name", "sport", "datetime", "captain_name", "player_names", "sport_incharge_name", "sport_incharge_number", "sport_incharge_email_id", "need_transport")
+    list_display = ("name", "payment", "sport", "datetime", "captain_name", "player_names", "sport_incharge_name", "sport_incharge_number", "sport_incharge_email_id", "need_transport")
     search_fields = ("name", "institute_name", "captain_name", "sport_incharge_name", "sport_incharge_number", "sport_incharge_email_id", "order_id")
-    list_filter = ("sport", "is_payment_successful", "is_male_team", "need_accomodation", "need_transport")
+    list_filter = ("sport", "is_payment_successful", "is_male_team", "need_accomodation", "need_transport", "institution_type")
     actions = [csvexport]
 
     def changelist_view(self, request, extra_context=None):
@@ -84,4 +84,5 @@ class PlayerAdmin(admin.ModelAdmin):
 class PaymentAdmin(admin.ModelAdmin):
     list_display = ("tracking_id", "trans_date", "amount", "bank_ref_no", "order_status", "failure_message", "payment_mode", "card_name", "status_code", "status_message", "amount", "billing_name", "billing_address", "billing_city", "billing_state", "billing_zipcode", "billing_telephone", "billing_email")
     search_fields = ("amount", "bank_ref_no",)
+    list_filter = ("order_status", "payment_mode", "billing_state", "billing_city")
     actions = [csvexport]
