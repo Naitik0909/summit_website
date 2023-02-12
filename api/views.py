@@ -10,7 +10,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from pay_ccavenue import CCAvenue
 
 from api.models import Payment, Team, Player
-from frontend.email_handler import send_registration_mail
+from frontend.email_handler import send_registration_mail, failed_registration_email
 from .utils import getFormatedDate
 
 from datetime import datetime
@@ -95,12 +95,18 @@ class CCAveResposeHandler(View):
                     logo_url = f"https://{settings.AWS_S3_CUSTOM_DOMAIN}/media/{team.sport.logo}"
                     send_registration_mail(decResp["billing_email"], logo_url, team_update_url)
                 except Exception as e:
-                    print("---------Email Exception---------", e)
+                    print("---------Success Email Exception---------", e)
                 team.save()
             else:
                 failed = True
                 team.is_payment_successful = False
                 team.save()
+                try:
+                    team_update_url = request.build_absolute_uri("/update_team/" + str(decResp["tracking_id"]))
+                    logo_url = f"https://{settings.AWS_S3_CUSTOM_DOMAIN}/media/{team.sport.logo}"
+                    failed_registration_email(decResp["billing_email"], logo_url, team_update_url)
+                except Exception as e:
+                    print("---------Failed Email Exception---------", e)
 
             decResp["failed"] = failed
             context = {
@@ -116,7 +122,7 @@ class CCAveResposeHandler(View):
             file1.write(currTime+"---------Exception in payments--------- "+str(e))
             file1.close()
             print(currTime+"---------Exception in payments---------", str(e))
-            messages.warning(request, "Something went wrong. Please try again later.")
+            messages.info(request, "Something went wrong. Please try again later.")
             return redirect('home')
         return render(request, "response1.html", context=context)
 
