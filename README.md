@@ -37,7 +37,7 @@ The Github app has been cloned into our college's Azure VM and has been deployed
 
 ```
 source myenv/bin/activate
-cd summit_app
+cd summit_website
 git pull origin main
 pip3 install -r requirements.txt
 python3 manage.py collectstatic
