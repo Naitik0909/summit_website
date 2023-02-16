@@ -63,6 +63,7 @@
 		
 			<div class="collapse navbar-collapse" id="ftco-nav">
 			<ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a href="{% url 'conference' %}" class="nav-link{% if request.resolver_match.view_name == 'conference' %}-active{% endif %}">Sports Conference</a></li>
 				<li class="nav-item"><a href="{% url 'events' %}" class="nav-link{% if request.resolver_match.view_name == 'events' %}-active{% endif %}">Events</a></li>
 				<li class="nav-item"><a href="{% url 'guests' %}" class="nav-link{% if request.resolver_match.view_name == 'guests' %}-active{% endif %}">Guests</a></li>
         <li class="nav-item"><a href="{% url 'prizes' %}" class="nav-link{% if request.resolver_match.view_name == 'prizes' %}-active{% endif %}">Prizes</a></li>
@@ -131,6 +132,7 @@
                       <li class="nav-item"></li>
                       <li class="nav-item"></li>
                       <li class="nav-item"></li> -->
+                      <li><a href="{% url 'conference' %}" class="nav-link">Sports Conference</a></li>
                       <li><a href="{% url 'events' %}" class="nav-link">Events</a></li>
                       <li><a href="{% url 'guests' %}" class="nav-link">Guests</a></li>
                       <li><a href="{% url 'prizes' %}" class="nav-link">Prizes</a></li>

@@ -45,6 +45,18 @@ class AboutUsView(View):
             }
         return render(request, 'about.html',context)
 
+class ConferencePageView(View):
+    def get(self, request, *args, **kwargs):
+        introData = {
+            'title': 'Sports Conference',
+            'desc':'',
+            'image':'/static/images/Banner_Homepage.svg',
+            }
+        context = {
+                'introData': introData
+            }
+        return render(request, 'conference.html',context)
+
 class GuestsPageView(View):
      def get(self, request, *args, **kwargs):
         introData = {
