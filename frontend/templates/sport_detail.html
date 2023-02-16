@@ -84,43 +84,52 @@
               <!-- END comment-list -->
               
              </div>
-            {% if sport.name == "Chess" or "Esport" in sport.name %}
-              <div class="form-group">
-                <a href="{% url 'sport_register' sport.slug %}_all" class="btn py-3 px-4 btn-primary">Register</a>
-              </div>
-            {% else %}
-              {% if "Swimming" in sport.name %}
-                <div class="form-outline mb-4">
-                  <select style="width: 300px;max-width: 100%;" class="form-dropdown form-control form-control-lg" name="swimming_category" id="swimming_category" onchange="handleSwimmingCategory()">
-                    <option selected value="">Select a category</option>
-                    <option value="swimming-freestyle-50m">Freestyle - 50m</option>
-                    <option value="swimming-backstroke-50m">Backstroke - 50m</option>
-                    <option value="swimming-breaststroke-50m">Breaststroke - 50m</option>
-                    <option value="swimming-butterfly-50m">Butterfly - 50m</option>
-                    <option value="swimming-freestyle-100m">Freestyle - 100m</option>
-                    <option value="swimming-backstroke-100m">Backstroke - 100m</option>
-                    <option value="swimming-breaststroke-100m">Breaststroke - 100m</option>
-                    <option value="swimming-butterfly-100m">Butterfly - 100m</option>
-                    <option value="swimming-freestyle-relay-50m">Freestyle Relay - 50m</option>
-                    <option value="swimming-medley-relay-50m">Medley Relay - 50m</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <a style="display: none;" href="{% url 'sport_register' sport.slug %}_men" id="register-men" class="btn py-3 px-4 btn-primary">Register (Men)</a>
-                  &ensp;
-                  {% if sport.minimumPlayersFemale %}
-                  <a style="display: none;" href="{% url 'sport_register' sport.slug %}_women" id="register-women" class="btn py-3 px-4 btn-primary">Register (Women)</a>
+             {% if sport.name == "Cricket" %}
+
+             <div class="form-group">
+              <button class="btn py-3 px-4 btn-disable">Registerations Full</button>
+            </div>
+
+             {% else %}
+
+                {% if sport.name == "Chess" or "Esport" in sport.name %}
+                  <div class="form-group">
+                    <a href="{% url 'sport_register' sport.slug %}_all" class="btn py-3 px-4 btn-primary">Register</a>
+                  </div>
+                {% else %}
+                  {% if "Swimming" in sport.name %}
+                    <div class="form-outline mb-4">
+                      <select style="width: 300px;max-width: 100%;" class="form-dropdown form-control form-control-lg" name="swimming_category" id="swimming_category" onchange="handleSwimmingCategory()">
+                        <option selected value="">Select a category</option>
+                        <option value="swimming-freestyle-50m">Freestyle - 50m</option>
+                        <option value="swimming-backstroke-50m">Backstroke - 50m</option>
+                        <option value="swimming-breaststroke-50m">Breaststroke - 50m</option>
+                        <option value="swimming-butterfly-50m">Butterfly - 50m</option>
+                        <option value="swimming-freestyle-100m">Freestyle - 100m</option>
+                        <option value="swimming-backstroke-100m">Backstroke - 100m</option>
+                        <option value="swimming-breaststroke-100m">Breaststroke - 100m</option>
+                        <option value="swimming-butterfly-100m">Butterfly - 100m</option>
+                        <option value="swimming-freestyle-relay-50m">Freestyle Relay - 50m</option>
+                        <option value="swimming-medley-relay-50m">Medley Relay - 50m</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <a style="display: none;" href="{% url 'sport_register' sport.slug %}_men" id="register-men" class="btn py-3 px-4 btn-primary">Register (Men)</a>
+                      &ensp;
+                      {% if sport.minimumPlayersFemale %}
+                      <a style="display: none;" href="{% url 'sport_register' sport.slug %}_women" id="register-women" class="btn py-3 px-4 btn-primary">Register (Women)</a>
+                      {% endif %}
+                    </div>
+                  {% else %}
+                    <div class="form-group">
+                      <a href="{% url 'sport_register' sport.slug %}_men" class="btn py-3 px-4 btn-primary">Register (Men)</a>
+                      &ensp;
+                      {% if sport.minimumPlayersFemale %}
+                      <a href="{% url 'sport_register' sport.slug %}_women" class="btn py-3 px-4 btn-primary">Register (Women)</a>
+                      {% endif %}
+                    </div>
                   {% endif %}
-                </div>
-              {% else %}
-                <div class="form-group">
-                  <a href="{% url 'sport_register' sport.slug %}_men" class="btn py-3 px-4 btn-primary">Register (Men)</a>
-                  &ensp;
-                  {% if sport.minimumPlayersFemale %}
-                  <a href="{% url 'sport_register' sport.slug %}_women" class="btn py-3 px-4 btn-primary">Register (Women)</a>
-                  {% endif %}
-                </div>
-              {% endif %}
+                {% endif %}
             {% endif %}
           </div> <!-- .col-md-8 -->
           <div class="col-md-4 sidebar ftco-animate">
