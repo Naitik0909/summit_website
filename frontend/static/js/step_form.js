@@ -144,23 +144,18 @@ $(document).ready(function () {
 
 function onSubmit(){
 
+    $(".final-submit").attr("disabled", true);
+
     let emails = document.querySelectorAll("input[name=player_emails]");
     let phone_numbers = document.querySelectorAll("input[name=player_phones]");
     let player_names = document.querySelectorAll("input[name=player_names]");
-
-    // console.log(emails);
-    // console.log(phone_numbers);
-    // console.log(player_names);
-
-    // console.log(Array.from(emails).filter((str) => str.value !== '').length);
-    // console.log(Array.from(phone_numbers).filter((str) => str.value !== '').length);
-    // console.log(Array.from(player_names).filter((str) => str.value !== '').length);
 
     let email_len = Array.from(emails).filter((str) => str.value !== '').length;
     let phone_len = Array.from(phone_numbers).filter((str) => str.value !== '').length;
     let player_len = Array.from(player_names).filter((str) => str.value !== '').length
 
     if(!(email_len == phone_len && phone_len == player_len)){
+        $(".final-submit").attr("disabled", false);
         alert("Please make sure that each Player's information is filled completely, not partially");
         event.preventDefault();
     }

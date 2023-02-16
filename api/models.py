@@ -68,7 +68,7 @@ class Payment(models.Model):
     billing_email = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
-        return f"{self.tracking_id} - {self.amount}"
+        return f"{self.tracking_id} - Rs.{self.amount}"
     
 
 class Team(models.Model):

@@ -60,9 +60,9 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
-    list_display = ("name", "institute_name", "sport", "datetime", "captain_name", "player_names", "sport_incharge_name", "sport_incharge_number", "sport_incharge_email_id", "need_transport")
+    list_display = ("name", "payment", "sport", "datetime", "captain_name", "captain_phone", "player_names", "sport_incharge_name", "sport_incharge_number", "sport_incharge_email_id", "need_transport")
     search_fields = ("name", "institute_name", "captain_name", "sport_incharge_name", "sport_incharge_number", "sport_incharge_email_id", "order_id")
-    list_filter = ("sport", "is_payment_successful", "is_male_team", "need_accomodation", "need_transport")
+    list_filter = ("sport", "is_payment_successful", "is_male_team", "need_accomodation", "need_transport", "institution_type")
     actions = [csvexport]
 
     def changelist_view(self, request, extra_context=None):
@@ -72,6 +72,16 @@ class TeamAdmin(admin.ModelAdmin):
             request.GET = temp
         return super(TeamAdmin,self).changelist_view(request, extra_context=extra_context)
 
+    def captain_phone(self, obj):
+        captain_name = obj.captain_name
+        try:
+            player = Player.objects.filter(name=captain_name, team=obj)[0]
+        except:
+            player = None
+        return player.phone if player else "Please search for this captain in the Players section"
+
+    captain_phone.allow_tags = True
+    captain_phone.short_description = "Captain's Phone"
 
 @admin.register(Player)
 class PlayerAdmin(admin.ModelAdmin):
@@ -83,5 +93,6 @@ class PlayerAdmin(admin.ModelAdmin):
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):
     list_display = ("tracking_id", "trans_date", "amount", "bank_ref_no", "order_status", "failure_message", "payment_mode", "card_name", "status_code", "status_message", "amount", "billing_name", "billing_address", "billing_city", "billing_state", "billing_zipcode", "billing_telephone", "billing_email")
-    search_fields = ("amount", "bank_ref_no",)
+    search_fields = ("amount", "bank_ref_no", "tracking_id")
+    list_filter = ("order_status", "payment_mode", "billing_state", "billing_city")
     actions = [csvexport]

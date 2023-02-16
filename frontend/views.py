@@ -5,7 +5,7 @@ from pay_ccavenue import CCAvenue
 from django.conf import settings
 
 from api.models import Sport, Team, Contact, Player, Payment
-from .utils import listToString, stringToBool
+from .utils import listToString, stringToBool, initiatePayment, reduceArray
 from .email_handler import send_registration_mail
 
 from datetime import datetime
@@ -15,11 +15,6 @@ class HomePageView(TemplateView):
     template_name = 'index.html'
 
 class EventsPageView(View):
-    def reducaeArray(arr,n):
-        newArr = []
-        for i in range(0,n):
-            newArr.append(arr[i])
-        return newArr
 
     def get(self, request, *args, **kwargs):
         introData = {
@@ -32,7 +27,7 @@ class EventsPageView(View):
         for sport in allSport:
             sport.rules = sport.rules.split(';')
             n = len(sport.rules) if len(sport.rules) < 4 else 4
-            sport.rules = PrizesPageView.reducaeArray(sport.rules, n)
+            sport.rules = reduceArray(sport.rules, n)
         context = {
                 'introData': introData,
                 'allSport': allSport,            }
@@ -64,12 +59,6 @@ class GuestsPageView(View):
 
 class PrizesPageView(View):
 
-    def reducaeArray(arr,n):
-        newArr = []
-        for i in range(0,n):
-            newArr.append(arr[i])
-        return newArr
-
     def get(self, request, *args, **kwargs):
         introData = {
             'title': 'Prizes',
@@ -80,7 +69,7 @@ class PrizesPageView(View):
         for sport in allSport:
             sport.rules = sport.rules.split(';')
             n = len(sport.rules) if len(sport.rules) < 4 else 4
-            sport.rules = PrizesPageView.reducaeArray(sport.rules, n)
+            sport.rules = reduceArray(sport.rules, n)
         context = {
                 'introData': introData,
                 'allSport': allSport            }
@@ -107,9 +96,6 @@ class TeamAndContactPageView(View):
             'title': 'Contact Us',
             'desc':'',
             'image':'/static/images/contact-us.png',
-            # 'question':'What are you looking for?',
-            # 'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
-       
         }
         context = {
                 'introData': introData
@@ -135,11 +121,6 @@ class ScoresAndFixturesPageView(View):
         introData = {
             'title': 'Scores & Fixtures',
             'image':'/static/images/Banner_Homepage.svg',
-
-            # 'desc':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?',
-            # 'question':'What are you looking for?',
-            # 'information':'ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem sequi, quo tempore in eum obcaecati atque quibusdam officiis est dolorum minima deleniti ratione molestias numquam. Voluptas voluptates quibusdam cum?'
-       
         }
         context = {
                 'introData': introData
@@ -284,36 +265,9 @@ class SportRegisterPageView(View):
             player.save()
 
         # Send request to payment gateway
-
-        basePrice = 0
-        if(team.is_male_team):
-            basePrice = sport.priceMale
-        else:
-            basePrice = sport.priceFemale
+        payment_context = initiatePayment(player_emails, team)
         
-        if("Swimming" in sport.name):
-            basePrice = basePrice * len(player_emails)
-
-        reqObj = {
-            'merchant_id': settings.CC_AVENUE_MERCHANT_ID,
-            'order_id': order_id,
-            'currency': settings.CC_AVENUE_CURRENCY,
-            'redirect_url':settings.CC_AVENUE_SUCCESS_URL,
-            'cancel_url': settings.CC_AVENUE_FAILURE_URL,
-            'language': settings.CC_AVENUE_LANG,
-            'amount': basePrice,
-        }
-        ccavenue = CCAvenue()
-        encrypt_data = ccavenue.encrypt(reqObj)
-        context = {
-            "encReq": encrypt_data,
-            "xscode": settings.CC_AVENUE_ACCESS_CODE,
-            "ccAveURL": settings.CC_AVENUE_URL
-        }
-        return render(request, 'redirectPage.html', context=context)
-
-        # messages.info(request, 'Your team has been successfully registered!')
-        # return redirect('home')
+        return render(request, 'redirectPage.html', context=payment_context)
 
 class UpdateTeamPage(View):
     def get(self, request, *args, **kwargs):
@@ -357,6 +311,10 @@ class UpdateTeamPage(View):
         payment = Payment.objects.get(tracking_id=int(transaction_id))
         team = Team.objects.get(payment=payment)
 
+        if "Swimming" in team.sport.name and "Relay" not in team.sport.name:
+            messages.info("You cannot edit swimming team details after payment. Please contact us for any queries.")
+            return redirect('home')
+
         # Player details
         player_emails = [i for i in request.POST.getlist('player_emails') if i]
         player_phones = [i for i in request.POST.getlist('player_phones') if i]
@@ -375,6 +333,10 @@ class UpdateTeamPage(View):
             player.phone = player_phones[i]
             player.team.add(team)
             player.save()
-
-        messages.info(request, 'Your team has been successfully edited!')
-        return redirect('home')
+        
+        if team.is_payment_successful:
+            messages.info(request, 'Your team has been successfully edited!')
+            return redirect('home')
+        else:
+            payment_context = initiatePayment(player_emails, team)
+            return render(request, 'redirectPage.html', context=payment_context)
