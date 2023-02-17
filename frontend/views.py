@@ -50,7 +50,7 @@ class ConferencePageView(View):
         introData = {
             'title': 'Sports Conference',
             'desc':'',
-            'image':'/static/images/Banner_Homepage.svg',
+            'image':'/static/images/events.png',
             }
         context = {
                 'introData': introData

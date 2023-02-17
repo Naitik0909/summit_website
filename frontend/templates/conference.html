@@ -9,13 +9,14 @@
 
   
 
-        <center>
+
 
             
        
-        <iframe src="{% static '/images/conference.pdf' %}#toolbar=0" width="100%" height="1000rem">
-        </iframe>
-
+        <!-- <iframe src="{% static '/images/conference.pdf' %}#toolbar=0" width="100%" height="1000rem">
+        </iframe> -->
+        <center>
+        <img class="conference" src="{% static 'images/conference.jpg' %}" alt="">
             
 
         <br/>
@@ -26,13 +27,15 @@
         </div>
         <br/>
         <br/>
-
-    </center>
+      </center>
     
 <style>
-@media screen and (max-width: 480px) {
-  iframe {
-    height: 400px;
+  .conference{
+    width: 60%;
+  }
+@media screen and (max-width: 600px) {
+  .conference {
+    width: 100%;
   }
 }
 </style>
