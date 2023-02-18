@@ -84,19 +84,22 @@
               <!-- END comment-list -->
               
              </div>
+             <!-- Sports for which registrations are full -->
              {% if sport.name == "Cricket" %}
 
              <div class="form-group">
-              <button class="btn py-3 px-4 btn-disable">Registerations Full</button>
+              <button disabled class="btn py-3 px-4 btn-disable">Registerations Full</button>
             </div>
 
              {% else %}
-
+                <!-- Sports that don't have male/female categories -->
                 {% if sport.name == "Chess" or "Esport" in sport.name %}
                   <div class="form-group">
                     <a href="{% url 'sport_register' sport.slug %}_all" class="btn py-3 px-4 btn-primary">Register</a>
                   </div>
                 {% else %}
+
+                  <!-- Custom categories for swimming -->
                   {% if "Swimming" in sport.name %}
                     <div class="form-outline mb-4">
                       <select style="width: 300px;max-width: 100%;" class="form-dropdown form-control form-control-lg" name="swimming_category" id="swimming_category" onchange="handleSwimmingCategory()">
@@ -121,8 +124,14 @@
                       {% endif %}
                     </div>
                   {% else %}
-                    <div class="form-group">
-                      <a href="{% url 'sport_register' sport.slug %}_men" class="btn py-3 px-4 btn-primary">Register (Men)</a>
+                    
+                  <div class="form-group">
+                      <!-- Registrations closed for Football men -->
+                      {% if sport.name != "Football" %}
+                        <a href="{% url 'sport_register' sport.slug %}_men" class="btn py-3 px-4 btn-primary">Register (Men)</a>
+                      {% else %}
+                        <button disabled class="btn py-2 px-2 btn-disable">Registerations Full for Men</button>
+                      {% endif %}
                       &ensp;
                       {% if sport.minimumPlayersFemale %}
                       <a href="{% url 'sport_register' sport.slug %}_women" class="btn py-3 px-4 btn-primary">Register (Women)</a>
