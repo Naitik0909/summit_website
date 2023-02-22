@@ -333,7 +333,7 @@ function makeTimer() {
 		var now = new Date();
 		now = (Date.parse(now) / 1000);
 
-		var timeLeft = endTime - now;
+		var timeLeft = endTime - now > 0 ? endTime - now : 0;
 
 		var days = Math.floor(timeLeft / 86400); 
 		var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
